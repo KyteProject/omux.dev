@@ -42,6 +42,13 @@ module.exports = {
         fill: withOpacity("--color-accent"),
       },
     },
+    textDecorationColor: {
+      skin: {
+        base: withOpacity("--color-text-base"),
+        accent: withOpacity("--color-accent"),
+        inverted: withOpacity("--color-fill"),
+      }
+    },
     borderColor: {
       skin: {
         line: withOpacity("--color-border"),

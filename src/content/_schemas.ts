@@ -1,4 +1,4 @@
-import { z } from "astro:content";
+import { z } from "astro:content"
 
 export const blogSchema = z
   .object({
@@ -12,6 +12,6 @@ export const blogSchema = z
     ogImage: z.string().optional(),
     description: z.string(),
   })
-  .strict();
+  .strict()
 
-export type BlogFrontmatter = z.infer<typeof blogSchema>;
+export type BlogFrontmatter = z.infer<typeof blogSchema>

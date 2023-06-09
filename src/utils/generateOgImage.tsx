@@ -1,25 +1,25 @@
-import satori, { SatoriOptions } from "satori";
-import { SITE } from "@config";
-import { writeFile } from "node:fs/promises";
-import { Resvg } from "@resvg/resvg-js";
+import satori, { SatoriOptions } from "satori"
+import { SITE } from "@config"
+import { writeFile } from "node:fs/promises"
+import { Resvg } from "@resvg/resvg-js"
 
 const fetchFonts = async () => {
   // Regular Font
   const fontFileRegular = await fetch(
     "https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf"
-  );
-  const fontRegular: ArrayBuffer = await fontFileRegular.arrayBuffer();
+  )
+  const fontRegular: ArrayBuffer = await fontFileRegular.arrayBuffer()
 
   // Bold Font
   const fontFileBold = await fetch(
     "https://www.1001fonts.com/download/font/ibm-plex-mono.bold.ttf"
-  );
-  const fontBold: ArrayBuffer = await fontFileBold.arrayBuffer();
+  )
+  const fontBold: ArrayBuffer = await fontFileBold.arrayBuffer()
 
-  return { fontRegular, fontBold };
-};
+  return { fontRegular, fontBold }
+}
 
-const { fontRegular, fontBold } = await fetchFonts();
+const { fontRegular, fontBold } = await fetchFonts()
 
 const ogImage = (text: string) => {
   return (
@@ -30,7 +30,7 @@ const ogImage = (text: string) => {
         height: "100%",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <div
@@ -46,7 +46,7 @@ const ogImage = (text: string) => {
           justifyContent: "center",
           margin: "2.5rem",
           width: "88%",
-          height: "80%",
+          height: "80%"
         }}
       />
 
@@ -59,7 +59,7 @@ const ogImage = (text: string) => {
           justifyContent: "center",
           margin: "2rem",
           width: "88%",
-          height: "80%",
+          height: "80%"
         }}
       >
         <div
@@ -69,7 +69,7 @@ const ogImage = (text: string) => {
             justifyContent: "space-between",
             margin: "20px",
             width: "90%",
-            height: "90%",
+            height: "90%"
           }}
         >
           <p
@@ -77,7 +77,7 @@ const ogImage = (text: string) => {
               fontSize: 72,
               fontWeight: "bold",
               maxHeight: "84%",
-              overflow: "hidden",
+              overflow: "hidden"
             }}
           >
             {text}
@@ -88,14 +88,14 @@ const ogImage = (text: string) => {
               justifyContent: "space-between",
               width: "100%",
               marginBottom: "8px",
-              fontSize: 28,
+              fontSize: 28
             }}
           >
             <span>
               by{" "}
               <span
                 style={{
-                  color: "transparent",
+                  color: "transparent"
                 }}
               >
                 "
@@ -112,8 +112,8 @@ const ogImage = (text: string) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const options: SatoriOptions = {
   width: 1200,
@@ -124,32 +124,32 @@ const options: SatoriOptions = {
       name: "IBM Plex Mono",
       data: fontRegular,
       weight: 400,
-      style: "normal",
+      style: "normal"
     },
     {
       name: "IBM Plex Mono",
       data: fontBold,
       weight: 600,
-      style: "normal",
-    },
-  ],
-};
+      style: "normal"
+    }
+  ]
+}
 
 const generateOgImage = async (mytext = SITE.title) => {
-  const svg = await satori(ogImage(mytext), options);
+  const svg = await satori(ogImage(mytext), options)
 
   // render png in production mode
   if (import.meta.env.MODE === "production") {
-    const resvg = new Resvg(svg);
-    const pngData = resvg.render();
-    const pngBuffer = pngData.asPng();
+    const resvg = new Resvg(svg)
+    const pngData = resvg.render()
+    const pngBuffer = pngData.asPng()
 
-    console.info("Output PNG Image  :", `${mytext}.png`);
+    console.info("Output PNG Image  :", `${mytext}.png`)
 
-    await writeFile(`./dist/${mytext}.png`, pngBuffer);
+    await writeFile(`./dist/${mytext}.png`, pngBuffer)
   }
 
-  return svg;
-};
+  return svg
+}
 
-export default generateOgImage;
+export default generateOgImage

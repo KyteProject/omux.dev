@@ -1,24 +1,24 @@
 ---
-import { SITE } from "@config";
-import Layout from "@layouts/Layout.astro";
-import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
-import LinkButton from "@components/LinkButton.astro";
-import slugify from "@utils/slugify";
-import type { CollectionEntry } from "astro:content";
+import { SITE } from "@config"
+import Layout from "@layouts/Layout.astro"
+import Main from "@layouts/Main.astro"
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+import Card from "@components/Card"
+import LinkButton from "@components/LinkButton.astro"
+import slugify from "@utils/slugify"
+import type { CollectionEntry } from "astro:content"
 
 export interface Props {
-  pageNum: number;
-  totalPages: number;
-  posts: CollectionEntry<"blog">[];
+  pageNum: number
+  totalPages: number
+  posts: CollectionEntry<"blog">[]
 }
 
-const { pageNum, totalPages, posts } = Astro.props;
+const { pageNum, totalPages, posts } = Astro.props
 
-const prev = pageNum > 1 ? "" : "disabled";
-const next = pageNum < totalPages ? "" : "disabled";
+const prev = pageNum > 1 ? "" : "disabled"
+const next = pageNum < totalPages ? "" : "disabled"
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
@@ -66,7 +66,7 @@ const next = pageNum < totalPages ? "" : "disabled";
 
 <style>
   .pagination-wrapper {
-    @apply mt-auto mb-8 flex justify-center;
+    @apply mb-8 mt-auto flex justify-center;
   }
   .disabled {
     @apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;

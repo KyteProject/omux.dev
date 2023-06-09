@@ -5,12 +5,12 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 0, 108, 172;
-    --color-card: 230, 230, 230;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 236, 233, 233;
+    --color-fill: 250, 252, 252;
+    --color-text-base: 34, 46, 54;
+    --color-accent: 211, 0, 106;
+    --color-card: 234, 206, 219;
+    --color-card-muted: 241, 186, 212;
+    --color-border: 227, 169, 198;
   }
   html[data-theme="dark"] {
     --color-fill: 33, 39, 55;

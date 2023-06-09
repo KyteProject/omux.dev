@@ -100,7 +100,7 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 **Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
 **Linting** - [ESLint](https://eslint.org)
 
-## 👨🏻‍💻 Running Locally
+## 👨🏻💻 Running Locally
 
 The easiest way to run this project locally is to run the following command in your desired directory.
 
@@ -150,4 +150,4 @@ Licensed under the MIT License, Copyright © 2023
 
 ---
 
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻
+Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻💻

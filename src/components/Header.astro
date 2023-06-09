@@ -2,14 +2,14 @@
 import { LOGO_IMAGE, SITE } from "@config"
 import Hr from "./Hr.astro"
 import LinkButton from "./LinkButton.astro"
-
-import logoPNG from "/assets/logo.png"
-import logoSVG from "/assets/logo.svg"
+import { Image } from "@astrojs/image/components"
 
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search"
 }
 
+const logoPNG = "/assets/logo.png"
+const logoSVG = "/assets/logo.svg"
 const { activeNav } = Astro.props
 ---
 
@@ -20,9 +20,9 @@ const { activeNav } = Astro.props
       <a href="/" class="logo">
         {
           LOGO_IMAGE.enable ? (
-            <img
+            <Image
               src={LOGO_IMAGE.svg ? logoSVG : logoPNG}
-              alt="AstroPaper Logo"
+              alt="Omux.dev logo"
               width={LOGO_IMAGE.width}
               height={LOGO_IMAGE.height}
             />

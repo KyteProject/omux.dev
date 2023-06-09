@@ -11,6 +11,10 @@ export const blogSchema = z
     tags: z.array(z.string()).default(["others"]),
     ogImage: z.string().optional(),
     description: z.string(),
+    extra: z
+      .array(z.enum(["math", "markmap", "mermaid", "gallery"]))
+      .optional(),
+    readingTime: z.string().optional()
   })
   .strict()
 

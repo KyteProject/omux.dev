@@ -7,7 +7,7 @@ export const SITE: Site = {
   title: "Synth & Syntax",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 8,
+  postPerPage: 8
 }
 
 export const LOCALE = ["en-GB"] // set to [] to use the environment default
@@ -16,7 +16,7 @@ export const LOGO_IMAGE = {
   enable: false,
   svg: true,
   width: 216,
-  height: 46,
+  height: 46
 }
 
 export const SOCIALS: SocialObjects = [
@@ -24,120 +24,120 @@ export const SOCIALS: SocialObjects = [
     name: "Github",
     href: "https://github.com/KyteProject",
     linkTitle: ` ${SITE.title} on Github`,
-    active: true,
+    active: true
   },
   {
     name: "Facebook",
     href: "",
     linkTitle: `${SITE.title} on Facebook`,
-    active: false,
+    active: false
   },
   {
     name: "Instagram",
     href: "",
     linkTitle: `${SITE.title} on Instagram`,
-    active: false,
+    active: false
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/daniel-s-30b70a97/",
     linkTitle: `${SITE.title} on LinkedIn`,
-    active: true,
+    active: true
   },
   {
     name: "Mail",
     href: "mailto:dan@omux.dev",
     linkTitle: `Send an email to ${SITE.title}`,
-    active: true,
+    active: true
   },
   {
     name: "Twitter",
     href: "https://twitter.com/omuxdev",
     linkTitle: `${SITE.title} on Twitter`,
-    active: true,
+    active: true
   },
   {
     name: "Twitch",
     href: "",
     linkTitle: `${SITE.title} on Twitch`,
-    active: false,
+    active: false
   },
   {
     name: "YouTube",
     href: "",
     linkTitle: `${SITE.title} on YouTube`,
-    active: false,
+    active: false
   },
   {
     name: "WhatsApp",
     href: "",
     linkTitle: `${SITE.title} on WhatsApp`,
-    active: false,
+    active: false
   },
   {
     name: "Snapchat",
     href: "",
     linkTitle: `${SITE.title} on Snapchat`,
-    active: false,
+    active: false
   },
   {
     name: "Pinterest",
     href: "",
     linkTitle: `${SITE.title} on Pinterest`,
-    active: false,
+    active: false
   },
   {
     name: "TikTok",
     href: "",
     linkTitle: `${SITE.title} on TikTok`,
-    active: false,
+    active: false
   },
   {
     name: "CodePen",
     href: "",
     linkTitle: `${SITE.title} on CodePen`,
-    active: false,
+    active: false
   },
   {
     name: "Discord",
     href: "https://discordapp.com/users/omux",
     linkTitle: `${SITE.title} on Discord`,
-    active: true,
+    active: true
   },
   {
     name: "GitLab",
     href: "https://gitlab.com/omux",
     linkTitle: `${SITE.title} on GitLab`,
-    active: true,
+    active: true
   },
   {
     name: "Reddit",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Reddit`,
-    active: false,
+    active: false
   },
   {
     name: "Skype",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Skype`,
-    active: false,
+    active: false
   },
   {
     name: "Steam",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Steam`,
-    active: false,
+    active: false
   },
   {
     name: "Telegram",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Telegram`,
-    active: false,
+    active: false
   },
   {
     name: "Mastodon",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Mastodon`,
-    active: false,
-  },
+    active: false
+  }
 ]

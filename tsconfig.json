@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "strictNullChecks": true,
     "baseUrl": "src",
     "jsx": "react-jsx",
     "paths": {
@@ -11,7 +12,10 @@
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
-    }
-  }
+      "@utils/*": ["utils/*"],
+      "@/data/*": ["data/*"]
+    },
+    "types": ["@astrojs/image/client"]
+  },
+  "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }

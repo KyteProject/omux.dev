@@ -5,6 +5,8 @@ pubDatetime: 2022-11-19T34:19:19Z
 postSlug: "essential-guide-software-architecture-web-development"
 featured: true
 draft: false
+categories:
+  - Software Architecture
 tags:
   - Software Architecture
   - Web Development

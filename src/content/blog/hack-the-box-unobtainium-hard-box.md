@@ -1,10 +1,13 @@
 ---
-title: "Unobtainium - HackTheBox (HTB) - Hard Box"
+title: "Unobtainium - HackTheBox (HTB) - Hard Box Writeup"
 author: Daniel Smith
 pubDatetime: 2022-12-14T12:53:10Z
 postSlug: "unobtanium-hackthebox-htb-hard-box"
 featured: false
 draft: false
+categories:
+  - Cybersecurity
+  - HackTheBox
 tags:
   - HTB
   - Hack The Box
@@ -767,3 +770,13 @@ spec:
 ```
 
 ![/images/unobtainium/Untitled_30.png](/images/unobtainium/Untitled_30.png)
+
+---
+
+This blog post is part of a series on practical approaches to cybersecurity. Stay tuned for more updates and insights into the fascinating world of ethical hacking and cybersecurity best practices.
+
+In the following posts, we will delve deeper into the exploitation phase, demonstrating techniques such as privilege escalation, lateral movement, and persistence.
+
+Stay safe, and happy hacking!
+
+Note: This blog is for educational purposes only. Attempting unauthorised penetration testing is illegal and punishable by law. Always get explicit permission before performing any penetration testing.

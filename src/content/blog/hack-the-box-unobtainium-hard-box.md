@@ -2,7 +2,7 @@
 title: "Unobtainium - HackTheBox (HTB) - Hard Box"
 author: Daniel Smith
 pubDatetime: 2022-12-14T12:53:10Z
-postSlug: "essential-guide-software-architecture-web-development"
+postSlug: "unobtanium-hackthebox-htb-hard-box"
 featured: false
 draft: false
 tags:

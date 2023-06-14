@@ -31,13 +31,13 @@ tags:
   - Weak Credentials
   - Clear Text Credentials
   - XXE Injection
-ogImage: ""
+ogImage: "/images/metatwo/MetaTwo.png"
 description: "A deep-dive walkthrough of MetaTwo, a challenge box on HTB (HackTheBox) focused on WordPress, SQL Injection and XML External Entity exploitation."
 ---
 
 ## Table of Contents
 
-[//]: # "IMAGE HERE"
+![MetaTwo](/images/metatwo/MetaTwo.png)
 
 ## Introduction
 
@@ -635,8 +635,6 @@ and we’ve got our final flag `5acf19dabe402006c6744912d180b243`.
 ---
 
 This blog post is part of a series on practical approaches to cybersecurity. Stay tuned for more updates and insights into the fascinating world of ethical hacking and cybersecurity best practices.
-
-In the following posts, we will delve deeper into the exploitation phase, demonstrating techniques such as privilege escalation, lateral movement, and persistence.
 
 Stay safe, and happy hacking!
 

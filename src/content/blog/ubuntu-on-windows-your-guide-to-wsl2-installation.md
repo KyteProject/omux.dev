@@ -3,7 +3,7 @@ title: "Ubuntu on Windows: Your Step-By-Step Guide to WSL2 Installation"
 author: Daniel Smith
 pubDatetime: 2022-09-21T05:17:19Z
 postSlug: ubuntu-on-windows-developers-guide-to-wsl2-setup
-featured: true
+featured: false
 draft: false
 categories:
   - Tutorials

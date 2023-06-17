@@ -5,6 +5,7 @@ pubDatetime: 2022-09-21T05:17:19Z
 postSlug: ubuntu-on-windows-developers-guide-to-wsl2-setup
 featured: false
 draft: false
+comments: true
 categories:
   - Tutorials
 tags:
@@ -23,7 +24,7 @@ tags:
   - WSL2 setup guide
   - Coding environment on Windows
 ogImage: "/images/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg"
-description: "Learn how to set up a robust and efficient development environment using WSL2. Our comprehensive guide walks you through installing Ubuntu, PostgreSQL, Go, Neovim, AstroVim, Docker, and other essential tools on WSL2. Perfect your web development setup on Windows today."
+description: "Learn how to set up a robust and efficient development environment using WSL2. Ubuntu, PostgreSQL, Go, Neovim, AstroVim, Docker, and other essential tools."
 ---
 
 <!-- ![Setting Up WSL2: An Extensive Guide](/images/pexels-kevin-ku-577585.jpg) -->

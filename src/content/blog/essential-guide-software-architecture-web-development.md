@@ -1,10 +1,11 @@
 ---
-title: "Essential Guide to Software Architecture in Web Development - Common Patterns Explained"
+title: "Essential Guide to Software Architecture in Web Development"
 author: Daniel Smith
 pubDatetime: 2022-11-19T34:19:19Z
 postSlug: "essential-guide-software-architecture-web-development"
 featured: true
 draft: false
+comments: true
 categories:
   - Software Architecture
 tags:
@@ -18,7 +19,7 @@ tags:
   - Software Design
   - Web Application Architecture
 ogImage: "/images/pexels-christina-morillo-1181345.jpg"
-description: "Discover the integral role of software architecture in web development. Dive into our comprehensive guide and explore common patterns like the client-server, microservices, MVC, layered, and event-driven patterns. Expand your understanding of each architecture's application in web development."
+description: "Discover the integral role of software architecture in web development. Expand your understanding of each architecture's application in web development."
 ---
 
 ![Introduction to Software Architecture in Web Development](/images/pexels-christina-morillo-1181345.jpg)

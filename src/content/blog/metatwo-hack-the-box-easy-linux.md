@@ -1,10 +1,11 @@
 ---
-title: "MetaTwo - A look at hacking WordPress, SQLi, XXE on HackTheBox (HTB)"
+title: "MetaTwo: A look at hacking WordPress, SQLi, XXE on HackTheBox"
 author: Daniel Smith
 pubDatetime: 2022-12-16T16:34:45Z
 postSlug: "metatwo-hackthebox-wordpress-sql-injection-xxe"
 featured: false
 draft: false
+comments: true
 categories:
   - Cybersecurity
   - HackTheBox

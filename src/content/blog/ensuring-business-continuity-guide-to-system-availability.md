@@ -1,10 +1,11 @@
 ---
-title: "Ensuring Business Continuity: A Comprehensive Guide to System Availability"
+title: "Ensuring Business Continuity: A Guide to System Availability"
 author: Daniel Smith
 pubDatetime: 2022-07-20T12:12:16Z
 postSlug: "ensuring-business-continuity-guide-to-system-availability"
 featured: true
 draft: false
+comments: true
 categories:
   - System Design
 tags:
@@ -18,7 +19,7 @@ tags:
   - Preventive Maintenance
   - System Downtime Costs
 ogImage: "/images/ensuring-business-continuity-guide-to-system-availability.jpg"
-description: "Explore the significance of system availability in today's digital world, understand how it's calculated, and learn strategies to enhance it. Dive deep into the implications of system availability for business operations, maintenance strategies, and profitability."
+description: "Dive deep into the implications of system availability for business operations, maintenance strategies, and profitability."
 ---
 
 ## Table of Contents

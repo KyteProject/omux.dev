@@ -5,6 +5,7 @@ pubDatetime: 2022-12-14T12:53:10Z
 postSlug: "unobtanium-hackthebox-htb-hard-box"
 featured: false
 draft: false
+comments: true
 categories:
   - Cybersecurity
   - HackTheBox

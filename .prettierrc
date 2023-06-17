@@ -7,5 +7,10 @@
   "jsxSingleQuote": false,
   "trailingComma": "none",
   "bracketSpacing": true,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "pluginSearchDirs": ["./node_modules"],
+  "plugins": [
+    "./node_modules/prettier-plugin-astro",
+    "./node_modules/prettier-plugin-tailwindcss"
+  ]
 }

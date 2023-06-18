@@ -210,10 +210,8 @@ curl -i 'http://metapress.htb/wp-admin/admin-ajax.php' \
 
 So we’ve got 2 users, emails, and passwords.
 
-| User    | Email                 | Hash                                 |
-| ------- | --------------------- | ------------------------------------ |
-| admin   | admin@metapress.htb   | $P$BGrGrgf2wToBS79i07Rk9sN4Fzk.TV.   |
-| manager | manager@metapress.htb | $P$B4aNM28N0E.tMy\\/JIcnVMZbGcU16Q70 |
+- **admin** - `admin@metapress.htb` - `$P$BGrGrgf2wToBS79i07Rk9sN4Fzk.TV.`
+- **manager** - `manager@metapress.htb` - `$P$B4aNM28N0E.tMy\\/JIcnVMZbGcU16Q70`
 
 After successfully extracting the usernames, emails, and password hashes of two users, I attempted to crack the hashes. I achieved this by using John the Ripper, a popular password cracking tool.
 

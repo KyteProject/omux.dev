@@ -24,6 +24,7 @@ module.exports = {
       white: "#787c99",
       background: "#1a1b26",
       foreground: "#a9b1d6",
+      fwhite: '#fff',
     },
 
     // Remove the following screen breakpoint or add other breakpoints

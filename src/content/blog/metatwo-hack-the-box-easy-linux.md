@@ -36,9 +36,9 @@ ogImage: "/images/metatwo/MetaTwo.png"
 description: "A deep-dive walkthrough of MetaTwo, a challenge box on HTB (HackTheBox) focused on WordPress, SQL Injection and XML External Entity exploitation."
 ---
 
-## Table of Contents
-
 ![MetaTwo](/images/metatwo/MetaTwo.png)
+
+## Table of Contents
 
 ## Introduction
 

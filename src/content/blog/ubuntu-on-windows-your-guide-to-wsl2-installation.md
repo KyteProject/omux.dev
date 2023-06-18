@@ -27,8 +27,6 @@ ogImage: "/images/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg"
 description: "Learn how to set up a robust and efficient development environment using WSL2. Ubuntu, PostgreSQL, Go, Neovim, AstroVim, Docker, and other essential tools."
 ---
 
-<!-- ![Setting Up WSL2: An Extensive Guide](/images/pexels-kevin-ku-577585.jpg) -->
-
 ![Setting Up WSL2: An Extensive Guide](/images/pexels-kevin-ku-577585.jpg)
 
 ## Table of contents

@@ -1,4 +1,8 @@
 ---
+import "@fontsource/jetbrains-mono/400.css"
+import "@fontsource/jetbrains-mono/400-italic.css"
+import "@fontsource/jetbrains-mono/700.css"
+import "@fontsource/jetbrains-mono/700-italic.css"
 import { SITE } from "@config"
 import "@styles/base.css"
 
@@ -55,14 +59,6 @@ const socialImageURL = new URL(
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
-      rel="stylesheet"
-    />
-
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
       // include google-site-verification tag in the heading
@@ -77,7 +73,7 @@ const socialImageURL = new URL(
 
     <script is:inline src="/toggle-theme.js"></script>
   </head>
-  <body>
+  <body class="flex h-screen flex-col justify-between font-mono">
     <slot />
   </body>
 </html>

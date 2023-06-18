@@ -5,7 +5,6 @@ import Footer from "@components/Footer.astro"
 import Header from "@components/Header.astro"
 import Layout from "./Layout.astro"
 import { SOCIALS } from "@config"
-import Socials from "@components/Socials.astro"
 
 const socialCount = SOCIALS.filter(social => social.active).length
 
@@ -22,18 +21,8 @@ const { frontmatter } = Astro.props
 <Layout title={`${frontmatter.title} | ${SITE.title}`}>
   <Header activeNav="about" />
   <Breadcrumbs />
-  <main id="main-content">
-    <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
-      <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
-      <slot />
-      {
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <Socials />
-          </div>
-        )
-      }
-    </section>
+  <main class="px-5vw py-6" id="main-content">
+    <slot />
   </main>
   <Footer />
 </Layout>

@@ -5,20 +5,17 @@ import remarkToc from "remark-toc"
 import remarkCollapse from "remark-collapse"
 import sitemap from "@astrojs/sitemap"
 import { SITE } from "./src/config"
-import { remarkReadingTime } from "./remarkReadingTime.mjs"
+import { remarkReadingTime } from "./src/utils/remarkReadingTime.mjs"
 import mdx from "@astrojs/mdx"
 import prefetch from "@astrojs/prefetch"
 import image from "@astrojs/image"
+import alpine from "@astrojs/alpinejs"
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false
-      }
-    }),
+    tailwind(),
     react(),
     sitemap(),
     mdx(),
@@ -45,6 +42,9 @@ export default defineConfig({
     extendDefaultPlugins: true
   },
   vite: {
+    ssr: {
+      external: ["svgo"]
+    },
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"]
     }

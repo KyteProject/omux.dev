@@ -1,0 +1,55 @@
+---
+import AboutLayout from "../layouts/AboutLayout.astro"
+import Socials from "@components/Socials.astro"
+import { SOCIALS } from "@config"
+
+const title = "About Me"
+
+const socialCount = SOCIALS.filter(social => social.active).length
+
+const { frontmatter } = Astro.props
+---
+
+<AboutLayout frontmatter={{ title }}>
+  <section
+    class="prose mb-28 max-w-3xl prose-headings:text-skin-base prose-img:border-0"
+    id="about"
+  >
+    <h1 class="text-2xl tracking-wider sm:text-5xl">{title}</h1>
+    <h2 class="mt-4 max-w-prose">
+      Hey, I'm Dan<br />Welcome to my personal site!
+    </h2>
+    <p class="max-w-prose">
+      I'm a polyglot <b class="text-green">Software Engineer</b> with a passion for
+      music, parkour, skateboarding, bouldering and anything creative or challenging.
+    </p>
+    <p class="max-w-prose">
+      Here, I delve into a variety of topics that currently capture my interest,
+      including <span class="text-yellow">Software Architecture</span>, <span
+        class="text-cyan">System Design</span
+      >, <span class="text-red">Software Engineering</span>, <span
+        class="text-blue">Music Production</span
+      >, and <span class="text-magenta">Cybersecurity</span>.
+    </p>
+    <p class="max-w-prose">
+      At the moment, I'm working on a number of projects professionally and
+      personally, mostly using Typescript and Go. If you're curious, feel free
+      to explore my <a
+        href="/posts"
+        class="font-semibold text-skin-base decoration-2 underline-offset-4 hover:underline"
+        >blog</a
+      > and check out the <a
+        href="/projects"
+        class="font-semibold text-skin-base decoration-2 underline-offset-4 hover:underline"
+        >projects</a
+      > I've been working on.
+    </p>
+    {
+      socialCount > 0 && (
+        <div class="social-wrapper">
+          <Socials />
+        </div>
+      )
+    }
+  </section>
+</AboutLayout>

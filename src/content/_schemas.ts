@@ -15,7 +15,8 @@ export const blogSchema = z
     extra: z
       .array(z.enum(["math", "markmap", "mermaid", "gallery"]))
       .optional(),
-    readingTime: z.string().optional()
+    readingTime: z.string().optional(),
+    comments: z.boolean()
   })
   .strict()
 

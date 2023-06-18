@@ -4,6 +4,8 @@ import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import Tag from "@components/Tag.astro"
 import Datetime from "@components/Datetime"
+import Comments from "../components/Comments.astro"
+import Hr from "@components/Hr.astro"
 import type { CollectionEntry } from "astro:content"
 import { slugifyStr } from "@utils/slugify"
 
@@ -13,7 +15,8 @@ export interface Props {
 
 const { post } = Astro.props
 
-const { title, author, description, ogImage, pubDatetime, tags } = post.data
+const { title, author, description, ogImage, pubDatetime, tags, comments } =
+  post.data
 
 const { Content, remarkPluginFrontmatter } = await post.render()
 
@@ -56,6 +59,15 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin).href
     <ul class="tags-container">
       {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
     </ul>
+
+    {
+      comments && (
+        <>
+          <Hr noPadding />
+          <Comments />
+        </>
+      )
+    }
   </main>
   <Footer />
 </Layout>

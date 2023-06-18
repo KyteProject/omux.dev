@@ -5,7 +5,7 @@ import LinkButton from "./LinkButton.astro"
 import { Image } from "@astrojs/image/components"
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search"
+  activeNav?: "posts" | "tags" | "about" | "search" | "projects"
 }
 
 const logoPNG = "/assets/logo.png"
@@ -66,6 +66,14 @@ const { activeNav } = Astro.props
           <li>
             <a href="/posts" class={activeNav === "posts" ? "active" : ""}>
               Posts
+            </a>
+          </li>
+          <li>
+            <a
+              href="/projects"
+              class={activeNav === "projects" ? "active" : ""}
+            >
+              Projects
             </a>
           </li>
           <li>

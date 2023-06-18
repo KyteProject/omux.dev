@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
+const plugin = require('tailwindcss/plugin')
 
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
@@ -25,6 +26,7 @@ module.exports = {
       background: "#1a1b26",
       foreground: "#a9b1d6",
       fwhite: '#fff',
+      fblack: '#000',
     },
 
     // Remove the following screen breakpoint or add other breakpoints
@@ -37,6 +39,11 @@ module.exports = {
     // if existing Tailwind color palette will be used
 
     extend: {
+      textShadow: {
+        sm: '0 1px 2px #000',
+        DEFAULT: '0px 1px 2px #000',
+        lg: '0 8px 16px #000',
+      },
       stroke: {
         skin: {
           base: withOpacity("--color-text-base"),
@@ -95,5 +102,18 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 }

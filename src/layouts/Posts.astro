@@ -1,4 +1,5 @@
 ---
+import dayjs from "dayjs"
 import { SITE } from "@config"
 import Layout from "@layouts/Layout.astro"
 import Main from "@layouts/Main.astro"
@@ -19,18 +20,39 @@ const { pageNum, totalPages, posts } = Astro.props
 
 const prev = pageNum > 1 ? "" : "disabled"
 const next = pageNum < totalPages ? "" : "disabled"
+
+const yearsWithPosts = posts.reduce<Record<string, CollectionEntry<"blog">[]>>(
+  (years, post) => {
+    const year = dayjs(post.data.pubDatetime).format("YYYY")
+    if (!years[year]) {
+      years[year] = []
+    }
+    years[year].push(post)
+    return years
+  },
+  {}
+)
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
   <Header activeNav="posts" />
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
-    <ul>
-      {
-        posts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+    {
+      Object.entries(yearsWithPosts)
+        .sort((a, b) => Number(b[0]) - Number(a[0]))
+        .map(([year, posts]) => (
+          <>
+            <h2 class="my-3 border-b-2 border-b-black text-2xl font-bold">
+              {year}
+            </h2>
+            <ul>
+              {posts.map(({ data }) => (
+                <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+              ))}
+            </ul>
+          </>
         ))
-      }
-    </ul>
+    }
   </Main>
 
   {

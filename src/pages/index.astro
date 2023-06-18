@@ -69,7 +69,7 @@ const socialCount = SOCIALS.filter(social => social.active).length
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
-            <h2>Featured</h2>
+            <h2>Featured Posts</h2>
             <ul>
               {featuredPosts.map(({ data }) => (
                 <Card
@@ -129,7 +129,7 @@ const socialCount = SOCIALS.filter(social => social.active).length
     @apply mb-6;
   }
   #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+    @apply mb-2 h-6 w-6 scale-125 fill-skin-accent sm:mb-3 sm:scale-150;
   }
   #hero p {
     @apply my-2;

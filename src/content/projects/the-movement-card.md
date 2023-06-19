@@ -3,7 +3,7 @@ name: "The Movement Card"
 postSlug: "movement-card"
 categories: ["code"]
 ogImage: "/images/projects/movementcard.png"
-description: "The movement card is part resource, part research and part response action created to promote freedom of movement. It is a worldwide project started in Scotland through a collaboration between Ukemi and Parkour Outreach."
+description: "Worldwide project created to promote freedom of movement"
 extra: []
 repoLink: "https://github.com/ukemi-project/mvmnt-card.com"
 demoLink: "https://mvmnt-card.com"
@@ -16,7 +16,7 @@ demoLink: "https://mvmnt-card.com"
 - **Role:** Co-Organiser, Designer, Developer
 - **Time:** 2020 - Present
 - **Status:** Active
-- **Source:** [Github](https://github.com/ukemi-project/mvmnt-card.com)
+- **Source:** [GitHub](https://github.com/ukemi-project/mvmnt-card.com)
 - **Website:** [mvmnt-card.com](https://mvmnt-card.com)
 
 ## Description

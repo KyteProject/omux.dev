@@ -1,0 +1,61 @@
+---
+import { SITE } from "@config"
+import Layout from "@layouts/Layout.astro"
+import Main from "@layouts/Main.astro"
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+import { Image } from "@astrojs/image/components"
+import type { CollectionEntry } from "astro:content"
+import slugify from "../utils/slugify"
+
+export interface Props {
+  projects: CollectionEntry<"projects">[]
+}
+
+const { projects } = Astro.props
+
+const title = "Projects & Accomplishments"
+const description =
+  "My personal portfolio includes a broad spectrum of work, from advanced software engineering to creative design, product creation and community arts development."
+---
+
+<Layout title={`${title} | ${SITE.title}`} description={description}>
+  <Header activeNav="projects" />
+  <Main pageTitle={title} pageDesc={description}>
+    <h2>Click on a project below to find out more!</h2>
+    <div class="mt-4 flex flex-col space-y-8">
+      <div class="mt-4 flex flex-col space-y-8">
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-8">
+          {
+            projects.map(({ data }) => (
+              <a class="transition-all" href={`projects/${slugify(data)}`}>
+                <li class="relative h-[275px] w-full rounded-2xl border-2 border-black bg-fblack shadow-md shadow-fblack transition-all duration-200 ease-in-out hover:scale-105 hover:border-fblack">
+                  <Image
+                    src={data.ogImage}
+                    alt={data.name}
+                    class="absolute z-10 h-full max-h-full w-full max-w-full rounded-2xl object-cover opacity-80"
+                    height={275}
+                    aspectRatio={"16:9"}
+                    quality={100}
+                    format="webp"
+                  />
+                  <div class="relative z-20 flex h-full w-full flex-col justify-end gap-2 p-4">
+                    <div class="progressive-blur inset-0 h-full w-full rounded-2xl" />
+
+                    <h2 class="text-2xl font-bold tracking-tight text-fwhite shadow-fblack text-shadow">
+                      {data.name}
+                    </h2>
+                    <p class="line-clamp-3 text-ellipsis text-fwhite shadow-fblack text-shadow">
+                      {data.description}
+                    </p>
+                  </div>
+                </li>
+              </a>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </Main>
+  <Footer />
+</Layout>

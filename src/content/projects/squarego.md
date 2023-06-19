@@ -13,7 +13,7 @@ extra: []
 
 - **Role:** Co-Founder, Full-Stack Developer
 - **Time:** 2017 - 2018
-- **Status:** Cancelled
+- **Status:** Inactive
 
 ## Technology
 

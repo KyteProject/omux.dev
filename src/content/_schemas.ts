@@ -20,4 +20,18 @@ export const blogSchema = z
   })
   .strict()
 
+export const projectSchema = z
+  .object({
+    name: z.string(),
+    postSlug: z.string(),
+    categories: z.array(z.string()).default(["other"]),
+    ogImage: z.string(),
+    description: z.string(),
+    extra: z.array(z.enum(["gallery"])).optional(),
+    repoLink: z.string().optional(),
+    demoLink: z.string().optional()
+  })
+  .strict()
+
 export type BlogFrontmatter = z.infer<typeof blogSchema>
+export type ProjectFrontmatter = z.infer<typeof projectSchema>

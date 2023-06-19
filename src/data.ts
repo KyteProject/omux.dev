@@ -1,8 +1,3 @@
-export interface Collaborator {
-  name: string
-  github: string
-}
-
 export interface Project {
   name: string
   slug: string
@@ -29,7 +24,7 @@ export const projects: Project[] = [
     description:
       "A discord chatbot using Node.js and the Discord.js library. The bot is to help with organising company resources on Discord. Plans are to interface with Google Drives's API to allow for direct communication and control through automation and commands on the Discord platform.",
     categories: ["code"],
-    image: "/images/pexels-kevin-ku-577585.jpg",
+    image: "/images/pexels-luis-gomes-546819.jpg",
     repoLink: null,
     demoLink: null
   },
@@ -39,7 +34,7 @@ export const projects: Project[] = [
     description:
       "A custom chatbot for music production Discord communities. The bot addresses the need for automating the moderation of feedback channels.",
     categories: ["code"],
-    image: "/images/pexels-kevin-ku-577585.jpg",
+    image: "/images/pexels-kindel-media-8566526.jpg",
     repoLink: null,
     demoLink: null
   },

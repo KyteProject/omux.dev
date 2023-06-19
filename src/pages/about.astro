@@ -6,8 +6,6 @@ import { SOCIALS } from "@config"
 const title = "Hello World!"
 
 const socialCount = SOCIALS.filter(social => social.active).length
-
-const { frontmatter } = Astro.props
 ---
 
 <AboutLayout frontmatter={{ title }}>

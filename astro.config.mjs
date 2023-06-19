@@ -9,7 +9,6 @@ import { remarkReadingTime } from "./src/utils/remarkReadingTime.mjs"
 import mdx from "@astrojs/mdx"
 import prefetch from "@astrojs/prefetch"
 import image from "@astrojs/image"
-import alpine from "@astrojs/alpinejs"
 
 // https://astro.build/config
 export default defineConfig({

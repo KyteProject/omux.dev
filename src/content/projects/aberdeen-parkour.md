@@ -3,12 +3,15 @@ name: "Aberdeen Parkour"
 postSlug: "aberdeen-parkour"
 categories: ["other"]
 ogImage: "/images/projects/jump.jpg"
-description: "Founder of the Aberdeen Parkour community - since 2003"
+description: "Founder of the Aberdeen Parkour community - est. 2003"
 demoLink: "https://www.facebook.com/groups/AberdeenParkour"
 ---
 
+## Overview
+
 - **Role:** Founder and Community Leader
 - **Time:** 2003 - Present
+- **Status:** Active
 
 ## Description
 

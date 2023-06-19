@@ -34,7 +34,7 @@ We aimed to cater to a diverse range of interests, featuring over a thousand spo
 My role in this entrepreneurial venture included developing the landing page with `React.js` and prototype app using `IONIC`, launching it on the `Play/Apple Stores`, creating media and marketing materials, and implementing `UI/UX` improvements in later versions of the app. I also performed market analyses, conducted focus group discussions, and developed a business plan.
 
 <div class="gap-8 columns-2">
-<img class="w-full mb-6 rounded-2" src="/images/projects/squarego/app1.png" alt="first_image">
+<img class="w-100 mb-6 rounded-2" src="/images/projects/squarego/app1.png" alt="first_image">
 <img class="w-100 rounded-2" src="/images/projects/squarego/marketing-1.jpg" alt="fourth_image">
 <img class="w-100 rounded-2" src="/images/projects/squarego/app2.png" alt="second_image">
 </div>

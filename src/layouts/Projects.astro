@@ -28,7 +28,7 @@ const description =
         <ul class="grid grid-cols-2 gap-x-4 gap-y-8">
           {
             projects.map(({ data }) => (
-              <a class="transition-all" href={`projects/${slugify(data)}`}>
+              <a class="transition-all" href={`/projects/${slugify(data)}`}>
                 <li class="relative h-[275px] w-full rounded-2xl border-2 border-black bg-fblack shadow-md shadow-fblack transition-all duration-200 ease-in-out hover:scale-105 hover:border-fblack">
                   <Image
                     src={data.ogImage}

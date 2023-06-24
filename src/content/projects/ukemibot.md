@@ -17,7 +17,7 @@ extra: []
 
 A discord chatbot using `Node.js` and the `Discord.js` library. The bot is to help with organising company resources on Discord. Plans are to interface with Google Drives's API to allow for direct communication and control through automation and commands on the Discord platform.
 
-Project is open source and code is available on GitHub.
+The project is open source and the code is available on GitHub.
 
 ## Links
 

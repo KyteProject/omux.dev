@@ -3,11 +3,19 @@ name: "Ukemi"
 postSlug: "ukemi"
 categories: ["code"]
 ogImage: "/images/projects/ukemi-logo.jpg"
-description: ""
+description: "Ukemi is a company that I co-founded with two friends"
 extra: []
 repoLink: "https://github.com/ukemi-project/ukemi.ninja-2019"
 demoLink: "https://ukemi.ninja"
 ---
+
+## Overview
+
+- **Role:** Co-Founder, Full-Stack Developer
+- **Time:** 2018 - Present
+- **Status:** Active
+
+## Description
 
 Ukemi is a company that I co-founded with two friends as a platform to introduce and promote our passion projects.
 

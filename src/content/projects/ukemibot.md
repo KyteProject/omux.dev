@@ -3,8 +3,22 @@ name: "UkemiBot"
 postSlug: "ukemibot"
 categories: ["code"]
 ogImage: "/images/pexels-luis-gomes-546819.jpg"
-description: "A discord chatbot using Node.js and the Discord.js library. The bot is to help with organising company resources on Discord. Plans are to interface with Google Drives's API to allow for direct communication and control through automation and commands on the Discord platform."
+description: "A discord chatbot using Node.js and the Discord.js library"
 extra: []
 ---
 
-Coming Soon
+## Overview
+
+- **Role:** Full-Stack Developer
+- **Time:** 2019
+- **Status:** Inactive
+
+## Description
+
+A discord chatbot using `Node.js` and the `Discord.js` library. The bot is to help with organising company resources on Discord. Plans are to interface with Google Drives's API to allow for direct communication and control through automation and commands on the Discord platform.
+
+Project is open source and code is available on GitHub.
+
+## Links
+
+- [GitHub](https://github.com/ukemi-project/UkemiBot)

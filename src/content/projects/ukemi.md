@@ -25,11 +25,9 @@ Leveraging our shared passion for parkour and movement culture, we've designed, 
 
 Static website with ecommerce and multiple data sources.
 
-- **Architecture:** `Web`, `Monolith`, `Serverless`
+**Architecture:** `Web`, `Monolith`, `Serverless`
 
-- **Deployment:** `Docker`, `AWS`, `Android`, `iOS`
-
-- **Technology:** `Gatsby`, `React`, `GraphQL`, `Bootstrap`, `SASS` structure. `Formik` and `Yup` for validation. `Stripe` for payment processing. `Ghost`, and `Forestry` as content API's, `AWS`, `S3`, and `CloudFront` for static/CDN media serving. `APIGateway`, `Lambda`, `SES`, for serverless form and email functions. `AWS CodeBuild/Pipeline` for continuous integration and auto build.
+**Technology:** `Gatsby`, `React`, `GraphQL`, `Bootstrap`, `SASS` structure. `Formik` and `Yup` for validation. `Stripe` for payment processing. `Ghost`, and `Forestry` as content API's, `AWS`, `S3`, and `CloudFront` for static/CDN media serving. `APIGateway`, `Lambda`, `SES`, for serverless form and email functions. `AWS CodeBuild/Pipeline` for continuous integration and auto build.
 
 ### Card Game
 

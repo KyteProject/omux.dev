@@ -6,6 +6,8 @@ import "@fontsource/jetbrains-mono/700-italic.css"
 import { SITE } from "@config"
 import "@styles/base.css"
 
+import img from "../assets/images/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg"
+
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION
 
 export interface Props {
@@ -24,10 +26,8 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const socialImageURL = new URL(
-  ogImage ? ogImage : SITE.ogImage,
-  Astro.url.origin
-).href
+const socialImageURL = new URL(ogImage ? ogImage : img.src, Astro.url.origin)
+  .href
 ---
 
 <!DOCTYPE html>

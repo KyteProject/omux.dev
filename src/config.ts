@@ -5,7 +5,6 @@ export const SITE: Site = {
   author: "Daniel Smith",
   desc: "Software engineer, D&B Producer, Parkour Dinosaur. I write about sytem design, architecture, cybersecurity, and web development",
   title: "Synth & Syntax",
-  ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 8
 }

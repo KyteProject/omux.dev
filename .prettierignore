@@ -12,3 +12,5 @@
 !.prettierrc
 !.eslintrc.js
 !README.md
+
+*.mdoc

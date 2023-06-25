@@ -18,11 +18,11 @@ tags:
   - Reliability Engineering
   - Preventive Maintenance
   - System Downtime Costs
-ogImage: "/images/ensuring-business-continuity-guide-to-system-availability.jpg"
+ogImage: "../../assets/images/ensuring-business-continuity-guide-to-system-availability.jpg"
 description: "Dive deep into the implications of system availability for business operations, maintenance strategies, and profitability."
 ---
 
-![Ensuring Business Continuity: A Comprehensive Guide to System Availability](/images/ensuring-business-continuity-guide-to-system-availability.jpg)
+![Ensuring Business Continuity: A Comprehensive Guide to System Availability](../../assets/images/ensuring-business-continuity-guide-to-system-availability.jpg)
 
 ## Table of Contents
 

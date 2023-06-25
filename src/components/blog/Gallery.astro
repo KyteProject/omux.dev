@@ -1,0 +1,74 @@
+---
+// Annoying workound component for markdoc files being unable to use raw HTML
+// https://github.com/markdoc/markdoc/issues/10#issuecomment-1492560830
+// https://gist.github.com/rpaul-stripe/941eb22c4779ea87b1adf7715d76ca08
+
+import app1 from "../../assets/images/projects/squarego/app1.png"
+import marketing from "../../assets/images/projects/squarego/marketing-1.jpg"
+import app2 from "../../assets/images/projects/squarego/app2.png"
+import app3 from "../../assets/images/projects/squarego/app3.png"
+import app4 from "../../assets/images/projects/squarego/app3.jpg"
+import logo from "../../assets/images/projects/squarego/logo.jpg"
+
+import muv from "../../assets/images/projects/movement-card.jpg"
+import muvrender from "../../assets/images/projects/Movement-Card-Render-Both-Sides.jpg"
+
+import yug1 from "../../assets/images/projects/yug/IMG_9853.jpg"
+import yug2 from "../../assets/images/projects/yug/IMG_9952.jpg"
+
+export interface Props {
+  id: string
+}
+
+const { id } = Astro.props
+---
+
+{
+  id === "squarego1" && (
+    <div class="columns-2 gap-8">
+      <img class="w-100 rounded-2 mb-6" src={app1.src} alt="mobile mockup" />
+      <img
+        class="w-100 rounded-2"
+        src={marketing.src}
+        alt="parkour marketing image"
+      />
+      <img class="w-100 rounded-2" src={app2.src} alt="3 mobile mockups" />
+    </div>
+  )
+}
+
+{
+  id === "squarego2" && (
+    <div class="mt-8 columns-3 gap-8">
+      <img class="w-100 rounded-2 mt-4" src={app3.src} alt="3 mobile mockups" />
+      <img class="w-100 rounded-2" src={app4.src} alt="6 mobile mockups" />
+      <img class="w-100 rounded-2" src={logo.src} alt="squarego logo" />
+    </div>
+  )
+}
+
+{
+  id === "movementcard1" && (
+    <div class="columns-2 gap-8">
+      <img class="w-100 rounded-2" src={muv.src} alt="cards 2" />
+      <img class="w-100 rounded-2" src={muvrender.src} alt="cards 3" />
+    </div>
+  )
+}
+
+{
+  id === "yug1" && (
+    <div class="columns-2 gap-8">
+      <img
+        class="w-100 rounded-2 mb-6"
+        src={yug1.src}
+        alt="Cork performed by parkour athlete"
+      />
+      <img
+        class="w-100 rounded-2"
+        src={yug2.src}
+        alt="360 back summersault performed by parkour athlete"
+      />
+    </div>
+  )
+}

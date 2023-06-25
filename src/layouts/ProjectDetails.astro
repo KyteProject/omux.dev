@@ -10,14 +10,17 @@ export interface Props {
 }
 
 const { project } = Astro.props
-const { name, description, ogImage } = project.data
+const { title, description, ogImage } = project.data
 const { Content } = await project.render()
 
-const ogUrl = new URL(ogImage ? ogImage : `${name}.png`, Astro.url.origin).href
+const ogUrl = new URL(
+  ogImage?.src ? ogImage.src : `${title}.png`,
+  Astro.url.origin
+).href
 ---
 
 <Layout
-  title={`${name} | ${SITE.title}`}
+  title={`${title} | ${SITE.title}`}
   description={description}
   ogImage={ogUrl}
 >
@@ -37,7 +40,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${name}.png`, Astro.url.origin).href
     </button>
   </div>
   <main id="main-content">
-    <h1 class="post-title">{name}</h1>
+    <h1 class="post-title">{title}</h1>
     <article
       id="article"
       role="article"

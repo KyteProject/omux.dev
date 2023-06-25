@@ -32,11 +32,11 @@ tags:
   - Weak Credentials
   - Clear Text Credentials
   - XXE Injection
-ogImage: "/images/metatwo/MetaTwo.png"
+ogImage: "../../assets/images/metatwo/MetaTwo.png"
 description: "A deep-dive walkthrough of MetaTwo, a challenge box on HTB (HackTheBox) focused on WordPress, SQL Injection and XML External Entity exploitation."
 ---
 
-![MetaTwo](/images/metatwo/MetaTwo.png)
+![MetaTwo](../../assets/images/metatwo/MetaTwo.png)
 
 ## Table of Contents
 
@@ -83,7 +83,7 @@ Our reconnaissance revealed that we are dealing with a WordPress site. WordPress
 
 ### Analysis of the WordPress Site
 
-![Metapress.htb](/images/metatwo/Untitled.png)
+![Metapress.htb](../../assets/images/metatwo/Untitled.png)
 
 I made a list of all the available pages by submitting an empty search. A careful inspection of these pages provided us with several potential avenues for investigation, such as possible vulnerable plugins or potential forms of payment systems.
 
@@ -109,7 +109,7 @@ And the theme is `twentytwwentyone v1.1.`
 
 ---
 
-![WordPress BookingPress Plugin Exploit](/images/metatwo/Untitled_1.png)
+![WordPress BookingPress Plugin Exploit](../../assets/images/metatwo/Untitled_1.png)
 
 A critical SQL Injection vulnerability was found in the WordPress BookingPress Plugin v1.0.10, discovered and reported by cydave. The vulnerability could allow an attacker to interact directly with your database — stealing information or creating new administrator accounts. This issue was patched in version 1.0.11.
 
@@ -135,7 +135,7 @@ SQL Injection is a code injection technique that attackers can use to insert mal
 
 As instructed in the exploit lets grab the nonce from the events source code.
 
-![metapress.htb source code](/images/metatwo/Untitled_2.png)
+![metapress.htb source code](../../assets/images/metatwo/Untitled_2.png)
 
 `_wpnonce:'b0def982ab'`
 `b0def982ab`
@@ -252,11 +252,11 @@ The result? We obtained the password for the 'manager' account: partylikearockst
 
 ### WP Admin panel as manager
 
-![metapress.htb source code](/images/metatwo/Untitled_3.png)
+![metapress.htb source code](../../assets/images/metatwo/Untitled_3.png)
 
 Armed with the newly obtained 'manager' credentials, I managed to gain access to the WordPress (WP) admin panel, revealing that this user has the ability to upload new media.
 
-![metapress.htb source code](/images/metatwo/Untitled_4.png)
+![metapress.htb source code](../../assets/images/metatwo/Untitled_4.png)
 
 ### Identifying Vulnerabilities
 
@@ -291,7 +291,7 @@ python3 -m http.server 80
 
 After creating the malicious WAVE file and initiating our web server, we are ready to upload our WAV file.
 
-![metapress.htb source code](/images/metatwo/Untitled_5.png)
+![metapress.htb source code](../../assets/images/metatwo/Untitled_5.png)
 
 This should trigger a response on our listening server:
 
@@ -418,7 +418,7 @@ local: send_email.php remote: send_email.php
 1126 bytes received in 00:00 (61.62 KiB/s)
 ```
 
-![metapress.htb source code](/images/metatwo/Untitled_6.png)
+![metapress.htb source code](../../assets/images/metatwo/Untitled_6.png)
 
 ```php
 $mail->Host = "mail.metapress.htb";
@@ -437,7 +437,7 @@ Let's try and SSH into the server with these credentials.
 
 ### SSH Access and User Flag
 
-![metapress.htb source code](/images/metatwo/Untitled_7.png)
+![metapress.htb source code](../../assets/images/metatwo/Untitled_7.png)
 
 With the new credentials in hand, we are able to establish an SSH connection. However, this user does not have any root commands, necessitating further enumeration.
 
@@ -547,7 +547,7 @@ o3KGdNgA/04lhPjdN3wrzjU3qmrLfo6KI+w2uXLaw+bIT1XZurDN
 
 We put the private key in a file on our machine to try and crack it.
 
-![metapress.htb source code](/images/metatwo/Untitled_8.png)
+![metapress.htb source code](../../assets/images/metatwo/Untitled_8.png)
 
 Convert it to a john the ripper format:
 

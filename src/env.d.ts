@@ -1,5 +1,5 @@
 /// <reference path="../.astro/types.d.ts" />
-/// <reference types="@astrojs/image/client" />
+/// <reference types="astro/client-image" />
 
 interface ImportMetaEnv {
   readonly PROD: boolean

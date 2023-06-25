@@ -23,11 +23,11 @@ tags:
   - Web development setup
   - WSL2 setup guide
   - Coding environment on Windows
-ogImage: "/images/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg"
+ogImage: "../../assets/images/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg"
 description: "Learn how to set up a robust and efficient development environment using WSL2. Ubuntu, PostgreSQL, Go, Neovim, AstroVim, Docker, and other essential tools."
 ---
 
-![Setting Up WSL2: An Extensive Guide](/images/pexels-kevin-ku-577585.jpg)
+![Setting Up WSL2: An Extensive Guide](../../assets/images/pexels-kevin-ku-577585.jpg)
 
 ## Table of contents
 
@@ -69,7 +69,7 @@ This command will install a fully up-to-date version of WSL2, as well as the Ubu
 
 ## Configure Ubuntu
 
-![Ubuntu prompt sudo](/images/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg)
+![Ubuntu prompt sudo](../../assets/images/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg)
 
 Once the installation completes, you'll need to configure the Ubuntu environment to fit your needs. This includes setting up your shell, updating Ubuntu, and installing any necessary software.
 
@@ -176,7 +176,7 @@ Replace `MY_USERNAME` with your actual username. If you don't, you'll receive an
 ## Setup Development Environments
 
 ![Boy in White T-shirt Sitting on Chair in Front of Computer
-](/images/pexels-cottonbro-studio-4709285.jpg)
+](../../assets/images/pexels-cottonbro-studio-4709285.jpg)
 
 This is the part where you set up the software required for your development needs. This can range from programming languages like Python, Rust or Go to package managers such as `npm` and `yarn`.
 

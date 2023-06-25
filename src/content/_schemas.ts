@@ -1,4 +1,20 @@
-import { z } from "astro:content"
+import { ImageFunction, z } from "astro:content"
+
+const image: ImageFunction = () =>
+  z.object({
+    src: z.string(),
+    width: z.number(),
+    height: z.number(),
+    format: z.union([
+      z.literal("png"),
+      z.literal("jpg"),
+      z.literal("jpeg"),
+      z.literal("tiff"),
+      z.literal("webp"),
+      z.literal("gif"),
+      z.literal("svg")
+    ])
+  })
 
 export const blogSchema = z
   .object({
@@ -10,7 +26,9 @@ export const blogSchema = z
     draft: z.boolean().optional(),
     categories: z.array(z.string()).default(["misc"]),
     tags: z.array(z.string()).default(["others"]),
-    ogImage: z.string().optional(),
+    ogImage: image().refine(img => img.width >= 720, {
+      message: "Cover image must be at least 720 pixels wide!"
+    }),
     description: z.string(),
     extra: z
       .array(z.enum(["math", "markmap", "mermaid", "gallery"]))
@@ -22,10 +40,12 @@ export const blogSchema = z
 
 export const projectSchema = z
   .object({
-    name: z.string(),
+    title: z.string(),
     postSlug: z.string(),
     categories: z.array(z.string()).default(["other"]),
-    ogImage: z.string(),
+    ogImage: image().refine(img => img.width >= 720, {
+      message: "Cover image must be at least 720 pixels wide!"
+    }),
     description: z.string(),
     extra: z.array(z.enum(["gallery"])).optional(),
     repoLink: z.string().optional(),

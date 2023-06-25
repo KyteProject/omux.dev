@@ -19,6 +19,8 @@ You are here!
 
 This is my personal website, blog, and portfolio. It's been through several iterations, the current one being a static-site genered using `Astro.js`, `React.js` and `Tailwind CSS`.
 
+It's deployed on `AWS` and uses an `S3` bucket for cost effient hosting, along with `Cloudfront` for `CDN`, `Route 53` for DNS mangement and `Codebuild/Pipeline` for automatic CI/CD builds and CDN invalidations.
+
 The project is open source and the code is available on GitHub.
 
 ## Links

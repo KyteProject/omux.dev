@@ -152,15 +152,15 @@ func (tw *TimingWheel) Tick() {
 
 Peeling back the layers, let's delve into what makes timing wheels an effective solution in system design.
 
-#### Scalability
+**Scalability**
 
 Timing wheels excel in scenarios where there are a large number of timers to be managed. Traditional timer data structures, like heaps, may suffer from performance degradation as the number of timers increases. Timing wheels offer a more scalable alternative.
 
-#### Constant Time Complexity
+**Constant Time Complexity**
 
 The insertion and deletion of timers in a timing wheel are typically constant-time operations, which is a significant advantage over other data structures that may require logarithmic or linear time.
 
-#### Memory Efficiency
+**Memory Efficiency**
 
 Given the fixed size of the timing wheel, memory allocations are predictable and minimal, leading to reduced overhead and better performance.
 
@@ -168,19 +168,19 @@ Given the fixed size of the timing wheel, memory allocations are predictable and
 
 Diving into real-world applications, let's explore where timing wheels prove their usefulness.
 
-#### Networking
+**Networking**
 
 In the transmision of data packets on a network, timing wheels choreograph events like packet retransmissions in protocols such as TCP. Their efficient timer management ensures seamless communication.
 
-#### Distributed Systems
+**Distributed Systems**
 
 In complex domain of distributed systems, where numerous nodes collaborate, timing wheels handle tasks like heartbeat checks, lease renewals, and more. Their precision ensures system consistency and resilience.
 
-#### Real-time Systems
+**Real-time Systems**
 
 Precision is the soul of real-time systems. From robotics to media playback, tasks need execution at exact intervals. Timing wheels prove highly effective at this.
 
-#### Databases
+**Databases**
 
 Databases, the backbone of many modern applications, rely on timing wheels for functions like cache eviction and garbage collection. This ensures data retrieval remains swift and system health optimal.
 

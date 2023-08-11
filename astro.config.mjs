@@ -1,13 +1,13 @@
-import { defineConfig, sharpImageService } from "astro/config"
-import tailwind from "@astrojs/tailwind"
+import markdoc from "@astrojs/markdoc"
+import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
-import remarkToc from "remark-toc"
-import remarkCollapse from "remark-collapse"
 import sitemap from "@astrojs/sitemap"
+import tailwind from "@astrojs/tailwind"
+import { defineConfig, sharpImageService } from "astro/config"
+import remarkCollapse from "remark-collapse"
+import remarkToc from "remark-toc"
 import { SITE } from "./src/config"
 import { remarkReadingTime } from "./src/utils/remarkReadingTime.mjs"
-import prefetch from "@astrojs/prefetch"
-import markdoc from "@astrojs/markdoc"
 
 // https://astro.build/config
 export default defineConfig({

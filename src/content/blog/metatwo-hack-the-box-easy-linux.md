@@ -5,7 +5,7 @@ pubDatetime: 2022-12-16T16:34:45Z
 postSlug: "metatwo-hackthebox-wordpress-sql-injection-xxe"
 featured: false
 draft: false
-comments: true
+comments: false
 categories:
   - Cybersecurity
   - HackTheBox

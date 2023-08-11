@@ -5,7 +5,7 @@ pubDatetime: 2022-07-20T12:12:16Z
 postSlug: "ensuring-business-continuity-guide-to-system-availability"
 featured: true
 draft: false
-comments: true
+comments: false
 categories:
   - System Design
 tags:

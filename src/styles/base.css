@@ -71,7 +71,7 @@
     prose-img:bg-fwhite prose-hr:!border-skin-line;
   }
   .prose a {
-    @apply hover:!text-skin-accent;
+    @apply text-skin-base hover:!text-skin-accent;
   }
   .prose thead th:first-child,
   tbody td:first-child,

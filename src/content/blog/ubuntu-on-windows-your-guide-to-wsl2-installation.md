@@ -5,7 +5,7 @@ pubDatetime: 2022-09-21T05:17:19Z
 postSlug: ubuntu-on-windows-developers-guide-to-wsl2-setup
 featured: false
 draft: false
-comments: true
+comments: false
 categories:
   - Tutorials
 tags:

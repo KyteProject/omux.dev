@@ -110,17 +110,29 @@ This pattern promotes separation of concerns, enhances modularity, and improves 
 
 The event-driven pattern in web development is an architectural approach where the flow and behaviour of a web application are determined by events and event handlers. Events can be user actions, system notifications, or messages from external systems, while event handlers are responsible for responding to these events.
 
-As an example use of event-driven pattern in web applications, in a real-time chat application, when a user (the event producer) sends a message, an event is triggered. The event handler receives the event, processes the message, and broadcasts it to other connected users. Similarly, when a new user registers, an event can be raised to perform actions like sending a welcome email or updating user statistics.
+As an example use of event-driven pattern in web applications, in a real-time chat application, when a user (the event producer) sends a message, an event is triggered.
+
+The event handler receives the event, processes the message, and broadcasts it to other connected users. Similarly, when a new user registers, an event can be raised to perform actions like sending a welcome email or updating user statistics.
 
 [![](https://mermaid.ink/img/pako:eNp1kVtrgzAUx79KOM-2aL1VGQNbLXvYXtaNwXQPqZ62AY2SxLKu9Lsv0Y7uwgiB3_mfK-ecoGwrhBh2gnZ7cv9YcPMIkf1mlAp4wQ1Juq5mJVWs5QUYPyGL_Emw3Q6FJNkBuXob5WU-WOSO8qpGMajIq19VU6rohkocc9L8y_4nfI3iwEqUY3iWZw1l9UW89F3la6Xnk4qV8rvnb7FniWLMSXLDP8MSMpnckoXBxYBLg0tyYzgd2WByxeyKq4KDBQ0KPWCl13oyrgLUHhssINZY4Zb2tTJbPOtQ2qt2feQlxEr0aEHfVVRhyqietYF4S2up1Y5yiE_wDvHM9qZ25IXzWRjazswLLDhC7NjOVP_ADn3Pdj3fPVvw0ba6gD0NXT9wo8B1Qm_uRJFvAVZMteJhPPxw_6HD65Bgxjh_Av3_pcE?type=png)](https://mermaid.live/edit#pako:eNp1kVtrgzAUx79KOM-2aL1VGQNbLXvYXtaNwXQPqZ62AY2SxLKu9Lsv0Y7uwgiB3_mfK-ecoGwrhBh2gnZ7cv9YcPMIkf1mlAp4wQ1Juq5mJVWs5QUYPyGL_Emw3Q6FJNkBuXob5WU-WOSO8qpGMajIq19VU6rohkocc9L8y_4nfI3iwEqUY3iWZw1l9UW89F3la6Xnk4qV8rvnb7FniWLMSXLDP8MSMpnckoXBxYBLg0tyYzgd2WByxeyKq4KDBQ0KPWCl13oyrgLUHhssINZY4Zb2tTJbPOtQ2qt2feQlxEr0aEHfVVRhyqietYF4S2up1Y5yiE_wDvHM9qZ25IXzWRjazswLLDhC7NjOVP_ADn3Pdj3fPVvw0ba6gD0NXT9wo8B1Qm_uRJFvAVZMteJhPPxw_6HD65Bgxjh_Av3_pcE)
 
-This pattern enables loose coupling and promotes asynchronous communication. It allows for the decoupling of components, as event producers don't need to know about event consumers. It facilitates scalability and extensibility, as new event handlers can be added without modifying existing components. Additionally, it enhances responsiveness, as the application can react to events in real-time.
+This pattern enables loose coupling and promotes asynchronous communication. It allows for the decoupling of components, as event producers don't need to know about event consumers.
+
+It facilitates scalability and extensibility, as new event handlers can be added without modifying existing components. Additionally, it enhances responsiveness, as the application can react to events in real-time.
 
 ## Conclusion
 
-In conclusion, software architecture serves as the backbone of any web development project, shaping its high-level structure and guiding the overall design principles. It provides developers and stakeholders with a roadmap, ensuring that functional requirements are met and desired qualities such as performance, scalability, and maintainability are achieved. Moreover, it mitigates potential risks and fosters better collaboration, leading to a more successful development and maintenance process.
+In conclusion, software architecture serves as the backbone of any web development project, shaping its high-level structure and guiding the overall design principles.
 
-The architectural patterns we have explored – the client-server, microservices, MVC, layered, and event-driven patterns – each offer their own unique benefits and can be applied in various scenarios in web development. The client-server pattern facilitates a clear separation of concerns, while the microservices pattern promotes modularity and fault tolerance. The MVC pattern, on the other hand, enhances code reusability, and the layered pattern allows for independent scalability of different components. Lastly, the event-driven pattern enables real-time responsiveness and asynchronous communication.
+It provides developers and stakeholders with a roadmap, ensuring that functional requirements are met and desired qualities such as performance, scalability, and maintainability are achieved. Moreover, it mitigates potential risks and fosters better collaboration, leading to a more successful development and maintenance process.
+
+The architectural patterns we have explored – the client-server, microservices, MVC, layered, and event-driven patterns – each offer their own unique benefits and can be applied in various scenarios in web development.
+
+The client-server pattern facilitates a clear separation of concerns, while the microservices pattern promotes modularity and fault tolerance.
+
+The MVC pattern, on the other hand, enhances code reusability, and the layered pattern allows for independent scalability of different components.
+
+Lastly, the event-driven pattern enables real-time responsiveness and asynchronous communication.
 
 Understanding and effectively applying these patterns is crucial for creating robust, scalable, and maintainable web applications that meet specific project requirements. As software architecture continues to evolve with the rapidly advancing tech landscape, developers must stay up-to-date and adapt their knowledge and skills accordingly.
 

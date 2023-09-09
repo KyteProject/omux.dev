@@ -99,9 +99,9 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Discord",
-    href: "https://discordapp.com/users/omux",
+    href: "",
     linkTitle: `${SITE.title} on Discord`,
-    active: true
+    active: false
   },
   {
     name: "GitLab",
@@ -111,31 +111,32 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Reddit",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "",
     linkTitle: `${SITE.title} on Reddit`,
     active: false
   },
   {
     name: "Skype",
-    href: "https://github.com/satnaing/astro-paper",
+
+    href: "",
     linkTitle: `${SITE.title} on Skype`,
     active: false
   },
   {
     name: "Steam",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "",
     linkTitle: `${SITE.title} on Steam`,
     active: false
   },
   {
     name: "Telegram",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "",
     linkTitle: `${SITE.title} on Telegram`,
     active: false
   },
   {
     name: "Mastodon",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "",
     linkTitle: `${SITE.title} on Mastodon`,
     active: false
   }

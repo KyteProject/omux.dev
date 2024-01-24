@@ -1,5 +1,7 @@
 {
-    "files.associations": {
-        "*.mdoc": "markdown"
-    }
+  "files.associations": {
+    "*.mdoc": "markdown",
+    "*.mdx": "markdown",
+    "*.scss": "postcss"
+  }
 }

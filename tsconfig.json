@@ -1,19 +1,29 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strictNullChecks": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "allowSyntheticDefaultImports": true,
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@config": ["config.ts"],
-      "@components/*": ["components/*"],
+      "@assets/*": ["src/assets/*"],
       "@content/*": ["content/*"],
-      "@layouts/*": ["layouts/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
+      "@components/*": ["src/components/*"],
+      "@config/*": ["src/config/*"],
+      "@helpers/*": ["src/layouts/helpers/*"],
+      "@images/*": ["src/images/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@partials/*": ["src/layouts/partials/*"],
+      "@shortcodes/*": ["src/layouts/shortcodes/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@/*": ["src/*"]
     }
   },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.astro", "tailwind.config.ts"],
   "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }

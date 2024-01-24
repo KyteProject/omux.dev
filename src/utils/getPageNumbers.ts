@@ -1,7 +1,7 @@
-import { SITE } from "@config"
+import { settings } from "@config/config"
 
 const getPageNumbers = (numberOfPosts: number) => {
-  const numberOfPages = numberOfPosts / Number(SITE.postPerPage)
+  const numberOfPages = numberOfPosts / Number(settings.pagination)
 
   let pageNumbers: number[] = []
   for (let i = 1; i <= Math.ceil(numberOfPages); i++) {

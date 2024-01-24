@@ -1,0 +1,76 @@
+---
+import { Moon, Sun } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { settings } from "@/config/config"
+
+const {
+  theme_switcher,
+  default_theme
+}: { theme_switcher: boolean; default_theme: string } = settings
+const { className }: { className?: string } = Astro.props
+---
+
+{
+  theme_switcher && (
+    <Button
+      variant="ghost"
+      size="icon"
+      id="theme-switcher"
+      data-theme-switcher
+      className="h-14 w-14 shrink-0 rounded-none md:flex"
+    >
+      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon
+        className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+        color="background"
+      />
+      <span class="sr-only">Toggle theme</span>
+    </Button>
+  )
+}
+
+<script>
+  import { settings } from "@/config/config"
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
+
+  matchMedia.addEventListener("change", () =>
+    toggleTheme(document.querySelectorAll("[data-theme-switcher]"))
+  )
+
+  function toggleTheme(themeSwitch: NodeListOf<Element>) {
+    const defaulTheme =
+      settings.default_theme === "system"
+        ? matchMedia.matches
+          ? "dark"
+          : "light"
+        : settings.default_theme
+    const currentTheme = localStorage.getItem("theme") || defaulTheme
+    const isDarkTheme = currentTheme === "dark"
+    themeSwitch.forEach((sw: any) => (sw.checked = isDarkTheme))
+    document.documentElement.classList.toggle("dark", isDarkTheme)
+  }
+
+  const setDarkMode = () => {
+    const themeSwitch = document.querySelectorAll("[data-theme-switcher]")
+    toggleTheme(themeSwitch)
+    themeSwitch.forEach(sw => {
+      sw.addEventListener("click", function () {
+        const defaulTheme =
+          settings.default_theme === "system"
+            ? matchMedia.matches
+              ? "dark"
+              : "light"
+            : settings.default_theme
+        const currentTheme = localStorage.getItem("theme") || defaulTheme
+        const newTheme = currentTheme === "light" ? "dark" : "light"
+        localStorage.setItem("theme", newTheme)
+        toggleTheme(themeSwitch)
+      })
+    })
+  }
+
+  // Runs on initial navigation
+  setDarkMode()
+  // Runs on view transitions navigation
+  document.addEventListener("astro:after-swap", setDarkMode)
+</script>

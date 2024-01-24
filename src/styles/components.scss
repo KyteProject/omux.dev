@@ -1,0 +1,12 @@
+.display-none {
+  @apply hidden;
+}
+.focus-outline {
+  @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+}
+.progressive-blur {
+  position: absolute;
+  z-index: -1;
+  backdrop-filter: saturate(1.5) contrast(2) blur(15px);
+  mask: linear-gradient(to bottom, transparent 0%, black 100%);
+}

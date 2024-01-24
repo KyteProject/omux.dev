@@ -1,16 +1,16 @@
 import rss from "@astrojs/rss"
-import { getCollection } from "astro:content"
+import { metadata, site } from "@config/config"
 import getSortedPosts from "@utils/getSortedPosts"
 import slugify from "@utils/slugify"
-import { SITE } from "@config"
+import { getCollection } from "astro:content"
 
 export async function get() {
   const posts = await getCollection("blog")
   const sortedPosts = getSortedPosts(posts)
   return rss({
-    title: SITE.title,
-    description: SITE.desc,
-    site: SITE.website,
+    title: site.title,
+    description: metadata.description,
+    site: site.base_url,
     items: sortedPosts.map(({ data }) => ({
       link: `posts/${slugify(data)}`,
       title: data.title,

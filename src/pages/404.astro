@@ -1,12 +1,12 @@
 ---
-import { SITE } from "@config"
-import Layout from "@layouts/Layout.astro"
-import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
+import Header from "@components/Header.astro"
 import LinkButton from "@components/LinkButton.astro"
+import { site } from "@config/config"
+import Layout from "@layouts/Layout.astro"
 ---
 
-<Layout title={`404 Not Found | ${SITE.title}`}>
+<Layout title={`404 Not Found | ${site.title}`}>
   <Header />
 
   <main id="main-content">
@@ -16,7 +16,7 @@ import LinkButton from "@components/LinkButton.astro"
       <p>Page Not Found</p>
       <LinkButton
         href="/"
-        className="my-6 underline decoration-dashed underline-offset-8 text-lg"
+        className="my-6 text-lg underline decoration-dashed underline-offset-8"
       >
         Go back home
       </LinkButton>

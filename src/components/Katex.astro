@@ -9,8 +9,8 @@ const { expression = "" } = Astro.props
 const html = katex.renderToString(expression, { throwOnError: false })
 ---
 
-<div class="text-center">
-  <span set:html={html} class="" />
+<div class="katex-container">
+  <span set:html={html} />
 </div>
 
 <link
@@ -19,3 +19,15 @@ const html = katex.renderToString(expression, { throwOnError: false })
   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
   crossorigin="anonymous"
 />
+
+<style>
+  .katex-container {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+</style>

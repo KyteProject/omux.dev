@@ -4,6 +4,8 @@ import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 import AutoImport from "astro-auto-import"
+import compress from "astro-compress"
+import icon from "astro-icon"
 import { defineConfig } from "astro/config"
 import remarkCollapse from "remark-collapse"
 import remarkToc from "remark-toc"
@@ -12,6 +14,7 @@ import { remarkReadingTime } from "./src/utils/remarkReadingTime.mjs"
 
 // https://astro.build/config
 export default defineConfig({
+  compressHTML: true,
   site: site.base_url ? site.base_url : "https://omux.dev",
   base: site.base_path ? site.base_path : "/",
   trailingSlash: site.trailing_slash ? "always" : "never",
@@ -33,7 +36,9 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false
     }),
-    mdx()
+    mdx(),
+    icon(),
+    compress()
   ],
   markdown: {
     remarkPlugins: [

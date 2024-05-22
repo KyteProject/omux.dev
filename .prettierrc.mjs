@@ -3,7 +3,7 @@ export default {
   arrowParens: "avoid",
   semi: false,
   tabWidth: 2,
-  printWidth: 80,
+  printWidth: 120,
   singleQuote: false,
   jsxSingleQuote: false,
   trailingComma: "none",
@@ -14,6 +14,7 @@ export default {
     "prettier-plugin-tailwindcss",
     "prettier-plugin-toml"
   ],
+  "pluginSearchDirs": false,
   overrides: [
     {
       files: ["*.astro"],

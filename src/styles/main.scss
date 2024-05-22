@@ -5,7 +5,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 @layer base {
-  @import "base";
+  @import "base/reset";
+  @import "base/root";
+  @import "base/font";
+  @import 'base/list';
+  @import 'base/container';
+  @import 'base/breakpoint';
+  @import 'base/button';
+  @import 'base/color';
+  @import 'base/outline';
+  @import 'base/space-content';
 }
 
 @layer components {

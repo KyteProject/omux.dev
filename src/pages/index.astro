@@ -1,6 +1,6 @@
 ---
-import FeaturedPostCard from "@components/FeaturedPostCard.astro"
 import Container from "@components/Container.astro"
+import FeaturedPostCard from "@components/FeaturedPostCard.astro"
 import Link from "@components/Link.astro"
 import { Sparkles } from "@components/ui/SparkleTitle"
 import { config } from "@config"
@@ -39,7 +39,7 @@ const blog = (await getCollection("blog"))
           <h2 class="font-semibold text-foreground">Featured Articles</h2>
           <Link href="/blog" class="underline"> See all posts </Link>
         </div>
-        <ul class="not-prose mx-4 grid gap-8">
+        <ul class="not-prose grid gap-8">
           {blog.map((post, i) => <FeaturedPostCard post={post} index={i} />)}
         </ul>
       </section>

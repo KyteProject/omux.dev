@@ -20,8 +20,8 @@ tags:
   - Software architecture and abstraction
   - Tools for code refactoring
   - Examples of abstraction in software
-ogImage: "./cpu-4393376_1920.jpg"
-description: "Learn how abstraction helps manage complexity by hiding unnecessary details"
+ogImage: "./omux-abstraction-refactoring-complexity.jpg"
+description: "Learn how abstraction helps manage complexity, and how refactoring improves code quality and maintainability."
 ---
 
 | Key Takeaways                                                             |

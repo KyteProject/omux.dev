@@ -22,7 +22,7 @@ tags:
   - Database Cache Eviction
   - Performance Optimization
   - Scalability
-ogImage: "./clock-2567921_1920.jpg"
+ogImage: "./omux-timing-wheels.jpg"
 description: "Explore the intricacies of timing wheels in system design. Dive deep into the evolution from simple timer lists to hierarchical timing wheels, their benefits, real-world applications, and Golang code examples."
 ---
 

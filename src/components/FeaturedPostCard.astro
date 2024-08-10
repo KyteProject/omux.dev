@@ -2,6 +2,7 @@
 import { setTransitionSlug, TransitionIds } from "@/lib/utils"
 import Link from "@components/Link.astro"
 import { Image } from "astro:assets"
+import { Button } from "./ui/button"
 
 export interface Props {
   post: any
@@ -16,7 +17,7 @@ const getTransitionNameFromId = setTransitionSlug({ slug: post.slug })
 <li class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
   <div class={`${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
     <Image
-      class="w-full rounded-t-lg"
+      class="w-full rounded-lg"
       src={post.data.ogImage}
       alt={post.data.title}
       loading="eager"
@@ -39,11 +40,11 @@ const getTransitionNameFromId = setTransitionSlug({ slug: post.slug })
         {post.data.title}
       </Link>
     </h2>
-    <p class="mb-4 text-muted-foreground">
+    <p class="!mt-0 mb-4 text-muted-foreground">
       {post.data.description}
     </p>
-    <Link variant="primary" href={`/blog/${post.slug}`}>
-      Read more &rarr;
-    </Link>
+    <Button variant="invert" className="mt-2 max-w-56">
+      <a href={`/blog/${post.slug}`}> Read more &rarr; </a>
+    </Button>
   </div>
 </li>

@@ -20,7 +20,7 @@ tags:
   - For Programmers
   - Health Innovation
   - Cross-Disciplinary Research
-ogImage: "./pexels-karolina-grabowska-4230620.jpg"
+ogImage: "./omux-calculating-phenotypic-age.jpg"
 description: "Discover the intersection of biology and technology in this exploration of Phenotypic Age. Learn how it transcends chronological age, its impact on healthcare, and how to calculate it using Python."
 ---
 

@@ -24,7 +24,7 @@ tags:
   - Web development setup
   - WSL2 setup guide
   - Coding environment on Windows
-ogImage: "./gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg"
+ogImage: "./omux-ubuntu-windows-wsl.jpg"
 description: "Learn how to set up a robust and efficient development environment using WSL2. Ubuntu, PostgreSQL, Go, Neovim, AstroVim, Docker, and other essential tools."
 ---
 

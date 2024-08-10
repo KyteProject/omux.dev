@@ -19,7 +19,7 @@ tags:
   - Event-Driven Pattern
   - Software Design
   - Web Application Architecture
-ogImage: "./pexels-christina-morillo-1181345.jpg"
+ogImage: "./omux-web-architechture.jpg"
 description: "Discover the integral role of software architecture in web development. Expand your understanding of each architecture's application in web development."
 ---
 

@@ -2,7 +2,7 @@
 title: "Ensuring Business Continuity: A Guide to System Availability"
 pubDatetime: 2022-07-20T12:12:16Z
 slug: "ensuring-business-continuity-guide-to-system-availability"
-featured: true
+featured: false
 draft: false
 commentsEnabled: false
 categories:
@@ -17,7 +17,7 @@ tags:
   - Reliability Engineering
   - Preventive Maintenance
   - System Downtime Costs
-ogImage: "./ensuring-business-continuity-guide-to-system-availability.jpg"
+ogImage: "./omux-ensuring-business.jpg"
 description: "Dive deep into the implications of system availability for business operations, maintenance strategies, and profitability."
 ---
 

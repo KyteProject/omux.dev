@@ -16,7 +16,7 @@ tags:
   - Debugging
   - IDA Pro
   - Ghidra
-ogImage: "./cpu-4393376_1920.jpg"
+ogImage: "./omux-assembly-heart-reverse-engineering.jpg"
 description: "Explore Assembly language's role in reverse engineering, its key components, syntax, structure, and the tools used with it."
 ---
 

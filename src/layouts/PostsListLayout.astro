@@ -1,0 +1,132 @@
+---
+import { type CollectionEntry } from "astro:content"
+import Layout from "@layouts/Layout.astro"
+import Container from "@components/ui/Container.astro"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious
+} from "@components/ui/pagination"
+import { formatDate } from "@lib/utils"
+
+export interface Props {
+  currentPage: number
+  totalPages: number
+  paginatedPosts: CollectionEntry<"blog">[]
+}
+
+type Acc = {
+  [year: string]: CollectionEntry<"blog">[]
+}
+
+const { currentPage, totalPages, paginatedPosts } = Astro.props
+
+const posts = paginatedPosts?.reduce((acc: Acc, post) => {
+  const year = post.data.pubDatetime.getFullYear().toString()
+  if (!acc[year]) {
+    acc[year] = []
+  }
+  acc[year].push(post)
+  return acc
+}, {})
+
+const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a))
+---
+
+<Layout
+  title="Blog"
+  description="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+>
+  <Container>
+    <div class="mb-8 space-y-10">
+      <div class="animate text-pretty">
+        <h1>Blog & Articles</h1>
+        <p class="max-w-2xl">
+          All of my long-form thoughts on programming, leadership, product
+          design, and more, collected in chronological order.
+        </p>
+      </div>
+      <div>
+        {
+          years.map(year => (
+            <section class="animate mb-6">
+              <div class="mb-6 flex flex-row items-center border-b-2 border-b-border font-semibold text-foreground">
+                <h2 class="border-none pb-0 font-serif italic">{year}</h2>
+              </div>
+              <div>
+                <ul class="max-w-5xl space-y-5">
+                  {posts[year].map(post => (
+                    <li class="flex flex-col text-lg">
+                      <div class="flex items-center">
+                        <div class="truncate">
+                          <div class="text-pretty font-semibold text-foreground hover:underline">
+                            <a
+                              class="text-lg"
+                              href={`/${post.collection}/${post.slug}`}
+                            >
+                              {post.data.title}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="text-sm text-muted-foreground">
+                          {formatDate(post.data.pubDatetime)}
+                        </span>
+                        •
+                        {post.data.categories.map((cat, i) => (
+                          <span class="text-sm text-muted-foreground">
+                            {cat}
+                            {i < post.data.categories.length - 1 ? "," : null}
+                          </span>
+                        ))}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          ))
+        }
+      </div>
+    </div>
+    {
+      totalPages > 1 && (
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                isActive={currentPage === 1}
+                href={`/blog${currentPage - 1 !== 1 ? "/" + (currentPage - 1) : ""}/`}
+              />
+            </PaginationItem>
+
+            {Array.from({ length: totalPages }).map((_, i) => {
+              const page = i + 1
+              return (
+                <PaginationItem key={page}>
+                  <PaginationLink
+                    isActive={currentPage === page}
+                    href={`/blog${page !== 1 ? "/" + page : ""}/`}
+                  >
+                    {page}
+                  </PaginationLink>
+                </PaginationItem>
+              )
+            })}
+
+            <PaginationItem>
+              <PaginationNext
+                isActive={currentPage === totalPages}
+                href={`/blog/${currentPage + 1}/`}
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      )
+    }
+  </Container>
+</Layout>

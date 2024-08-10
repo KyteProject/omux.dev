@@ -1,0 +1,11 @@
+---
+interface Props {
+  className?: string | undefined
+}
+
+const { className }: Props = Astro.props
+
+import { cn } from "@/lib/utils"
+---
+
+<div class={cn("mx-auto max-w-screen-lg px-3", className)}><slot /></div>

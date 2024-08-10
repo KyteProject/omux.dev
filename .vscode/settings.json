@@ -1,5 +1,18 @@
 {
-    "files.associations": {
-        "*.mdoc": "markdown"
-    }
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
+  "files.associations": {
+    "*.mdx": "markdown",
+    "*.css": "tailwindcss"
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "eslint.experimental.useFlatConfig": true
 }

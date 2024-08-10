@@ -1,8 +1,34 @@
 ---
-import Projects from "@layouts/Projects.astro"
 import { getCollection } from "astro:content"
+import Layout from "@layouts/Layout.astro"
+import Container from "@components/ui/Container.astro"
+import { ProjectBento } from "@components/ExampleBento"
 
-const projects = await getCollection("projects")
+const projects = (await getCollection("projects")).filter(
+  project => !project.data.draft
+)
 ---
 
-<Projects projects={projects} />
+<Layout
+  title="Projects"
+  description="My portfolio includes a broad spectrum of work, from advanced software engineering to creative design, product creation and community arts development."
+>
+  <Container>
+    <div class="mb-8 space-y-10 px-4">
+      <div class="animate text-pretty">
+        <h1>Projects</h1>
+        <p class="max-w-2xl">
+          My personal portfolio includes a broad spectrum of work, from advanced
+          <span class="text-red">software engineering</span> to <span
+            class="text-yellow">creative design</span
+          >,
+          <span class="text-blue-300">product creation</span> and <span
+            class="text-magenta">community arts development</span
+          >.
+        </p>
+        <p>Click on a project below to find out more!</p>
+      </div>
+    </div>
+    <ProjectBento items={projects} client:load />
+  </Container>
+</Layout>

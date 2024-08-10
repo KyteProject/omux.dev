@@ -1,0 +1,302 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* @import "./reset.css"; */
+@import "./prism.css";
+@import "@microflash/remark-callout-directives/theme/github";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* colour vars */
+@layer base {
+  :root {
+    --background: 38 24% 91%;
+    --foreground: 229 84% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 229 84% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 229 84% 5%;
+
+    --primary: 22 86% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 169 25% 44%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 169 25% 44%;
+    --accent-foreground: 22 86% 65%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 75 12% 7%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 229 84% 5%;
+    --foreground: 210 40% 99%;
+
+    --card: 221 60% 5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 221 60% 20%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 22 86% 65%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 169 25% 44%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 169 25% 44%;
+    --accent-foreground: 22 86% 65%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-padding-top: 100px;
+    color-scheme: light;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    /* scrollbar-color: hsl(var(--secondary) / 50%) hsl(var(--background)); */
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/images/noise2.png") center center;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.01;
+    mix-blend-mode: hard-light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    @apply size-full;
+  }
+
+  body {
+    @apply text-pretty font-sans antialiased;
+    @apply flex flex-col;
+    @apply bg-background text-foreground;
+  }
+
+  header {
+    @apply fixed left-0 right-0 top-0 z-50 py-6;
+    @apply saturate-100 backdrop-blur-sm;
+    @apply justify-between;
+  }
+
+  main {
+    @apply flex-1 py-32;
+  }
+
+  footer {
+    @apply py-6 text-sm;
+  }
+
+  article {
+    @apply prose prose-neutral max-w-full dark:prose-invert lg:prose-xl prose-img:mx-auto prose-img:my-auto;
+    @apply prose-headings:font-semibold;
+  }
+
+  h1 {
+    @apply scroll-m-20 font-serif text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply text-pretty text-lg leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  a {
+    @apply text-pretty leading-7;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+
+  ul {
+    @apply list-none [&>li]:mt-2;
+  }
+
+  small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  code {
+    @apply text-sm !leading-loose md:text-base;
+  }
+
+  figure {
+    @apply mb-6 mt-1;
+  }
+
+  .prose {
+    scrollbar-gutter: stable both-edges;
+  }
+
+  .prose a:hover {
+    @apply text-primary;
+  }
+
+  .prose ul {
+    @apply list-disc text-pretty;
+  }
+
+  abbr {
+    cursor: help;
+  }
+
+  [aria-current="page"] {
+    pointer-events: none;
+    cursor: default;
+    @apply text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  article h2 {
+    @apply mb-8 mt-12 text-4xl font-semibold tracking-tight;
+  }
+
+  article h3 {
+    @apply mb-4 mt-8 scroll-m-20 pb-2 font-semibold tracking-tight transition-colors first:mt-0 lg:text-3xl;
+  }
+
+  article p {
+    @apply mb-4 mt-0 text-xl;
+  }
+
+  article ul {
+    @apply mb-4 list-disc sm:list-inside;
+  }
+
+  article li {
+    @apply m-auto text-lg tracking-tight;
+  }
+
+  article a {
+    @apply font-sans text-current underline underline-offset-[3px];
+    @apply decoration-foreground/30;
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  article a:hover {
+    @apply text-primary;
+    @apply decoration-primary/50;
+  }
+
+  article th {
+    @apply text-left;
+  }
+
+  article > figure {
+    @apply text-left;
+  }
+
+  article > figure > img {
+    max-height: 36rem;
+    width: fit-content;
+    border-radius: 1rem;
+  }
+}
+
+.animate {
+  @apply -translate-y-3 opacity-0;
+  @apply transition-all duration-300 ease-out;
+}
+
+.animate.show {
+  @apply translate-y-0 opacity-100;
+}
+
+html #back-to-top {
+  @apply pointer-events-none opacity-0;
+}
+
+html.scrolled #back-to-top {
+  @apply pointer-events-auto opacity-100;
+}
+
+/* copy code button on codeblocks */
+.copy-code {
+  @apply absolute right-3 top-3 grid size-9 place-content-center rounded border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+}
+
+.copy-code:hover {
+  @apply bg-[#E9E9E9] transition-colors dark:bg-[#232323];
+}
+
+.copy-code:active {
+  @apply scale-90 transition-transform;
+}
+
+.callout {
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.callout > :first-child {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+
+.callout-content > p {
+  margin: 0;
+}

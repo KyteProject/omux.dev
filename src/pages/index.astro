@@ -1,156 +1,87 @@
 ---
-import { getCollection } from "astro:content"
 import Layout from "@layouts/Layout.astro"
-import Header from "@components/Header.astro"
-import Footer from "@components/Footer.astro"
-import LinkButton from "@components/LinkButton.astro"
-import Hr from "@components/Hr.astro"
-import Card from "@components/Card"
-import Socials from "@components/Socials.astro"
-import getSortedPosts from "@utils/getSortedPosts"
-import slugify from "@utils/slugify"
-import { SOCIALS } from "@config"
+import Container from "@components/ui/Container.astro"
+import Link from "@components/ui/Link.astro"
+import { getCollection } from "astro:content"
+import { config } from "@config"
+import { Sparkles } from "@components/ui/SparkleTitle"
+import { ProjectBento } from "@components/ExampleBento"
 
-const posts = await getCollection("blog")
-
-const sortedPosts = getSortedPosts(posts)
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
-
-const socialCount = SOCIALS.filter(social => social.active).length
+const blog = (await getCollection("blog"))
+  .filter(post => !post.data.draft && post.data.featured)
+  .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+  .slice(0, 6)
 ---
 
-<Layout>
-  <Header />
-  <main id="main-content">
-    <section id="hero">
-      <h1>
-        Synth & Syntax: Adventures in Software and Sound
-        <a
-          target="_blank"
-          href="/rss.xml"
-          class="rss-link"
-          aria-label="rss feed"
-          title="RSS Feed"
-        >
-          <svg xmlns="http://www.w2.org/2000/svg" class="rss-icon"
-            ><path
-              d="M18 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
-            ></path><path
-              d="M11 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
-            ></path><circle cx="5" cy="18" r="2"></circle>
-          </svg>
-        </a>
-      </h1>
+<Layout title={config.site.title} description={config.metadata.description}>
+  <Container>
+    <Sparkles client:load text={config.site.title} />
+    <div class="mt-4 space-y-16 px-4">
+      <section class="text-center">
+        <article class="mx-auto max-w-2xl space-y-4 text-center">
+          <span class="animate">
+            <p>
+              Welcome to <b>'{config.site.title}'</b>, where I write about a
+              variety of topics that currently capture my interest, including <span
+                class="text-yellow">Software Architecture</span
+              >, <span class="text-cyan">System Design</span>, <span
+                class="text-red">Software Engineering</span
+              >, <span class="text-blue-300">Music Production</span>, and <span
+                class="text-magenta">Cybersecurity</span
+              >.
+            </p>
+          </span>
+        </article>
+      </section>
 
-      <p>
-        Welcome to <b>'Synth & Syntax'</b>, where I write about a variety of
-        topics that currently capture my interest, including <span
-          class="text-yellow">Software Architecture</span
-        >, <span class="text-cyan">System Design</span>, <span class="text-red"
-          >Software Engineering</span
-        >, <span class="text-blue">Music Production</span>, and <span
-          class="text-magenta">Cybersecurity</span
-        >.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
-    </section>
-
-    <Hr />
-
-    {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured">
-            <h2>Featured Posts</h2>
-            <ul>
-              {featuredPosts.map(({ data }) => (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-          <Hr />
-        </>
-      )
-    }
-
-    <section id="recent-posts">
-      <h2>Recent Posts</h2>
-      <ul>
-        {
-          sortedPosts.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
-        }
-      </ul>
-      <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts">
-          All Posts
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-        </LinkButton>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-foreground">Featured Articles</h2>
+          <Link href="/blog"> See all posts </Link>
+        </div>
+        <ul class="not-prose mx-4 grid gap-8">
+          {
+            blog.map((post, index) => (
+              <li class="animate mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div class={`${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
+                  <img
+                    src={post.data.ogImage?.src ?? ""}
+                    alt={post.data.title}
+                    class="w-full rounded-lg"
+                  />
+                </div>
+                <div
+                  class={`flex flex-col justify-center ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}
+                >
+                  <h2 class="mb-2 border-none text-2xl font-bold">
+                    {post.data.title}
+                  </h2>
+                  <p class="mb-4 text-muted-foreground">
+                    {post.data.description}
+                  </p>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="text-primary hover:underline"
+                  >
+                    Read more &rarr;
+                  </a>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <!-- <ExampleBento client:load /> -->
+    </div>
+  </Container>
 </Layout>
 
 <style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pb-6 pt-8;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-125 fill-skin-accent sm:mb-3 sm:scale-150;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+  .border-style {
+    transition: transform 0.25s ease-in-out;
   }
 
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply pb-6 pt-12;
-  }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
+  .border-style:hover {
+    transform: scale(1.025);
   }
 </style>

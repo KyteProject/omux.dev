@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content"
+import { getPagination } from "@lib/utils"
+import PostsListLayout from "@layouts/PostsListLayout.astro"
+
+const data = (await getCollection("blog"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+
+const pagination = getPagination({
+  posts: data,
+  page: 1,
+  isIndex: true
+})
+---
+
+<PostsListLayout {...pagination} />

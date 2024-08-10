@@ -1,0 +1,51 @@
+---
+import Container from "@components/ui/Container.astro"
+import Layout from "@layouts/Layout.astro"
+import { config } from "@/config"
+import TableOfContents from "@components/TableOfContents.svelte"
+import FormattedDate from "@components/FormattedDate.astro"
+
+const { frontmatter, headings } = Astro.props
+const { title, intro, updated, toc_enabled } = frontmatter
+---
+
+<Layout title={`${config.site.title} | ${title}`} description={intro}>
+  <Container>
+    <div class="flex flex-col flex-nowrap md:flex-row md:flex-wrap">
+      {
+        toc_enabled && (
+          <div class="mx-auto w-full flex-1 transform ease-out md:order-last xl:ml-0 xl:mr-0">
+            <div class="animate hidden h-full md:block">
+              <TableOfContents {headings} client:only />
+            </div>
+          </div>
+        )
+      }
+      <div class="flex-none">
+        <div class="mb-6 max-w-3xl space-y-4 px-4">
+          <div class="animate flex items-center gap-1.5">
+            {
+              updated && (
+                <>
+                  <div class="font-base text-sm">
+                    <>
+                      <strong>Updated:</strong>
+                      <FormattedDate date={new Date(updated)} />
+                    </>
+                  </div>
+                </>
+              )
+            }
+          </div>
+          <h1>{title}</h1>
+          {intro && <p class="mt-6 text-base">{intro}</p>}
+        </div>
+        <article
+          class="animate prose z-10 !max-w-3xl overflow-hidden text-pretty px-4 dark:prose-invert md:mb-8 lg:mb-16 lg:px-0"
+        >
+          <slot />
+        </article>
+      </div>
+    </div>
+  </Container>
+</Layout>

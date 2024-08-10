@@ -1,0 +1,115 @@
+---
+import { cn } from "@lib/utils"
+import {
+  AmazonLogo,
+  CodepenLogo,
+  CodesandboxLogo,
+  DevToLogo,
+  DiscordLogo,
+  DribbbleLogo,
+  FacebookLogo,
+  FediverseLogo,
+  FigmaLogo,
+  GithubLogo,
+  GitlabLogoSimple,
+  GoodreadsLogo,
+  GooglePlayLogo,
+  InstagramLogo,
+  LastfmLogo,
+  Link,
+  LinkedinLogo,
+  LinktreeLogo,
+  MastodonLogo,
+  MediumLogo,
+  MessengerLogo,
+  MetaLogo,
+  MicrosoftTeamsLogo,
+  OpenAiLogo,
+  PaperPlaneTilt,
+  PatreonLogo,
+  PaypalLogo,
+  PinterestLogo,
+  RedditLogo,
+  SlackLogo,
+  SnapchatLogo,
+  SoundcloudLogo,
+  SpotifyLogo,
+  StackOverflowLogo,
+  SteamLogo,
+  TelegramLogo,
+  ThreadsLogo,
+  TidalLogo,
+  TiktokLogo,
+  TumblrLogo,
+  TwitchLogo,
+  TwitterLogo,
+  WechatLogo,
+  WhatsappLogo,
+  XLogo,
+  YoutubeLogo
+} from "@phosphor-icons/react"
+
+export type IconComponent = typeof InstagramLogo
+
+export const iconMap: { [key: string]: IconComponent } = {
+  amazon: AmazonLogo,
+  codepen: CodepenLogo,
+  codesandbox: CodesandboxLogo,
+  devto: DevToLogo,
+  discord: DiscordLogo,
+  dribbble: DribbbleLogo,
+  facebook: FacebookLogo,
+  fediverse: FediverseLogo,
+  figma: FigmaLogo,
+  github: GithubLogo,
+  gitlab: GitlabLogoSimple,
+  goodreads: GoodreadsLogo,
+  googleplay: GooglePlayLogo,
+  instagram: InstagramLogo,
+  lastfm: LastfmLogo,
+  link: Link,
+  linkedin: LinkedinLogo,
+  linktree: LinktreeLogo,
+  mastodon: MastodonLogo,
+  medium: MediumLogo,
+  messenger: MessengerLogo,
+  meta: MetaLogo,
+  microsoftteams: MicrosoftTeamsLogo,
+  openai: OpenAiLogo,
+  mail: PaperPlaneTilt,
+  patreon: PatreonLogo,
+  paypal: PaypalLogo,
+  pinterest: PinterestLogo,
+  reddit: RedditLogo,
+  slack: SlackLogo,
+  snapchat: SnapchatLogo,
+  soundcloud: SoundcloudLogo,
+  spotify: SpotifyLogo,
+  stackoverflow: StackOverflowLogo,
+  steam: SteamLogo,
+  telegram: TelegramLogo,
+  threads: ThreadsLogo,
+  tidal: TidalLogo,
+  tiktok: TiktokLogo,
+  tumblr: TumblrLogo,
+  twitch: TwitchLogo,
+  twitter: TwitterLogo,
+  wechat: WechatLogo,
+  whatsapp: WhatsappLogo,
+  x: XLogo,
+  youtube: YoutubeLogo
+}
+
+interface Props {
+  icon: string
+  size?: number | string
+  weight?: "thin" | "light" | "regular" | "bold" | "fill" | "duotone"
+  className?: string
+}
+
+const { icon, size = 24, weight = "regular", className } = Astro.props as Props
+
+const IconComponent = iconMap[icon.toLowerCase()]
+---
+
+<IconComponent className={cn("", className)} size={size} weight={weight} />

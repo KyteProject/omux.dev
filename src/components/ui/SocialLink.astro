@@ -1,0 +1,17 @@
+---
+import { cn } from "@lib/utils"
+import Icon from "@components/ui/Icon.astro"
+
+const { href, className, icon } = Astro.props
+---
+
+<li class={cn("flex", className)}>
+  <a
+    {href}
+    class="group flex text-sm font-medium transition hover:text-primary dark:hover:text-primary"
+  >
+    {icon && <Icon {icon} className="flex-none transition" />}
+    <span class="sr-only">Link to {icon}</span>
+    <span class="ml-4"><slot /></span>
+  </a>
+</li>

@@ -3,7 +3,7 @@ title: "An overview of Site Redesign & Markdown Demo"
 pubDatetime: 2024-06-18T14:52:43Z
 slug: "website-redesign-and-markdown-demo"
 featured: false
-draft: false
+draft: true
 commentsEnabled: false
 categories:
   - Updates

@@ -25,4 +25,4 @@ The project is open source and the code is available on GitHub.
 ## Links
 
 - [Omux.dev](https://omux.dev)
-- [GitHub](https://github.com/KyteProject/omux.dev-astro)
+- [GitHub](https://github.com/KyteProject/omux.dev)

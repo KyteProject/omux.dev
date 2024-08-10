@@ -1,15 +1,15 @@
 ---
-import Layout from "@layouts/Layout.astro"
-import Container from "@components/ui/Container.astro"
-import BackToPrevious from "@components/ui/BackToPrevious.astro"
+import BackToPrevious from "@components/BackToPrevious.astro"
+import Container from "@components/Container.astro"
 import { metadata } from "@config/config"
+import Layout from "@layouts/Layout.astro"
 ---
 
 <Layout title="404" description={metadata.description}>
   <Container>
     <div class="mt-16 grid place-items-center gap-3">
-      <h4 class="animate text-2xl font-semibold">404: Page not found</h4>
-      <span class="animate">
+      <h4 class="text-2xl font-semibold">404: Page not found</h4>
+      <span>
         <BackToPrevious href="/">Go to home page</BackToPrevious>
       </span>
     </div>

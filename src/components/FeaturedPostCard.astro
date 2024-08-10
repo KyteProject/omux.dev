@@ -1,0 +1,49 @@
+---
+import { setTransitionSlug, TransitionIds } from "@/lib/utils"
+import Link from "@components/Link.astro"
+import { Image } from "astro:assets"
+
+export interface Props {
+  post: any
+  index: number
+}
+
+const { post, index } = Astro.props as Props
+
+const getTransitionNameFromId = setTransitionSlug({ slug: post.slug })
+---
+
+<li class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+  <div class={`${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
+    <Image
+      class="w-full rounded-t-lg"
+      src={post.data.ogImage}
+      alt={post.data.title}
+      loading="eager"
+      transition:name={getTransitionNameFromId({
+        id: TransitionIds.post_card.image
+      })}
+    />
+  </div>
+  <div
+    class={`flex flex-col justify-center ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}
+  >
+    <h2 class="mb-2 border-none text-2xl font-bold">
+      <Link
+        variant="heading"
+        href={`/blog/${post.slug}`}
+        transition:name={getTransitionNameFromId({
+          id: TransitionIds.post_card.title
+        })}
+      >
+        {post.data.title}
+      </Link>
+    </h2>
+    <p class="mb-4 text-muted-foreground">
+      {post.data.description}
+    </p>
+    <Link variant="primary" href={`/blog/${post.slug}`}>
+      Read more &rarr;
+    </Link>
+  </div>
+</li>

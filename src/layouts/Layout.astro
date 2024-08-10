@@ -1,8 +1,9 @@
 ---
+import Footer from "@components/Footer.astro"
 import Head from "@components/Head.astro"
 import Header from "@components/Header.astro"
-import Footer from "@components/Footer.astro"
 import PageFind from "@components/PageFind.astro"
+import ThemeScript from "@components/ThemeScript.astro"
 import { site } from "@config/config"
 
 type Props = {
@@ -17,14 +18,12 @@ const { title, description, image, keywords } = Astro.props
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <Head
-      title={`${title} | ${site.title}`}
-      description={description}
-      image={image}
-      keywords={keywords}
-    />
-  </head>
+  <Head
+    title={`${title} | ${site.title}`}
+    description={description}
+    image={image}
+    keywords={keywords}
+  />
   <body>
     <Header />
     <main>
@@ -32,5 +31,6 @@ const { title, description, image, keywords } = Astro.props
     </main>
     <Footer />
     <PageFind />
+    <ThemeScript />
   </body>
 </html>

@@ -1,5 +1,8 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "astro/tsconfigs/strict",
+  "display": "Default",
+  "esModuleInterop": true,
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,

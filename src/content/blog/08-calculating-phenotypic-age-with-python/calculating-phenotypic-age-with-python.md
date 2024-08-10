@@ -24,8 +24,6 @@ ogImage: "./pexels-karolina-grabowska-4230620.jpg"
 description: "Discover the intersection of biology and technology in this exploration of Phenotypic Age. Learn how it transcends chronological age, its impact on healthcare, and how to calculate it using Python."
 ---
 
-![Test tubes filled with liquid](./pexels-karolina-grabowska-4230620.jpg "Calculating Phenotypic Age from biomarkers with Python and numpy")
-
 ## Introduction
 
 As an enthusiastic data collector, I find great satisfaction in tracking various aspects of my life. This can include my dietary habits, physical activity, sleep patterns, and even the hours I spend coding.

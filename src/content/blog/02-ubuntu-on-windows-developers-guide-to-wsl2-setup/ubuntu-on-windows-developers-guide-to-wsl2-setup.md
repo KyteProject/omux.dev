@@ -28,8 +28,6 @@ ogImage: "./gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg"
 description: "Learn how to set up a robust and efficient development environment using WSL2. Ubuntu, PostgreSQL, Go, Neovim, AstroVim, Docker, and other essential tools."
 ---
 
-![Setting Up WSL2: An Extensive Guide](./pexels-kevin-ku-577585.jpg "Setting Up WSL2: An Extensive Guide")
-
 ## Setting Up WSL2: An Extensive Guide
 
 The advent of the Windows Subsystem for Linux (WSL) has brought about a paradigm shift in the way developers operate on Windows-based systems in recent years. The Windows Subsystem for Linux (WSL) enables the seamless execution of a GNU/Linux environment on Windows, sans modification, and minus the resource-intensive nature of a virtual machine.

@@ -1,13 +1,15 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content"
-import Layout from "@layouts/Layout.astro"
-import Container from "@components/ui/Container.astro"
+import { setTransitionSlug, TransitionIds } from "@/lib/utils"
 import FormattedDate from "@components/FormattedDate.astro"
-import { readingTime } from "@lib/utils"
-import BackToPrevious from "@components/ui/BackToPrevious.astro"
 import PostNavigation from "@components/PostNavigation.astro"
-import { Badge } from "@components/ui/badge"
 import TableOfContents from "@components/TableOfContents.svelte"
+import BackToPrevious from "@components/BackToPrevious.astro"
+import { Badge } from "@components/ui/badge"
+import Container from "@components/Container.astro"
+import Layout from "@layouts/Layout.astro"
+import { readingTime } from "@lib/utils"
+import { Image } from "astro:assets"
+import { type CollectionEntry, getCollection } from "astro:content"
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -50,6 +52,8 @@ function getPrevPost() {
 const nextPost = getNextPost()
 const prevPost = getPrevPost()
 
+const getTransitionNameFromId = setTransitionSlug({ slug: post.slug })
+
 const { Content, headings } = await post.render()
 ---
 
@@ -65,7 +69,7 @@ const { Content, headings } = await post.render()
         class="mx-auto w-full flex-1 transform ease-out md:order-last xl:ml-0 xl:mr-0"
       >
         <div class="hidden h-full md:block">
-          <TableOfContents {headings} client:only />
+          <TableOfContents {headings} client:only="svelte" />
         </div>
       </div>
       <div class="flex-none">
@@ -73,7 +77,19 @@ const { Content, headings } = await post.render()
           <div>
             <BackToPrevious href="/blog">Back to blog</BackToPrevious>
           </div>
-          <div class="animate flex items-center gap-1.5">
+          <h1
+            transition:name={getTransitionNameFromId({
+              id: TransitionIds.post_card.title
+            })}
+          >
+            {post.data.title}
+          </h1>
+          <div
+            class="flex items-center gap-1.5"
+            transition:name={getTransitionNameFromId({
+              id: TransitionIds.post_card.meta
+            })}
+          >
             <div class="font-base text-sm">
               <FormattedDate date={post.data.pubDatetime} />
             </div>
@@ -82,9 +98,6 @@ const { Content, headings } = await post.render()
               {readingTime(post.body)}
             </div>
           </div>
-          <h1>
-            {post.data.title}
-          </h1>
           <div class="my-4 flex items-center gap-2">
             {
               post.data.categories.map(cat => (
@@ -96,6 +109,22 @@ const { Content, headings } = await post.render()
         <article
           class="prose z-10 !max-w-3xl overflow-hidden text-pretty px-4 dark:prose-invert md:mb-8 lg:mb-16 lg:px-0"
         >
+          <Fragment slot="ogImage">
+            <figure>
+              <Image
+                src={post.data.ogImage}
+                alt={post.data.title}
+                width={1200}
+                height={630}
+                class="h-full w-full object-cover"
+                transition:name={getTransitionNameFromId({
+                  id: TransitionIds.post_card.image
+                })}
+              />
+              <figcaption>{post.data.title}</figcaption>
+            </figure>
+          </Fragment>
+
           <Content />
           <div class="mt-24">
             <h2>Related Posts</h2>

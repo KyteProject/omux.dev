@@ -1,0 +1,38 @@
+---
+import { cva } from "class-variance-authority"
+
+import type { HTMLAttributes } from "astro/types"
+import type { VariantProps } from "class-variance-authority"
+
+const linkVariants = cva("link-default", {
+  variants: {
+    variant: {
+      link: "link",
+      "no-underline": "link-no-underline",
+      heading: "link-heading",
+      nav: "link-nav",
+      primary: "link-primary"
+    },
+    disabled: { true: "link-disabled" },
+    external: { true: "link-external" }
+  }
+})
+
+export interface Props
+  extends HTMLAttributes<"a">,
+    VariantProps<typeof linkVariants> {}
+
+const {
+  class: className,
+  variant = "link",
+  disabled,
+  external,
+  ...props
+} = Astro.props
+
+const Element = disabled ? "span" : "a"
+---
+
+<Element class={linkVariants({ variant, disabled, className })} {...props}>
+  <slot />
+</Element>

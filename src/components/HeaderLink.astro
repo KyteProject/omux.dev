@@ -1,0 +1,23 @@
+---
+import Link from "@components/Link.astro"
+import { cn } from "@lib/utils"
+
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
+  isActive?: boolean
+}
+
+const {
+  slot,
+  isActive = false,
+  class: className,
+  ...props
+} = Astro.props as Props
+---
+
+<Link
+  {...props}
+  variant="nav"
+  class={cn({ "text-primary": isActive }, className)}
+>
+  <slot />
+</Link>

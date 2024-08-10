@@ -1,8 +1,9 @@
 ---
-import Container from "@components/ui/Container.astro"
-import Layout from "./Layout.astro"
 import { config } from "@/config"
-import SocialLink from "@components/ui/SocialLink.astro"
+import PageTitle from "@components/PageTitle.astro"
+import Container from "@components/Container.astro"
+import SocialLink from "@components/SocialLink.astro"
+import Layout from "./Layout.astro"
 
 const { frontmatter } = Astro.props
 const { title, intro } = frontmatter
@@ -14,7 +15,7 @@ const { title, intro } = frontmatter
       class="grid grid-cols-1 gap-y-16 px-4 md:grid-cols-3 lg:grid-rows-[auto_1fr] lg:gap-y-12"
     >
       <div class="md:col-span-2 lg:order-first">
-        <h1>{title}</h1>
+        <PageTitle title={title} />
         <article class="prose mt-6 dark:prose-invert">
           <slot />
         </article>

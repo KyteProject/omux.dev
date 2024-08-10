@@ -8,6 +8,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+@import "./components.css";
+
 /* colour vars */
 @layer base {
   :root {
@@ -252,14 +254,14 @@
   }
 }
 
-.animate {
+/* .animate {
   @apply -translate-y-3 opacity-0;
   @apply transition-all duration-300 ease-out;
 }
 
 .animate.show {
   @apply translate-y-0 opacity-100;
-}
+} */
 
 html #back-to-top {
   @apply pointer-events-none opacity-0;

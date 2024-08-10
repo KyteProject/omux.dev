@@ -26,8 +26,6 @@ ogImage: "./clock-2567921_1920.jpg"
 description: "Explore the intricacies of timing wheels in system design. Dive deep into the evolution from simple timer lists to hierarchical timing wheels, their benefits, real-world applications, and Golang code examples."
 ---
 
-![Setting Up WSL2: An Extensive Guide](./clock-2567921_1920.jpg "Setting Up WSL2: An Extensive Guide")
-
 ## Introduction
 
 The essence of many software systems lies in the precision of their timing. Whether it's a database handling cache eviction, a networking protocol managing packet retransmissions, or a real-time system coordinating task executions, the capability to manage and execute operations based on time is essential.

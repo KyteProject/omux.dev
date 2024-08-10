@@ -1,11 +1,11 @@
 ---
 import { type CollectionEntry } from "astro:content"
 
-import Layout from "@layouts/Layout.astro"
-import Container from "@components/ui/Container.astro"
-import { readingTime } from "@lib/utils"
-import BackToPrevious from "@components/ui/BackToPrevious.astro"
 import TableOfContents from "@components/TableOfContents.svelte"
+import BackToPrevious from "@components/BackToPrevious.astro"
+import Container from "@components/Container.astro"
+import Layout from "@layouts/Layout.astro"
+import { readingTime } from "@lib/utils"
 
 export interface Props {
   project: CollectionEntry<"projects">
@@ -25,7 +25,7 @@ const { Content, headings } = await project.render()
         {
           project.data.toc_enabled && (
             <div class="hidden h-full md:block">
-              <TableOfContents {headings} client:only />
+              <TableOfContents {headings} client:only="svelte" />
             </div>
           )
         }
@@ -35,7 +35,7 @@ const { Content, headings } = await project.render()
           <div>
             <BackToPrevious href="/projects">Back to projects</BackToPrevious>
           </div>
-          <div class="animate flex items-center gap-1.5">
+          <div class="flex items-center gap-1.5">
             <div class="font-base text-sm">
               {readingTime(project.body)}
             </div>

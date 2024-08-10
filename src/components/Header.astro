@@ -1,44 +1,39 @@
 ---
-import Container from "@components/ui/Container.astro"
-import { MobileNav } from "./MobileNav"
-import ThemeToggler from "./ui/ThemeToggler.astro"
-import { Button } from "./ui/button"
-import { MagnifyingGlass } from "@phosphor-icons/react"
-import { cn } from "@lib/utils"
 import { config } from "@/config"
+import Container from "@components/Container.astro"
+import { MagnifyingGlass } from "@phosphor-icons/react"
+import { MobileNav } from "./MobileNav"
+import { Button } from "./ui/button"
+import HeaderLink from "./HeaderLink.astro"
+import ThemeToggler from "./ThemeToggler.astro"
 
-const path = Astro.url.pathname ?? ""
-console.log(path)
+const { pathname: path } = Astro.url
 ---
 
 <header>
   <Container>
     <div class="flex flex-wrap justify-between gap-y-2">
-      <a
-        href="/"
-        class="order-0 flex items-center gap-2 text-2xl font-semibold md:text-base"
+      <a href="/" class="order-0 flex items-center gap-2 text-2xl font-semibold"
         >{config.site.title}</a
       >
       <nav
-        class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"
+        aria-label="Main Navigation"
+        class="text-md hidden flex-col gap-6 font-medium md:flex md:flex-row md:items-center md:gap-5 lg:gap-6"
       >
-        {
-          config.mainMenu.map(item => (
-            <Button
-              variant="link"
-              className={cn(
-                "px-0 text-muted-foreground transition-colors duration-300 hover:text-primary",
-                path.includes(item.href) && "text-primary"
-              )}
-              aria-current={path.includes(item.href) && "page"}
-              key={item.href}
-            >
-              <a href={item.href} target={item?.target}>
-                {item.name}
-              </a>
-            </Button>
-          ))
-        }
+        <ul>
+          {
+            config.mainMenu.map(({ href, name, target = "" }) => (
+              <HeaderLink
+                href={href}
+                aria-current={path.includes(href) && "page"}
+                isActive={path.includes(href)}
+                target={target}
+              >
+                {name}
+              </HeaderLink>
+            ))
+          }
+        </ul>
       </nav>
       <div class="order-1 inline-flex">
         <nav transition:persist>
@@ -47,7 +42,7 @@ console.log(path)
             aria-label="Search"
             size="icon"
             variant="ghost"
-            className="hover:bg-card active:bg-transparent"
+            className="hover:bg-transparent active:bg-transparent"
           >
             <MagnifyingGlass size={24} />
           </Button>

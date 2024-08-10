@@ -48,45 +48,43 @@ export const BentoGridItem = ({
   }
 
   return (
-    <>
-      <div
-        className={cn(
-          "relative row-span-1 rounded-xl border bg-card p-4 shadow-input hover:shadow-xl",
-          className
-        )}
-      >
-        <Noise />
+    <div
+      className={cn(
+        "relative row-span-1 rounded-xl border bg-card p-4 shadow-input hover:shadow-xl",
+        className
+      )}
+    >
+      <Noise />
 
-        <a href={href ?? ""}>
-          <motion.div
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => {
-              setIsHovering(false)
-              setMousePosition({ x: 0, y: 0 })
-            }}
-            style={{
-              transform: isHovering
-                ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
-                : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
-              transition: "transform 0.2s ease-out"
-            }}
-            className="flex h-full w-full flex-col justify-between space-y-4"
-          >
-            {header}
-            <div className="">
-              {icon}
-              <div className="mb-2 mt-2 font-sans text-lg font-bold text-card-foreground">
-                {title}
-              </div>
-              <div className="font-sans text-xs font-normal text-card-foreground">
-                {description}
-              </div>
+      <a href={href ?? ""}>
+        <motion.div
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => {
+            setIsHovering(false)
+            setMousePosition({ x: 0, y: 0 })
+          }}
+          style={{
+            transform: isHovering
+              ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
+              : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
+            transition: "transform 0.2s ease-out"
+          }}
+          className="flex h-full w-full flex-col justify-between space-y-4"
+        >
+          {header}
+          <div className="">
+            {icon}
+            <div className="mb-2 mt-2 font-sans text-lg font-bold text-card-foreground">
+              {title}
             </div>
-          </motion.div>
-        </a>
-      </div>
-    </>
+            <div className="font-sans text-xs font-normal text-card-foreground">
+              {description}
+            </div>
+          </div>
+        </motion.div>
+      </a>
+    </div>
   )
 }
 

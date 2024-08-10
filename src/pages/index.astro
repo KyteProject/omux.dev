@@ -1,11 +1,11 @@
 ---
-import Layout from "@layouts/Layout.astro"
-import Container from "@components/ui/Container.astro"
-import Link from "@components/ui/Link.astro"
-import { getCollection } from "astro:content"
-import { config } from "@config"
+import FeaturedPostCard from "@components/FeaturedPostCard.astro"
+import Container from "@components/Container.astro"
+import Link from "@components/Link.astro"
 import { Sparkles } from "@components/ui/SparkleTitle"
-import { ProjectBento } from "@components/ExampleBento"
+import { config } from "@config"
+import Layout from "@layouts/Layout.astro"
+import { getCollection } from "astro:content"
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft && post.data.featured)
@@ -19,7 +19,7 @@ const blog = (await getCollection("blog"))
     <div class="mt-4 space-y-16 px-4">
       <section class="text-center">
         <article class="mx-auto max-w-2xl space-y-4 text-center">
-          <span class="animate">
+          <span>
             <p>
               Welcome to <b>'{config.site.title}'</b>, where I write about a
               variety of topics that currently capture my interest, including <span
@@ -34,44 +34,15 @@ const blog = (await getCollection("blog"))
         </article>
       </section>
 
-      <section class="animate space-y-6">
+      <section class="space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
           <h2 class="font-semibold text-foreground">Featured Articles</h2>
-          <Link href="/blog"> See all posts </Link>
+          <Link href="/blog" class="underline"> See all posts </Link>
         </div>
         <ul class="not-prose mx-4 grid gap-8">
-          {
-            blog.map((post, index) => (
-              <li class="animate mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div class={`${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
-                  <img
-                    src={post.data.ogImage?.src ?? ""}
-                    alt={post.data.title}
-                    class="w-full rounded-lg"
-                  />
-                </div>
-                <div
-                  class={`flex flex-col justify-center ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}
-                >
-                  <h2 class="mb-2 border-none text-2xl font-bold">
-                    {post.data.title}
-                  </h2>
-                  <p class="mb-4 text-muted-foreground">
-                    {post.data.description}
-                  </p>
-                  <a
-                    href={`/blog/${post.slug}`}
-                    class="text-primary hover:underline"
-                  >
-                    Read more &rarr;
-                  </a>
-                </div>
-              </li>
-            ))
-          }
+          {blog.map((post, i) => <FeaturedPostCard post={post} index={i} />)}
         </ul>
       </section>
-      <!-- <ExampleBento client:load /> -->
     </div>
   </Container>
 </Layout>

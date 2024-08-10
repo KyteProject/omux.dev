@@ -1,0 +1,47 @@
+---
+import { themes } from "@/lib/utils"
+---
+
+{/* Inlined to avoid flash of white content. */}
+<script is:inline define:vars={{ themes }}>
+  const getStoredTheme = () => {
+    const stored = localStorage.getItem("theme")
+    return stored ? JSON.parse(stored) : null
+  }
+
+  const setTheme = theme => {
+    const root = document.documentElement
+    root.setAttribute("data-theme", theme.name)
+    root.classList.toggle("dark", theme.mode === "dark")
+    localStorage.setItem("theme", JSON.stringify(theme))
+  }
+
+  const getPreferredTheme = () => {
+    const stored = getStoredTheme()
+    if (stored) return stored
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? themes.dark
+      : themes.light
+  }
+
+  // Initial setup
+  setTheme(getPreferredTheme())
+
+  // View Transitions hook
+  document.addEventListener("astro:after-swap", () =>
+    setTheme(getPreferredTheme())
+  )
+
+  // Theme change event listener
+  document.addEventListener("theme-change", event =>
+    setTheme(event.detail.theme)
+  )
+
+  // System preference change listener
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", event => {
+      const newTheme = event.matches ? themes.dark : themes.light
+      setTheme(newTheme)
+    })
+</script>

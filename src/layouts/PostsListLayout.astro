@@ -1,7 +1,6 @@
 ---
-import { type CollectionEntry } from "astro:content"
-import Layout from "@layouts/Layout.astro"
-import Container from "@components/ui/Container.astro"
+import PageTitle from "@components/PageTitle.astro"
+import Container from "@components/Container.astro"
 import {
   Pagination,
   PaginationContent,
@@ -10,7 +9,9 @@ import {
   PaginationNext,
   PaginationPrevious
 } from "@components/ui/pagination"
+import Layout from "@layouts/Layout.astro"
 import { formatDate } from "@lib/utils"
+import { type CollectionEntry } from "astro:content"
 
 export interface Props {
   currentPage: number
@@ -42,8 +43,8 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a))
 >
   <Container>
     <div class="mb-8 space-y-10">
-      <div class="animate text-pretty">
-        <h1>Blog & Articles</h1>
+      <div class="text-pretty">
+        <PageTitle title="Blog" />
         <p class="max-w-2xl">
           All of my long-form thoughts on programming, leadership, product
           design, and more, collected in chronological order.
@@ -52,7 +53,7 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a))
       <div>
         {
           years.map(year => (
-            <section class="animate mb-6">
+            <section class="mb-6">
               <div class="mb-6 flex flex-row items-center border-b-2 border-b-border font-semibold text-foreground">
                 <h2 class="border-none pb-0 font-serif italic">{year}</h2>
               </div>

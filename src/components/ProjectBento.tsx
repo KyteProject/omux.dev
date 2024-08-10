@@ -2,7 +2,6 @@
 import { cn } from "@lib/utils"
 import { Barcode, BezierCurve, Code, UsersThree } from "@phosphor-icons/react"
 import type { CollectionEntry } from "astro:content"
-import { motion } from "framer-motion"
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid"
 
 const iconMap = {
@@ -31,9 +30,9 @@ export const ProjectBento = ({
           key={i}
           title={item.data.title}
           description={<span className="text-sm">{item.data.description}</span>}
-          header={<Skeleton image={item.data.ogImage} />}
+          header={<BentoGridItemImage image={item.data.ogImage} alt={item.data.title} />}
           className={cn(
-            "animate [&>p:text-lg] cursor-pointer",
+            "[&>p:text-lg] cursor-pointer",
             i === 4 || i === 8 ? "md:col-span-2" : "",
             `hover:border-${
               colorMap[item.data.category as keyof typeof colorMap]
@@ -47,19 +46,23 @@ export const ProjectBento = ({
   )
 }
 
-const Skeleton = ({
-  image
+const BentoGridItemImage = ({
+  image,
+  alt
 }: {
   image: CollectionEntry<"projects">["data"]["ogImage"]
+  alt: string
 }) => {
   return (
-    <motion.div className="flex h-full min-h-[6rem] w-full flex-1 flex-col space-y-2">
-      <motion.div className="h-full w-full flex-shrink-0 rounded-lg">
-        <motion.img
+    <div className="flex h-full min-h-[6rem] w-full flex-1 flex-col space-y-2">
+      <div className="h-full w-full flex-shrink-0 rounded-lg">
+        <img
           src={image.src}
           className="h-full w-full rounded-lg object-cover"
+          alt={alt}
+          loading="lazy"
         />
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   )
 }

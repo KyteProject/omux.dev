@@ -1,7 +1,7 @@
 ---
-import { getCollection } from "astro:content"
-import { getPagination } from "@lib/utils"
 import PostsListLayout from "@layouts/PostsListLayout.astro"
+import { getPagination } from "@lib/utils"
+import { getCollection } from "astro:content"
 
 const data = (await getCollection("blog"))
   .filter(post => !post.data.draft)

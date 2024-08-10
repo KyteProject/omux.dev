@@ -1,0 +1,22 @@
+@layer components {
+  /* Links */
+  .link-default {
+    @apply text-foreground no-underline underline-offset-4;
+  }
+
+  .link-heading {
+    @apply hover:underline;
+  }
+
+  .link-nav {
+    @apply px-2 transition-colors duration-300 hover:text-primary;
+  }
+
+  .link-primary {
+    @apply text-primary hover:underline;
+  }
+
+  .link-disabled {
+    @apply pointer-events-none cursor-not-allowed text-muted-foreground no-underline;
+  }
+}

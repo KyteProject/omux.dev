@@ -1,8 +1,8 @@
 <script lang="ts">
+  import BuyMeACoffee from "@components/ui/BuyMeACoffee.svelte"
+  import type { MarkdownHeading } from 'astro'
   import { onDestroy, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import type { MarkdownHeading } from 'astro'
-  import BuyMeACoffee from "@components/ui/BuyMeACoffee.svelte"
 
   export let headings: MarkdownHeading[]
 

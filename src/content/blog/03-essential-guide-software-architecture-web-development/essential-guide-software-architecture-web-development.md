@@ -23,8 +23,6 @@ ogImage: "./pexels-christina-morillo-1181345.jpg"
 description: "Discover the integral role of software architecture in web development. Expand your understanding of each architecture's application in web development."
 ---
 
-![Introduction to Software Architecture in Web Development](./pexels-christina-morillo-1181345.jpg "Introduction to Software Architecture in Web Development")
-
 ## Introduction to Software Architecture in Web Development
 
 In this blog post, I'm going to run through a somewhat detailed, high-level overview of software architecture, its common patterns, and how they are applied in web development.

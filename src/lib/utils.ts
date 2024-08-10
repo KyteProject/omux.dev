@@ -64,3 +64,57 @@ export const getPagination = <T>({
     paginatedPosts
   }
 }
+
+// TRANSITIONS
+
+export const TransitionIds = {
+  post_card: {
+    image: 'post-card-image',
+    title: 'post-card-title',
+    description: 'post-card-description',
+    meta: 'post-card-meta'
+  },
+  project: {
+    image: 'project-image',
+    title: 'project-title'
+  },
+  page: {
+    title: 'page-title',
+    description: 'page-description'
+  }
+} as const
+
+export interface TransitionProps {
+  id: string;
+  slug: string;
+}
+
+export type TransitionId = Pick<TransitionProps, 'id'>;
+export type TransitionSlug = Pick<TransitionProps, 'slug'>;
+
+export const getTransitionName = ({ id, slug }: TransitionProps): string =>
+  `${id}-${slug}`;
+
+export const setTransitionSlug =
+  ({ slug }: TransitionSlug) =>
+  ({ id }: TransitionId) =>
+    getTransitionName({ id, slug });
+
+
+// THEME
+export const themes = {
+  light: { name: 'default-light', mode: 'light' },
+  dark: { name: 'default-dark', mode: 'dark' }
+}
+
+export type Theme = typeof themes[keyof typeof themes];
+
+export const getCurrentTheme = (): Theme => {
+  const isDark = document.documentElement.classList.contains("dark");
+  return isDark ? themes.dark : themes.light;
+};
+
+export const toggleTheme = (): Theme => {
+  const currentTheme = getCurrentTheme();
+  return currentTheme.mode === 'light' ? themes.dark : themes.light
+}

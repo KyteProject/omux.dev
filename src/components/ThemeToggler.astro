@@ -1,0 +1,42 @@
+---
+import { Moon, Sun } from "@phosphor-icons/react"
+import { Button } from "./ui/button"
+---
+
+<theme-switcher>
+  <Button
+    variant="ghost"
+    className="hover:bg-transparent active:bg-transparent"
+    size="icon"
+    aria-label="Switch theme"
+  >
+    <Sun size={24} className="dark:hidden" />
+    <Moon size={24} className="hidden dark:block" />
+  </Button>
+</theme-switcher>
+
+<script>
+  import { toggleTheme } from "@/lib/utils"
+
+  function handleThemeSwitch() {
+    const themeToggle = document.querySelector("theme-switcher")
+    if (!themeToggle) return
+
+    const button = themeToggle.querySelector("button")
+    if (!button) return
+
+    button.replaceWith(button.cloneNode(true))
+
+    themeToggle.querySelector("button")?.addEventListener("click", () => {
+      const newTheme = toggleTheme()
+      const event = new CustomEvent("theme-change", {
+        detail: { theme: newTheme }
+      })
+      document.dispatchEvent(event)
+    })
+  }
+
+  handleThemeSwitch()
+
+  document.addEventListener("astro:page-load", handleThemeSwitch)
+</script>

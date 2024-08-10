@@ -25,8 +25,6 @@ ogImage: "./images/Untitled.png"
 description: "A no-frills walkthrough of Unobtainium, a hard level challenge box on HTB (HackTheBox) - a platform for practicing ethical hacking skills."
 ---
 
-![Unobtanium Header](./images/Untitled.png "Unobtanium Header")
-
 ## Unobtainium
 
 ![Challenge style](./images/Untitled_1.png "Challenge style")

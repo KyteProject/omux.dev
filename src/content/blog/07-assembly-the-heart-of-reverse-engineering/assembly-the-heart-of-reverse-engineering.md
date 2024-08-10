@@ -20,9 +20,6 @@ ogImage: "./cpu-4393376_1920.jpg"
 description: "Explore Assembly language's role in reverse engineering, its key components, syntax, structure, and the tools used with it."
 ---
 
-![Assembly Language: The Heart of Reverse Engineering](./cpu-4393376_1920.jpg "Computer CPU representing Assembly language")
-Image by <a href="https://pixabay.com/users/bru-no-1161770/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4393376">Bruno</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4393376">Pixabay</a>
-
 ## Introduction
 
 Currently, as of _September 2023_, Wikipedia lists **679 languages** in their [List of Programming Languages](https://en.wikipedia.org/wiki/List_of_programming_languages).

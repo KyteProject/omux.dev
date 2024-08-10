@@ -1,8 +1,9 @@
 ---
-import { getCollection } from "astro:content"
+import PageTitle from "@components/PageTitle.astro"
+import { ProjectBento } from "@components/ProjectBento"
+import Container from "@components/Container.astro"
 import Layout from "@layouts/Layout.astro"
-import Container from "@components/ui/Container.astro"
-import { ProjectBento } from "@components/ExampleBento"
+import { getCollection } from "astro:content"
 
 const projects = (await getCollection("projects")).filter(
   project => !project.data.draft
@@ -15,8 +16,8 @@ const projects = (await getCollection("projects")).filter(
 >
   <Container>
     <div class="mb-8 space-y-10 px-4">
-      <div class="animate text-pretty">
-        <h1>Projects</h1>
+      <div class="text-pretty">
+        <PageTitle title="Projects" />
         <p class="max-w-2xl">
           My personal portfolio includes a broad spectrum of work, from advanced
           <span class="text-red">software engineering</span> to <span
@@ -29,6 +30,6 @@ const projects = (await getCollection("projects")).filter(
         <p>Click on a project below to find out more!</p>
       </div>
     </div>
-    <ProjectBento items={projects} client:load />
+    <ProjectBento items={projects} />
   </Container>
 </Layout>

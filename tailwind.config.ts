@@ -1,7 +1,6 @@
 import Typeography from "@tailwindcss/typography"
 import svgToDataUri from "mini-svg-data-uri"
 import type { Config } from "tailwindcss"
-import TailwindAnimate from "tailwindcss-animate"
 import { fontFamily } from "tailwindcss/defaultTheme"
 
 const {
@@ -10,8 +9,7 @@ const {
 
 const config = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  safelist: ["dark"],
-  darkMode: "class",
+  darkMode: "selector",
   theme: {
     container: {
       center: true,
@@ -148,7 +146,6 @@ const config = {
   },
   plugins: [
     Typeography,
-    TailwindAnimate,
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

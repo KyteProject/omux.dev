@@ -37,8 +37,6 @@ ogImage: "./images/MetaTwo.png"
 description: "A deep-dive walkthrough of MetaTwo, a challenge box on HTB (HackTheBox) focused on WordPress, SQL Injection and XML External Entity exploitation."
 ---
 
-![MetaTwo](./images/MetaTwo.png "MetaTwo Screenshot")
-
 ## Introduction
 
 In the sprawling landscape of cybersecurity, we often encounter a variety of digital fortresses — each with their unique layers of protection. MetaTwo is one such system. In this post, we will take a look into how we approach the penetration testing (pen-testing) of such a system.

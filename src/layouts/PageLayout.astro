@@ -1,9 +1,10 @@
 ---
-import Container from "@components/ui/Container.astro"
-import Layout from "@layouts/Layout.astro"
 import { config } from "@/config"
-import TableOfContents from "@components/TableOfContents.svelte"
 import FormattedDate from "@components/FormattedDate.astro"
+import PageTitle from "@components/PageTitle.astro"
+import TableOfContents from "@components/TableOfContents.svelte"
+import Container from "@components/Container.astro"
+import Layout from "@layouts/Layout.astro"
 
 const { frontmatter, headings } = Astro.props
 const { title, intro, updated, toc_enabled } = frontmatter
@@ -15,15 +16,16 @@ const { title, intro, updated, toc_enabled } = frontmatter
       {
         toc_enabled && (
           <div class="mx-auto w-full flex-1 transform ease-out md:order-last xl:ml-0 xl:mr-0">
-            <div class="animate hidden h-full md:block">
-              <TableOfContents {headings} client:only />
+            <div class="hidden h-full md:block">
+              <TableOfContents {headings} client:only="svelte" />
             </div>
           </div>
         )
       }
       <div class="flex-none">
         <div class="mb-6 max-w-3xl space-y-4 px-4">
-          <div class="animate flex items-center gap-1.5">
+          <PageTitle title={title} />
+          <div class="flex items-center gap-1.5">
             {
               updated && (
                 <>
@@ -37,11 +39,10 @@ const { title, intro, updated, toc_enabled } = frontmatter
               )
             }
           </div>
-          <h1>{title}</h1>
           {intro && <p class="mt-6 text-base">{intro}</p>}
         </div>
         <article
-          class="animate prose z-10 !max-w-3xl overflow-hidden text-pretty px-4 dark:prose-invert md:mb-8 lg:mb-16 lg:px-0"
+          class="prose z-10 !max-w-3xl overflow-hidden text-pretty px-4 dark:prose-invert md:mb-8 lg:mb-16 lg:px-0"
         >
           <slot />
         </article>

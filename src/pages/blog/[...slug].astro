@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content"
+import { getPageNumbers, getPagination } from "@lib/utils"
+import PostLayout from "@layouts/PostLayout.astro"
+import PostsListLayout from "@layouts/PostsListLayout.astro"
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog"))
+    .filter(post => !post.data.draft)
+    .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+
+  const postMap = posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }))
+
+  const paths = getPageNumbers(posts.length).map(page => ({
+    params: { slug: page.toString() }
+  }))
+
+  return [...postMap, ...paths]
+}
+
+const { slug } = Astro.params
+const { post } = Astro.props
+
+const posts = (await getCollection("blog"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+
+const pagination = getPagination({
+  posts: posts,
+  page: slug
+})
+---
+
+{post ? <PostLayout post={post} /> : <PostsListLayout {...pagination} />}

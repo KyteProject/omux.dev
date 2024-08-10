@@ -1,0 +1,74 @@
+---
+import { type CollectionEntry } from "astro:content"
+
+import Layout from "@layouts/Layout.astro"
+import Container from "@components/ui/Container.astro"
+import { readingTime } from "@lib/utils"
+import BackToPrevious from "@components/ui/BackToPrevious.astro"
+import TableOfContents from "@components/TableOfContents.svelte"
+
+export interface Props {
+  project: CollectionEntry<"projects">
+}
+
+const { project } = Astro.props
+
+const { Content, headings } = await project.render()
+---
+
+<Layout title={project.data.title} description={project.data.description}>
+  <Container>
+    <div class="flex flex-col flex-nowrap md:flex-row md:flex-wrap">
+      <div
+        class="mx-auto w-full flex-1 transform ease-out md:order-last xl:ml-0 xl:mr-0"
+      >
+        {
+          project.data.toc_enabled && (
+            <div class="hidden h-full md:block">
+              <TableOfContents {headings} client:only />
+            </div>
+          )
+        }
+      </div>
+      <div class="flex-none">
+        <div class="mb-12 max-w-3xl space-y-4 px-4">
+          <div>
+            <BackToPrevious href="/projects">Back to projects</BackToPrevious>
+          </div>
+          <div class="animate flex items-center gap-1.5">
+            <div class="font-base text-sm">
+              {readingTime(project.body)}
+            </div>
+          </div>
+          <h1>
+            {project.data.title}
+          </h1>
+          {
+            (project.data.demoLink || project.data.repoLink) && (
+              <nav class="flex gap-1">
+                {project.data.demoLink && (
+                  <a target="_blank" href={project.data.demoLink}>
+                    View Demo
+                  </a>
+                )}
+                {project.data.demoLink && project.data.repoLink && (
+                  <span>/</span>
+                )}
+                {project.data.repoLink && (
+                  <a target="_blank" href={project.data.repoLink}>
+                    View Repo
+                  </a>
+                )}
+              </nav>
+            )
+          }
+        </div>
+        <article
+          class="prose z-10 !max-w-3xl overflow-hidden text-pretty px-4 dark:prose-invert md:mb-8 lg:mb-16 lg:px-0"
+        >
+          <Content />
+        </article>
+      </div>
+    </div>
+  </Container>
+</Layout>

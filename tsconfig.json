@@ -9,19 +9,7 @@
     "jsxImportSource": "react",
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@content/*": ["content/*"],
-      "@components/*": ["src/components/*"],
-      "@config/*": ["src/config/*"],
-      "@helpers/*": ["src/layouts/helpers/*"],
-      "@images/*": ["src/images/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@partials/*": ["src/layouts/partials/*"],
-      "@shortcodes/*": ["src/layouts/shortcodes/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"],
-      "@/*": ["src/*"]
+      "@*": ["./src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.astro", "tailwind.config.ts"],

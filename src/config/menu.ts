@@ -1,39 +1,48 @@
-export interface ChildNavigationLink {
-  name: string
-  url: string
-}
-
 export interface NavigationLink {
   name: string
-  url: string
+  href: string
+  target?: string
 }
 
 export const main: NavigationLink[] = [
   {
-    name: "_home",
-    url: "/"
+    name: "About",
+    href: "/about"
   },
   {
-    name: "_about",
-    url: "/about"
+    name: "Blog",
+    href: "/blog"
   },
   {
-    name: "_projects",
-    url: "/projects"
+    name: "Projects",
+    href: "/projects"
   },
   {
-    name: "_blog",
-    url: "/posts"
+    name: "Music",
+    href: "https://linktr.ee/omuxdnb",
+    target: "_blank"
+  },
+  {
+    name: "Now",
+    href: "/now"
+  },
+  {
+    name: "Uses",
+    href: "/uses"
+  },
+  {
+    name: "TIL",
+    href: "/today-i-learned"
   }
 ]
 
 export const footer: NavigationLink[] = [
   {
-    name: "Elements",
-    url: "/elements"
+    name: "Sitemap",
+    href: "/sitemap"
   },
   {
-    name: "Privacy Policy",
-    url: "/privacy-policy"
+    name: "RSS",
+    href: "/rss.xml"
   }
 ]

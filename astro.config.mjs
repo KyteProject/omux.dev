@@ -1,55 +1,133 @@
 import mdx from "@astrojs/mdx"
-import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
+import svelte from "@astrojs/svelte"
 import tailwind from "@astrojs/tailwind"
-import AutoImport from "astro-auto-import"
+import compress from "astro-compress"
+import pagefind from "astro-pagefind"
 import { defineConfig } from "astro/config"
-import remarkCollapse from "remark-collapse"
-import remarkToc from "remark-toc"
-import { site } from "./src/config/config"
-import { remarkReadingTime } from "./src/utils/remarkReadingTime.mjs"
+
+import rehypeFigure from "@microflash/rehype-figure"
+import remarkCalloutDirectives from "@microflash/remark-callout-directives"
+import githubCalloutOptions from "@microflash/remark-callout-directives/config/github"
+import rehypeExternalLinks from "rehype-external-links"
+import rehypeKatex from "rehype-katex"
+import rehypePrettyCode from "rehype-pretty-code"
+import remarkDirective from "remark-directive"
+import remarkEmoji from "remark-emoji"
+import remarkGfm from "remark-gfm"
+import remarkMath from "remark-math"
+import smartypants from "remark-smartypants"
+import remarkUnwrapImages from "remark-unwrap-images"
+import { visit } from "unist-util-visit"
+
+const hasExternalScripts = false
+const whenExternalScripts = (items = []) =>
+  hasExternalScripts
+    ? Array.isArray(items)
+      ? items.map(item => item())
+      : [items()]
+    : []
+
+// Tooltip plugin
+function abbrPlugin() {
+  return (tree, file) => {
+    visit(tree, ["textDirective"], _node => {
+      const node = _node
+      if (node.name !== "abbr") return
+
+      if (
+        !node.children ||
+        node.children.length !== 1 ||
+        node.children[0].type !== "text"
+      )
+        file.fail(
+          "Abbr directive must have exactly one text child." +
+            JSON.stringify(node)
+        )
+
+      if (!node.attributes || !("value" in node.attributes))
+        file.fail(
+          "Abbr directive must have a `value` attribute." + JSON.stringify(node)
+        )
+
+      const title = node.attributes.value
+
+      const data = node.data || (node.data = {})
+      data.hName = "abbr"
+      data.hProperties = { title }
+    })
+  }
+}
 
 // https://astro.build/config
 export default defineConfig({
-  site: site.base_url ? site.base_url : "https://omux.dev",
-  base: site.base_path ? site.base_path : "/",
-  trailingSlash: site.trailing_slash ? "always" : "never",
+  output: "static",
+
+  site: "https://omux.dev",
+
+  redirects: {
+    "/posts/[...slug]": "/blog/[...slug]"
+  },
+
   integrations: [
+    svelte(),
     react(),
     sitemap(),
-    prefetch(),
-    AutoImport({
-      imports: [
-        "@/shortcodes/Button",
-        "@/shortcodes/Accordion",
-        "@/shortcodes/Notice",
-        "@/shortcodes/Video",
-        "@/shortcodes/Youtube",
-        "@/shortcodes/Tabs",
-        "@/shortcodes/Tab"
-      ]
-    }),
+    pagefind(),
+    mdx(),
     tailwind({
       applyBaseStyles: false
     }),
-    mdx()
+    ...whenExternalScripts(() =>
+      partytown({
+        config: { forward: ["dataLayer.push"] }
+      })
+    ),
+    compress({
+      CSS: true,
+      HTML: {
+        "html-minifier-terser": {
+          removeAttributeQuotes: false
+        }
+      },
+      Image: false,
+      JavaScript: true,
+      SVG: false,
+      Logger: 1
+    })
   ],
   markdown: {
+    syntaxHighlight: false,
     remarkPlugins: [
-      remarkToc,
-      remarkReadingTime,
+      remarkDirective,
+      abbrPlugin,
+      [remarkEmoji, { accessible: true, padSpaceAfter: true }],
+      remarkGfm,
+      [remarkCalloutDirectives, githubCalloutOptions],
+      [smartypants, { dashes: "oldschool" }],
+      remarkMath,
+      remarkUnwrapImages
+    ],
+    rehypePlugins: [
+      rehypeFigure,
+      rehypeKatex,
       [
-        remarkCollapse,
+        rehypePrettyCode,
         {
-          test: "Table of contents"
+          // theme: "aurora-x"
+          // theme: "ayu-dark"
+          // theme: "dark-plus"
+          theme: "vesper"
+        }
+      ],
+      [
+        rehypeExternalLinks,
+        {
+          rel: ["external"],
+          target: "_blank"
         }
       ]
-    ],
-    shikiConfig: {
-      theme: "dracula-soft",
-      wrap: true
-    },
-    extendDefaultPlugins: true
+    ]
   }
 })

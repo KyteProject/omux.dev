@@ -1,130 +1,87 @@
 ---
-import { AnimatedText } from "@components/AnimatedText"
-import Card from "@components/Card"
-import Header from "@components/Header.astro"
-import Hr from "@components/Hr.astro"
-import { socials } from "@config/social"
 import Layout from "@layouts/Layout.astro"
-import getSortedPosts from "@utils/getSortedPosts"
-import slugify from "@utils/slugify"
+import Container from "@components/ui/Container.astro"
+import Link from "@components/ui/Link.astro"
 import { getCollection } from "astro:content"
+import { config } from "@config"
+import { Sparkles } from "@components/ui/SparkleTitle"
+import { ProjectBento } from "@components/ExampleBento"
 
-const posts = await getCollection("blog")
-const sortedPosts = getSortedPosts(posts)
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
-const socialCount = socials.filter(social => social.active).length
+const blog = (await getCollection("blog"))
+  .filter(post => !post.data.draft && post.data.featured)
+  .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+  .slice(0, 6)
 ---
 
-<Layout title="Synth & Syntax">
-  <Header />
-  <section class="grid h-full grid-cols-12 overflow-hidden">
-    <aside class="hidden overflow-y-auto md:col-span-3 md:block lg:col-span-2">
-    </aside>
-    <section
-      class="relative col-span-12 h-[84dvh] overflow-y-auto md:col-span-9 md:h-auto lg:col-span-10"
-    >
-      <div class="my-auto">
-        <article class="min-w-full space-y-10 p-5">
-          <header class="my-10">
-            <p class="text-lg font-extralight text-muted-foreground">
-              Hello, I am <h1
-                class="text-3xl font-medium text-foreground sm:text-4xl md:text-6xl"
-              >
-                Daniel Smith
-              </h1>
-            </p>
-            <AnimatedText client:load />
-          </header>
-
-          <div class="text-md max-w-4xl space-y-3">
-            <p class="text-muted-foreground">
-              Welcome to <b>Synth & Syntax</b>, my personal site and blog, where
-              I write about a variety of topics that currently capture my
-              interest. Topics include <span class="italic text-yellow-500"
-                >Software Architecture</span
-              >, <span class="italic text-cyan-500">System Design</span>, <span
-                class="italic text-red-500">Software Engineering</span
-              >, <span class="italic text-blue-500">Music Production</span>, and <span
-                class="italic text-magenta">Cybersecurity</span
+<Layout title={config.site.title} description={config.metadata.description}>
+  <Container>
+    <Sparkles client:load text={config.site.title} />
+    <div class="mt-4 space-y-16 px-4">
+      <section class="text-center">
+        <article class="mx-auto max-w-2xl space-y-4 text-center">
+          <span class="animate">
+            <p>
+              Welcome to <b>'{config.site.title}'</b>, where I write about a
+              variety of topics that currently capture my interest, including <span
+                class="text-yellow">Software Architecture</span
+              >, <span class="text-cyan">System Design</span>, <span
+                class="text-red">Software Engineering</span
+              >, <span class="text-blue-300">Music Production</span>, and <span
+                class="text-magenta">Cybersecurity</span
               >.
             </p>
-            <!-- {
-          // only display if at least one social link is enabled
-          socialCount > 0 && (
-            <div class="social-wrapper">
-              <div class="social-links text-muted-foreground">
-                Social Links: <Socials />
-              </div>
-            </div>
-          )
-        } -->
-          </div>
-
-          <hr class="max-w-4xl bg-accent" />
-
-          {
-            featuredPosts.length > 0 && (
-              <>
-                <section
-                  id="featured"
-                  class="text-md max-w-4xl space-y-2 text-muted-foreground"
-                >
-                  <h2 class="text-3xl text-foreground">Featured Posts</h2>
-                  <ul>
-                    {featuredPosts.map(({ data }) => (
-                      <Card
-                        href={`/posts/${slugify(data)}`}
-                        frontmatter={data}
-                        secHeading={false}
-                      />
-                    ))}
-                  </ul>
-                </section>
-              </>
-            )
-          }
+          </span>
         </article>
-      </div>
-    </section>
-  </section>
+      </section>
 
-  <!-- <section id="recent-posts">
-      <h2>Recent Posts</h2>
-      <ul>
-        {
-          sortedPosts.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
-        }
-      </ul>
-      <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts">
-          All Posts
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-        </LinkButton>
-      </div>
-    </section> -->
-  <!-- </div> -->
-
-  <!-- <Footer /> -->
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-foreground">Featured Articles</h2>
+          <Link href="/blog"> See all posts </Link>
+        </div>
+        <ul class="not-prose mx-4 grid gap-8">
+          {
+            blog.map((post, index) => (
+              <li class="animate mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div class={`${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
+                  <img
+                    src={post.data.ogImage?.src ?? ""}
+                    alt={post.data.title}
+                    class="w-full rounded-lg"
+                  />
+                </div>
+                <div
+                  class={`flex flex-col justify-center ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}
+                >
+                  <h2 class="mb-2 border-none text-2xl font-bold">
+                    {post.data.title}
+                  </h2>
+                  <p class="mb-4 text-muted-foreground">
+                    {post.data.description}
+                  </p>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="text-primary hover:underline"
+                  >
+                    Read more &rarr;
+                  </a>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <!-- <ExampleBento client:load /> -->
+    </div>
+  </Container>
 </Layout>
 
 <style>
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  .border-style {
+    transition: transform 0.25s ease-in-out;
   }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+
+  .border-style:hover {
+    transform: scale(1.025);
   }
 </style>

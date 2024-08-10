@@ -1,0 +1,108 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content"
+import Layout from "@layouts/Layout.astro"
+import Container from "@components/ui/Container.astro"
+import FormattedDate from "@components/FormattedDate.astro"
+import { readingTime } from "@lib/utils"
+import BackToPrevious from "@components/ui/BackToPrevious.astro"
+import PostNavigation from "@components/PostNavigation.astro"
+import { Badge } from "@components/ui/badge"
+import TableOfContents from "@components/TableOfContents.svelte"
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog"))
+    .filter(post => !post.data.draft)
+    .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: post
+  }))
+}
+
+export interface Props {
+  post: CollectionEntry<"blog">
+}
+
+const { post } = Astro.props
+
+const posts = await getCollection("blog")
+
+function getNextPost() {
+  let postIndex
+  for (const post of posts) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = posts.indexOf(post)
+      return posts[postIndex + 1]
+    }
+  }
+}
+
+function getPrevPost() {
+  let postIndex
+  for (const post of posts) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = posts.indexOf(post)
+      return posts[postIndex - 1]
+    }
+  }
+}
+
+const nextPost = getNextPost()
+const prevPost = getPrevPost()
+
+const { Content, headings } = await post.render()
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.ogImage.src}
+  keywords={post.data.tags}
+>
+  <Container>
+    <div class="flex flex-col flex-nowrap md:flex-row md:flex-wrap">
+      <div
+        class="mx-auto w-full flex-1 transform ease-out md:order-last xl:ml-0 xl:mr-0"
+      >
+        <div class="hidden h-full md:block">
+          <TableOfContents {headings} client:only />
+        </div>
+      </div>
+      <div class="flex-none">
+        <div class="mb-12 max-w-3xl space-y-4 px-4">
+          <div>
+            <BackToPrevious href="/blog">Back to blog</BackToPrevious>
+          </div>
+          <div class="animate flex items-center gap-1.5">
+            <div class="font-base text-sm">
+              <FormattedDate date={post.data.pubDatetime} />
+            </div>
+            &bull;
+            <div class="font-base text-sm">
+              {readingTime(post.body)}
+            </div>
+          </div>
+          <h1>
+            {post.data.title}
+          </h1>
+          <div class="my-4 flex items-center gap-2">
+            {
+              post.data.categories.map(cat => (
+                <Badge variant="outline">{cat}</Badge>
+              ))
+            }
+          </div>
+        </div>
+        <article
+          class="prose z-10 !max-w-3xl overflow-hidden text-pretty px-4 dark:prose-invert md:mb-8 lg:mb-16 lg:px-0"
+        >
+          <Content />
+          <div class="mt-24">
+            <h2>Related Posts</h2>
+            <PostNavigation prevPost={prevPost} nextPost={nextPost} />
+          </div>
+        </article>
+      </div>
+    </div>
+  </Container>
+</Layout>

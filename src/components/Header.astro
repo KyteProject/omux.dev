@@ -1,62 +1,60 @@
 ---
-import ThemeToggle from "@/components/ThemeToggle.astro"
-import { NavLink } from "@components/ui/nav-link"
-import { site } from "@config/config"
-import { main } from "@config/menu"
-import { Image } from "astro:assets"
+import Container from "@components/ui/Container.astro"
+import { MobileNav } from "./MobileNav"
+import ThemeToggler from "./ui/ThemeToggler.astro"
+import { Button } from "./ui/button"
+import { MagnifyingGlass } from "@phosphor-icons/react"
+import { cn } from "@lib/utils"
+import { config } from "@/config"
 
-const { pathname } = Astro.url
-
-export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search" | "projects"
-}
-
-const { activeNav } = Astro.props
+const path = Astro.url.pathname ?? ""
+console.log(path)
 ---
 
-<nav
-  class="relative z-10 flex grid-cols-12 items-center justify-between overflow-x-auto border-b bg-background md:grid"
->
-  <!-- logo -->
-  <a
-    href="/"
-    class="shrink-0 px-2.5 py-4 text-foreground transition-colors md:col-span-3 md:border-r md:px-5 lg:col-span-2"
-  >
-    {
-      site.logo_enable ? (
-        <Image
-          src={site.logo}
-          alt={site.logo_text}
-          width={site.logo_width}
-          height={site.logo_height}
-        />
-      ) : (
-        site.title
-      )
-    }
-  </a>
-
-  <div class="flex items-center justify-between md:col-span-9 lg:col-span-10">
-    <ul class="hidden w-max shrink-0 items-center divide-x border-r md:flex">
-      {
-        main.map(menu => (
-          <NavLink
-            href={menu.url}
-            isActive={pathname === `${menu.url}/` || pathname === menu.url}
+<header>
+  <Container>
+    <div class="flex flex-wrap justify-between gap-y-2">
+      <a
+        href="/"
+        class="order-0 flex items-center gap-2 text-2xl font-semibold md:text-base"
+        >{config.site.title}</a
+      >
+      <nav
+        class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"
+      >
+        {
+          config.mainMenu.map(item => (
+            <Button
+              variant="link"
+              className={cn(
+                "px-0 text-muted-foreground transition-colors duration-300 hover:text-primary",
+                path.includes(item.href) && "text-primary"
+              )}
+              aria-current={path.includes(item.href) && "page"}
+              key={item.href}
+            >
+              <a href={item.href} target={item?.target}>
+                {item.name}
+              </a>
+            </Button>
+          ))
+        }
+      </nav>
+      <div class="order-1 inline-flex">
+        <nav transition:persist>
+          <Button
+            id="magnifying-glass"
+            aria-label="Search"
+            size="icon"
+            variant="ghost"
+            className="hover:bg-card active:bg-transparent"
           >
-            {menu.name}
-          </NavLink>
-        ))
-      }
-    </ul>
-    <!--
-    <Button
-      variant="ghost"
-      size="icon"
-      className="h-14 w-14 shrink-0 rounded-none md:flex"
-    >
-      <Search className="h-[1.2rem] w-[1.2rem] scale-100 transition-all" />
-    </Button> -->
-    <ThemeToggle />
-  </div>
-</nav>
+            <MagnifyingGlass size={24} />
+          </Button>
+          <ThemeToggler />
+          <MobileNav client:load />
+        </nav>
+      </div>
+    </div>
+  </Container>
+</header>

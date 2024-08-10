@@ -15,9 +15,9 @@ export const socials: SocialObjects = [
   },
   {
     name: "Instagram",
-    href: "",
+    href: "https://www.instagram.com/omuxdnb/",
     linkTitle: `${site.title} on Instagram`,
-    active: false
+    active: true
   },
   {
     name: "LinkedIn",
@@ -28,13 +28,19 @@ export const socials: SocialObjects = [
   {
     name: "Mail",
     href: "mailto:dan@omux.dev",
-    linkTitle: `Send an email to ${site.title}`,
+    linkTitle: `Email me at: dan@omux.dev`,
     active: true
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/omuxdev",
-    linkTitle: `${site.title} on Twitter`,
+    name: "X",
+    href: "https://x.com/omuxdev",
+    linkTitle: `${site.title} on X`,
+    active: true
+  },
+  {
+    name: "LinkTree",
+    href: "https://linktr.ee/omuxdnb",
+    linkTitle: `${site.title} on Linktree`,
     active: true
   },
   {
@@ -121,6 +127,12 @@ export const socials: SocialObjects = [
     href: "",
     linkTitle: `${site.title} on Mastodon`,
     active: false
+  },
+  {
+    name: "Soundcloud",
+    href: "https://soundcloud.com/omux",
+    linkTitle: `${site.title} on Soundcloud`,
+    active: true
   }
 ]
 
@@ -157,3 +169,5 @@ export type SocialMedia =
   | "Steam"
   | "Telegram"
   | "Mastodon"
+  | "X"
+  | "LinkTree"

@@ -1,5 +1,15 @@
-# Omux.dev
+## Package Manager
 
-## 🔗 [Omux.dev](https://omux.dev)
+Uses [pnpm](https://pnpm.io)
 
-This is my personal website, blog, and portfolio. It's been through several iterations, the current one being a static-site genered using `Astro.js`, `React.js` and `Tailwind CSS`. Based on a modified version of the [Paper](https://github.com/satnaing/astro-paper) theme.
+## UI
+
+Uses [Shadcn/ui](https://ui.shadcn.com)
+
+You an add components through the CLI
+
+```
+pnpm dlx shadcn-ui@latest add badge
+```
+
+## Markdown

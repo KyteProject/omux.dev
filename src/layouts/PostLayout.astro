@@ -10,6 +10,8 @@ import Layout from "@layouts/Layout.astro"
 import { readingTime } from "@lib/utils"
 import { Image } from "astro:assets"
 import { type CollectionEntry, getCollection } from "astro:content"
+import ShareButtons from "@components/ShareButtons.astro"
+import { BookOpen, Clock } from "@phosphor-icons/react"
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -54,6 +56,12 @@ const prevPost = getPrevPost()
 
 const getTransitionNameFromId = setTransitionSlug({ slug: post.slug })
 
+const shareProps = {
+  title: post.data.title,
+  description: post.data.description,
+  url: `https://omux.dev/blog/${post.slug}`
+}
+
 const { Content, headings } = await post.render()
 ---
 
@@ -85,16 +93,18 @@ const { Content, headings } = await post.render()
             {post.data.title}
           </h1>
           <div
-            class="flex items-center gap-1.5"
+            class="flex items-center gap-3"
             transition:name={getTransitionNameFromId({
               id: TransitionIds.post_card.meta
             })}
           >
-            <div class="font-base text-sm">
+            <div class="font-base inline-flex items-center gap-1.5 text-sm">
+              <Clock size="18" />
               <FormattedDate date={post.data.pubDate} />
             </div>
-            &bull;
-            <div class="font-base text-sm">
+            <span class="text-xs">&bull;</span>
+            <div class="font-base inline-flex items-center gap-1.5 text-sm">
+              <BookOpen size="18" />
               {readingTime(post.body)}
             </div>
           </div>
@@ -126,7 +136,12 @@ const { Content, headings } = await post.render()
           </Fragment>
 
           <Content />
+
           <div class="mt-24">
+            <h2>Share This Post</h2>
+            <ShareButtons {...shareProps} />
+          </div>
+          <div class="mt-12">
             <h2>Related Posts</h2>
             <PostNavigation prevPost={prevPost} nextPost={nextPost} />
           </div>

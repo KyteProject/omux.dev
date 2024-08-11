@@ -1,0 +1,54 @@
+---
+import {
+  FacebookShareButton,
+  HackerNewsShareButton,
+  LinkedInShareButton,
+  RedditShareButton,
+  SocialShare,
+  TwitterShareButton
+} from "astro-social-share"
+
+import { cn } from "@/lib/utils"
+
+import type { ComponentProps } from "astro/types"
+import { config } from "@config"
+
+type SocialShareProps = Omit<ComponentProps<typeof SocialShare>, "buttons">
+export interface Props extends SocialShareProps {
+  class?: string
+}
+const { class: className, ...shareProps } = Astro.props
+
+const { title } = config.site
+const { description } = config.metadata
+const author = config.socials.find(({ name }) => name === "Twitter")
+const defaultProps = { description, title, via: author?.href }
+
+const buttons = [
+  TwitterShareButton,
+  FacebookShareButton,
+  RedditShareButton,
+  LinkedInShareButton,
+  HackerNewsShareButton
+]
+
+const props = { ...defaultProps, ...shareProps }
+---
+
+<div class={cn("inline-flex items-center gap-2", className)}>
+  <SocialShare {...props} {buttons} />
+</div>
+
+{/* his slot is broken */}
+<style is:global slot="astro-social-share-css">
+  .astro-social-share {
+    @apply my-0;
+  }
+
+  .social-share-btn {
+    @apply !mr-4 inline-block h-6 w-6;
+    svg {
+      @apply h-full w-full fill-accent;
+    }
+  }
+</style>

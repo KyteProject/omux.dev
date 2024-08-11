@@ -18,7 +18,7 @@ export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, "")
   const wordCount = textOnly.split(/\s+/).length
   const readingTimeMinutes = (wordCount / 200 + 1).toFixed()
-  return `${readingTimeMinutes} min read`
+  return `${readingTimeMinutes} minutes`
 }
 
 interface GetPaginationProps<T> {
@@ -66,7 +66,6 @@ export const getPagination = <T>({
 }
 
 // TRANSITIONS
-
 export const TransitionIds = {
   post_card: {
     image: "post-card-image",
@@ -102,18 +101,19 @@ export const setTransitionSlug =
 
 // THEME
 export const themes = {
-  light: { name: "default-light", mode: "light" },
-  dark: { name: "default-dark", mode: "dark" }
+  light: "light",
+  dark: "dark"
 }
 
 export type Theme = (typeof themes)[keyof typeof themes]
 
 export const getCurrentTheme = (): Theme => {
-  const isDark = document.documentElement.classList.contains("dark")
-  return isDark ? themes.dark : themes.light
+  return document.documentElement.classList.contains("dark")
+    ? themes.dark
+    : themes.light
 }
 
 export const toggleTheme = (): Theme => {
   const currentTheme = getCurrentTheme()
-  return currentTheme.mode === "light" ? themes.dark : themes.light
+  return currentTheme === themes.light ? themes.dark : themes.light
 }

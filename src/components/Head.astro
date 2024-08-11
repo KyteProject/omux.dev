@@ -84,34 +84,25 @@ const {
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script is:inline src="/pagefind/pagefind-ui.js"></script>
 
-  <!-- CSP -->
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline'; script-src static.cloudflareinsights.com; connect-src cloudflareinsights.com; script-src 'self' ajax.cloudflare.com; img-src 'self' https:; font-src 'self' https:; connect-src 'self';"
-  />
-
   <ViewTransitions fallback="none" />
 
   {/* Inlined to avoid flash of white content. */}
   <script is:inline define:vars={{ themes }}>
-    const getStoredTheme = () => {
-      const stored = localStorage.getItem("theme")
-      return stored ? JSON.parse(stored) : null
-    }
+    const getStoredTheme = () => localStorage.getItem("theme")
 
     const setTheme = theme => {
       const root = document.documentElement
-      root.setAttribute("data-theme", theme.name)
-      root.classList.toggle("dark", theme.mode === "dark")
-      localStorage.setItem("theme", JSON.stringify(theme))
+      root.setAttribute("data-theme", theme)
+      root.classList.toggle("dark", theme === "dark")
+      localStorage.setItem("theme", theme)
     }
 
     const getPreferredTheme = () => {
       const stored = getStoredTheme()
       if (stored) return stored
-      return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? themes.dark
-        : themes.light
+      return window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark"
     }
 
     setTheme(getPreferredTheme())
@@ -125,7 +116,7 @@ const {
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", event => {
-        const newTheme = event.matches ? themes.dark : themes.light
+        const newTheme = event.matches ? "dark" : "light"
         setTheme(newTheme)
       })
   </script>

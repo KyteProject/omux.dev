@@ -20,7 +20,7 @@ const getTransitionNameFromId = setTransitionSlug({ slug: post.slug })
       class="w-full rounded-lg"
       src={post.data.ogImage}
       alt={post.data.title}
-      loading="eager"
+      loading={index >= 1 ? "eager" : "lazy"}
       transition:name={getTransitionNameFromId({
         id: TransitionIds.post_card.image
       })}

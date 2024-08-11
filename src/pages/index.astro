@@ -2,7 +2,7 @@
 import Container from "@components/Container.astro"
 import FeaturedPostCard from "@components/FeaturedPostCard.astro"
 import Link from "@components/Link.astro"
-import { Sparkles } from "@components/ui/SparkleTitle"
+import Sparkles from "@components/Sparkles.astro"
 import { config } from "@config"
 import Layout from "@layouts/Layout.astro"
 import { getCollection } from "astro:content"
@@ -15,7 +15,7 @@ const blog = (await getCollection("blog"))
 
 <Layout title={config.site.title} description={config.metadata.description}>
   <Container>
-    <Sparkles client:load text={config.site.title} />
+    <Sparkles text={config.site.title} />
     <div class="mt-4 space-y-16 px-4">
       <section class="text-center">
         <article class="mx-auto max-w-2xl space-y-4 text-center">

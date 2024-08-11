@@ -3,7 +3,6 @@ import Footer from "@components/Footer.astro"
 import Head from "@components/Head.astro"
 import Header from "@components/Header.astro"
 import PageFind from "@components/PageFind.astro"
-import ThemeScript from "@components/ThemeScript.astro"
 import { site } from "@config/config"
 
 type Props = {
@@ -31,6 +30,5 @@ const { title, description, image, keywords } = Astro.props
     </main>
     <Footer />
     <PageFind />
-    <ThemeScript />
   </body>
 </html>

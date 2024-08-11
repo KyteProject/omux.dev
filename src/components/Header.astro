@@ -5,7 +5,7 @@ import { MagnifyingGlass } from "@phosphor-icons/react"
 import { MobileNav } from "./MobileNav"
 import { Button } from "./ui/button"
 import HeaderLink from "./HeaderLink.astro"
-import ThemeToggler from "./ThemeToggler.astro"
+import ThemeSwitcher from "./ThemeSwitcher.astro"
 
 const { pathname: path } = Astro.url
 ---
@@ -46,7 +46,7 @@ const { pathname: path } = Astro.url
           >
             <MagnifyingGlass size={24} />
           </Button>
-          <ThemeToggler />
+          <ThemeSwitcher />
           <MobileNav client:load />
         </nav>
       </div>

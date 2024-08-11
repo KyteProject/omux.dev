@@ -87,7 +87,7 @@ export default defineConfig({
           removeAttributeQuotes: false
         }
       },
-      Image: false,
+      Image: true,
       JavaScript: true,
       SVG: false,
       Logger: 1

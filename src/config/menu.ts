@@ -39,7 +39,7 @@ export const main: NavigationLink[] = [
 export const footer: NavigationLink[] = [
   {
     name: "Sitemap",
-    href: "/sitemap"
+    href: "/sitemap-index.xml"
   },
   {
     name: "RSS",

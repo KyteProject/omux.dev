@@ -70,6 +70,12 @@ const {
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
   <script is:inline src="/pagefind/pagefind-ui.js"></script>
 
+  <!-- CSP -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; script-src static.cloudflareinsights.com; connect-src cloudflareinsights.com; script-src 'self' ajax.cloudflare.com; img-src 'self' https:; font-src 'self' https:; connect-src 'self';"
+  />
+
   <ViewTransitions fallback="none" />
 
   {/* Inlined to avoid flash of white content. */}

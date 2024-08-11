@@ -64,7 +64,7 @@ Some common examples of abstraction are:
 
 For example, consider a `Customer` class in an e-commerce application:
 
-```go
+```go showLineNumbers=false
 type Customer struct {
     ID        int
     FirstName string
@@ -135,7 +135,7 @@ Tools like [Gofmt](https://pkg.go.dev/cmd/gofmt) and [Golint](https://pkg.go.dev
 
 For example, consider refactoring this duplicated code:
 
-```go
+```go showLineNumbers=false
 func CalculateRectangleArea(length, width float64) float64 {
     return length * width
 }
@@ -147,18 +147,20 @@ func CalculateSquareArea(side float64) float64 {
 
 We can refactor this to eliminate the duplication:
 
-```go
+```diff lang="go"
 func CalculateRectangleArea(length, width float64) float64 {
-    return CalculateArea(length, width)
+-    return length * width
++    return CalculateArea(length, width)
 }
 
 func CalculateSquareArea(side float64) float64 {
-    return CalculateArea(side, side)
+-    return side * side
++    return CalculateArea(side, side)
 }
-
-func CalculateArea(a, b float64) float64 {
-    return a * b
-}
++
++func CalculateArea(a, b float64) float64 {
++    return a * b
++}
 ```
 
 By extracting the common area calculation, we've made the code more DRY (_Don't Repeat Yourself_) aligned and maintainable.

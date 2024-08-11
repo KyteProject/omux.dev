@@ -116,7 +116,7 @@ As time progresses, a pointer (or "hand") rotates around this clock, and when it
 
 This Golang snippet provides a rudimentary representation of a timing wheel. It demonstrates how tasks can be inserted and how they are executed when the "tick" function is called.
 
-```go
+```go title="timing_wheel.go" caption="A simple implementation of a timing wheel in Go"
 type TimerTask struct {
     Execute func()
 }
@@ -202,7 +202,7 @@ Implementing a timing wheel to handle these timeouts.
 
 Let's draft a basic implementation using a simplified timing wheel:
 
-```go
+```go title="main.go" caption="Implementing request timeouts using a timing wheel in Golang"
 package main
 
 import (

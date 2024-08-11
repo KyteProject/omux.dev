@@ -68,13 +68,7 @@ This is a note callout
 
 Supported types: note, commend, assert, warn, deter
 
-3. **Emoji Support**: Convert text codes to emojis.
-
-```markdown
-:tada: :+1:
-```
-
-4. **Math Equations**: `KaTeX` integration for rendering mathematical equations.
+3. **Math Equations**: `KaTeX` integration for rendering mathematical equations.
 
    - Inline math: `$equation$`
    - Block math:
@@ -85,7 +79,7 @@ Supported types: note, commend, assert, warn, deter
    $$
    ```
 
-5. **Code Blocks**: Enhanced code blocks with:
+4. **Code Blocks**: Enhanced code blocks with:
 
    - Syntax highlighting
    - Line numbers
@@ -93,11 +87,11 @@ Supported types: note, commend, assert, warn, deter
    - Line highlighting
    - Character highlighting
 
-6. **Figures**: Automatic figure and caption generation for images.
-7. **External Links**: Automatically adds `target="_blank"` and `rel="external"` to external links.
-8. **GitHub-Flavoured Markdown (GFM)**: Support for tables, task lists, and more.
-9. **Smartypants**: Typographic enhancements for punctuation.
-10. **Unwrapped Images**: Images are not wrapped in paragraphs for better styling control.
+5. **Figures**: Automatic figure and caption generation for images.
+6. **External Links**: Automatically adds `target="_blank"` and `rel="external"` to external links.
+7. **GitHub-Flavoured Markdown (GFM)**: Support for tables, task lists, and more.
+8. **Smartypants**: Typographic enhancements for punctuation.
+9. **Unwrapped Images**: Images are not wrapped in paragraphs for better styling control.
 
 These Markdown features are implemented through a combination of remark and rehype plugins, as configured in the `astro.config.mjs` file. This setup allows for a rich and flexible content creation experience, enabling me to write blog posts and documentation with advanced formatting and interactive elements.
 

@@ -3,22 +3,23 @@ import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
 import svelte from "@astrojs/svelte"
 import tailwind from "@astrojs/tailwind"
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers"
 import rehypeFigure from "@microflash/rehype-figure"
 import remarkCalloutDirectives from "@microflash/remark-callout-directives"
 import githubCalloutOptions from "@microflash/remark-callout-directives/config/github"
 import compress from "astro-compress"
+import expressiveCode from "astro-expressive-code"
 import pagefind from "astro-pagefind"
 import { defineConfig } from "astro/config"
 import rehypeExternalLinks from "rehype-external-links"
 import rehypeKatex from "rehype-katex"
-import rehypePrettyCode from "rehype-pretty-code"
 import remarkDirective from "remark-directive"
-import remarkEmoji from "remark-emoji"
 import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math"
 import smartypants from "remark-smartypants"
 import remarkUnwrapImages from "remark-unwrap-images"
 import { visit } from "unist-util-visit"
+
 const hasExternalScripts = false
 const whenExternalScripts = (items = []) =>
   hasExternalScripts
@@ -26,6 +27,33 @@ const whenExternalScripts = (items = []) =>
       ? items.map(item => item())
       : [items()]
     : []
+
+const expressiveCodePlugin = () =>
+  expressiveCode({
+    themes: ["dracula", "rose-pine-dawn"],
+    useDarkModeMediaQuery: true,
+    themeCssRoot: ":root",
+    themeCssSelector: theme => {
+      let themeSelector
+      switch (theme.type) {
+        case "light":
+          themeSelector = '[class=""]'
+          break
+        case "dark":
+          themeSelector = '[class="dark"]'
+          break
+        default:
+          themeSelector = '[class=""]'
+          break
+      }
+      return themeSelector
+    },
+    showLineNumbers: true,
+    padding: 16,
+    borderRadius: 8,
+    tabWidth: 2,
+    plugins: [pluginLineNumbers()]
+  })
 
 // Tooltip plugin
 function abbrPlugin() {
@@ -69,6 +97,7 @@ export default defineConfig({
     react(),
     sitemap(),
     pagefind(),
+    expressiveCodePlugin(),
     mdx(),
     tailwind({
       applyBaseStyles: false
@@ -98,13 +127,6 @@ export default defineConfig({
     remarkPlugins: [
       remarkDirective,
       abbrPlugin,
-      [
-        remarkEmoji,
-        {
-          accessible: true,
-          padSpaceAfter: true
-        }
-      ],
       remarkGfm,
       [remarkCalloutDirectives, githubCalloutOptions],
       [
@@ -119,15 +141,6 @@ export default defineConfig({
     rehypePlugins: [
       rehypeFigure,
       rehypeKatex,
-      [
-        rehypePrettyCode,
-        {
-          // theme: "aurora-x"
-          // theme: "ayu-dark"
-          // theme: "dark-plus"
-          theme: "vesper"
-        }
-      ],
       [
         rehypeExternalLinks,
         {

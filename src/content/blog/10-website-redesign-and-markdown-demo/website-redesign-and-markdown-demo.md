@@ -109,12 +109,6 @@ warn callout
 deter callout
 :::
 
-## Emoji
-
-Emoji transpiling from text codes are supported.
-
-`:tada: :+1:` => :tada: :+1:
-
 ## Katex
 
 ### Multi-line

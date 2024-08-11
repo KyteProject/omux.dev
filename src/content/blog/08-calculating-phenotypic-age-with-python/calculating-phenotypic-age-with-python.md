@@ -149,7 +149,9 @@ The first step is to define the constants, which are the coefficients assigned t
 
 Next, input values for each biomarker are required. These can be obtained from blood tests and should be entered in the units specified by the formula.
 
-```python
+Constants:
+
+```python showLineNumbers=false
 # Constants from the formula
 b0 = -19.9067
 b_albumin = -0.0336
@@ -164,7 +166,9 @@ b_white_blood_cell_count = 0.0554
 b_chronological_age = 0.0804
 ```
 
-```python
+Input values:
+
+```python showLineNumbers=false
 # Input values for each biomarker
 albumin = 4.1  # g/L - this may need converted from g/dL
 creatinine = 0.73  # mmol/L - this may need converted from mg/dL
@@ -190,7 +194,7 @@ This requires summing the products of each biomarker value and its corresponding
 
 We'll do this as part of the $xb$ calculation, which is the weighted sum of the biomarkers.
 
-```python
+```python showLineNumbers=false
 # xb calculation
 xb = (b0 +
       (b_albumin * (albumin * 10)) +
@@ -211,15 +215,18 @@ Here I have adjusted the values for albumin, creatinine, glucose, and crp to mat
 
 The final step is to implement the formula as described in the research papers. This involves calculating $M$ and then using it to calculate the phenotypic age.
 
-```python
-# M calculation
+M calculation:
+
+```python showLineNumbers=false
 gamma = -1.51714
 lambda_ = 0.0076927
 M = 1 - np.exp((gamma * np.exp(xb)) / lambda_)
 ```
 
-```python
-# Phenotypic Age calculation
+Phenotypic Age calculation:
+
+```python showLineNumbers=false
+
 alpha = 141.50225
 beta = -0.00553
 phenotypic_age = alpha + (np.log(beta * np.log(1 - M)) / 0.09165)
@@ -227,7 +234,7 @@ phenotypic_age = alpha + (np.log(beta * np.log(1 - M)) / 0.09165)
 
 Puting it all together we get our full script and our phenotypic age:
 
-```python
+```python title="biological_age_calculator.py"
 import numpy as np
 
 # Given values from the spreadsheet

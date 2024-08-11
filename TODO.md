@@ -11,7 +11,6 @@ TODO
 - page newsletter CTA
 - navbar newsletter CTA
 - footer newsletter CTA
--
 
 - music page
 - 404 page
@@ -22,6 +21,8 @@ TODO
 
 DONE
 
+- JSON rss feed
+- dev tooling
 - about page
 - now page
 - uses page

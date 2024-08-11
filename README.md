@@ -18,7 +18,7 @@ I've built this site using modern web technologies to create a fast, responsive,
 ### Key Features
 
 - **Responsive Design**: Crafted to look great on devices of all sizes, from mobile to desktop.
-- **Dark Mode**: Implemented a theme toggler for comfortable viewing in any lighting condition.
+- **Dark Mode**: Implemented a theme switcher for comfortable viewing in any lighting condition.
 - **Search Functionality**: Integrated Pagefind for fast, client-side search capabilities across the entire site.
 - **MDX Support**: Allows me to write content with rich, interactive elements embedded directly in Markdown.
 - **RSS Feed**: Keeps my readers updated with new content (implemented with @astrojs/rss).
@@ -31,14 +31,14 @@ I've built this site using modern web technologies to create a fast, responsive,
 
 ### UI Components
 
-I've integrated `shadcn-ui` components into this project. shadcn provides a set of re-usable components that are not just visually appealing but also highly customisable. These components are built on top of Radix UI primitives, ensuring accessibility and consistent behavior across different browsers and devices. By using shadcn-ui, I've been able to:
+I've integrated `shadcn-ui` components into this project. shadcn provides a set of re-usable components that are not just visually appealing but also highly customisable. These components are built on top of Radix UI primitives, ensuring accessibility and consistent behaviors across different browsers and devices. By using shadcn-ui, I've been able to:
 
 - Rapidly develop a sleek, modern interface
 - Ensure accessibility standards are met
 - Maintain consistency across the site's design
 - Easily customise components to fit the site's unique style
 
-### Markdown Feaatures
+### Markdown Features
 
 One of the key aspects of this blog is its enhanced Markdown support. I've implemented several extensions and plugins to make the content creation process more powerful and flexible. Here's an overview of the Markdown features available:
 
@@ -95,7 +95,7 @@ Supported types: note, commend, assert, warn, deter
 
 6. **Figures**: Automatic figure and caption generation for images.
 7. **External Links**: Automatically adds `target="_blank"` and `rel="external"` to external links.
-8. **GitHub-Flavored Markdown (GFM)**: Support for tables, task lists, and more.
+8. **GitHub-Flavoured Markdown (GFM)**: Support for tables, task lists, and more.
 9. **Smartypants**: Typographic enhancements for punctuation.
 10. **Unwrapped Images**: Images are not wrapped in paragraphs for better styling control.
 

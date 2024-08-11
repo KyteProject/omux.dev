@@ -28,7 +28,7 @@ description: "Learn how abstraction helps manage complexity, and how refactoring
 | ------------------------------------------------------------------------- |
 | Abstraction helps manage complexity by hiding unnecessary details         |
 | Refactoring improves code quality, readability, and maintainability       |
-| Complexity management requires making thoughtful design tradeoffs         |
+| Complexity management requires making thoughtful design trade-offs        |
 | Continuous learning and improvement is a key skill for software engineers |
 
 ## Complexity and software development
@@ -95,7 +95,7 @@ Additionally, abstraction can introduce security risks if not implemented carefu
 
 ## Refactoring to Manage Complexity
 
-> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior — Martin Fowler
+> Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behaviour — Martin Fowler
 
 Where abstraction is about the design and structure of our code, [refactoring](https://en.wikipedia.org/wiki/Code_refactoring) is about continuous improvement and evolution of that design over time. It's the process of making small, behaviour-preserving transformations to improve its quality.
 
@@ -204,7 +204,7 @@ Some heuristics to help with this:
 - Create abstractions only when painful duplication emerges
 - When creating an abstraction, get it working first, then refactor
 - Treat tests as an essential safety net for refactoring
-- Timebox refactoring and focus on the biggest bang for buck
+- Time box refactoring and focus on the biggest bang for buck
 - Involve the whole team and spread knowledge continuously
 
 ## The SOLID Principles

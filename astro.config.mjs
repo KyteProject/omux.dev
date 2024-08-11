@@ -6,8 +6,6 @@ import tailwind from "@astrojs/tailwind"
 import rehypeFigure from "@microflash/rehype-figure"
 import remarkCalloutDirectives from "@microflash/remark-callout-directives"
 import githubCalloutOptions from "@microflash/remark-callout-directives/config/github"
-import sentry from "@sentry/astro"
-import spotlightjs from "@spotlightjs/astro"
 import compress from "astro-compress"
 import pagefind from "astro-pagefind"
 import { defineConfig } from "astro/config"
@@ -93,9 +91,7 @@ export default defineConfig({
       JavaScript: true,
       SVG: false,
       Logger: 1
-    }),
-    sentry(),
-    spotlightjs()
+    })
   ],
   markdown: {
     syntaxHighlight: false,

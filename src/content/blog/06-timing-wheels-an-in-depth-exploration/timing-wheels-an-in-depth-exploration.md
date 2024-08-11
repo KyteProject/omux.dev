@@ -166,7 +166,7 @@ Diving into real-world applications, let's explore where timing wheels prove the
 
 **Networking**
 
-In the transmision of data packets on a network, timing wheels choreograph events like packet retransmissions in protocols such as TCP. Their efficient timer management ensures seamless communication.
+In the transmission of data packets on a network, timing wheels choreograph events like packet retransmissions in protocols such as TCP. Their efficient timer management ensures seamless communication.
 
 **Distributed Systems**
 

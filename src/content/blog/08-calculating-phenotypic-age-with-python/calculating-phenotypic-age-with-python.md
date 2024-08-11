@@ -32,7 +32,7 @@ My pursuit of personal data doesn't just satisfy my curiosity — it's a quest t
 
 Recently, I underwent a comprehensive blood test via the [MediChecks Ultimate Performance Blood Test](https://www.medichecks.com/products/ultimate-performance-blood-test), an extensive examination that evaluates 56 different biomarkers.
 
-Armed with the results, I embarked on an intersting project: utilising the algorithm developed by Dr. Levine, I crafted a Python script dedicated to calculating my phenotypic age.
+Armed with the results, I embarked on an interesting project: utilising the algorithm developed by Dr. Levine, I crafted a Python script dedicated to calculating my phenotypic age.
 
 This article aims to provide an insight into what biological age is, and how I combined my laboratory results with the research on biological age to create a Python script that calculates my phenotypic age.
 
@@ -287,7 +287,7 @@ This suggests that the individual is in excellent health and may have a longer l
 
 ## Conclusion and Closing Thoughts
 
-The exploration of biological age presents a fascinating intersection of biology, medicine, and data science. I thouroughly enjoyed learning about this topic, and I hope you found this article informative and insightful.
+The exploration of biological age presents a fascinating intersection of biology, medicine, and data science. I thoroughly enjoyed learning about this topic, and I hope you found this article informative and insightful.
 
 I plan to continue to track and measure my phenotypic age over time, and I'll be sure to share my results in a future article should I find anything interesting!
 
@@ -295,14 +295,14 @@ If you have any questions or comments, please feel free to reach out to me.
 
 ## References
 
-- Liu Z, Kuo P-L, Horvath S, Crimmins E, Ferrucci L, Levine M (2019) **Correction: A new aging measure captures morbidity and
+- Liu Z, Kuo P-L, Horvath S, Crimmins E, Ferrucci L, Levine M (2019) **Correction: A new ageing measure captures morbidity and
   mortality risk across diverse subpopulations from NHANES IV: A cohort study. PLoS Med 16(2): e1002760.**
   [https://doi.org/10.1371/iournal.pmed.1002760](https://doi.org/10.1371/iournal.pmed.1002760)
-- Liu Z, Kuo PL, Horvath S, Crimmins E, Ferrucci L, et al. (2018) A new **aging measure captures morbidity and mortality risk across
+- Liu Z, Kuo PL, Horvath S, Crimmins E, Ferrucci L, et al. (2018) A new **ageing measure captures morbidity and mortality risk across
   diverse subpopulations from NHANES IV: A cohort study. PLOS Medicine 15(12): e1002718.**
   [https://doi.org/10.1371/iournal.pmed.1002718](https://doi.org/10.1371/iournal.pmed.1002718)
 - Levine ME, Lu AT, Quach A, Chen BH, Assimes TL, Bandinelli S, Hou L, **Baccarelli AA, Stewart JD, Li Y, Whitsel EA, Wilson JG, Reiner
-  AP, et al. An epigenetic biomarker of aging for lifespan and healthspan. Aging (Albany NY). 2018 Apr 1810:573-591.**
+  AP, et al. An epigenetic biomarker of ageing for lifespan and healthspan. Ageing (Albany NY). 2018 Apr 1810:573-591.**
   [https://doi.org/10.18632/aging.101414](https://doi.org/10.18632/aging.101414)
 - [Online LATEX Equation Editor](https://latexeditor.lagrida.com)
 - [Morgan Levine: ‘Only 10-30% of our lifespan is estimated to be due to genetics’ - The Guardian](https://www.theguardian.com/science/2022/may/07/morgan-levine-only-10-30-of-our-lifespan-is-estimated-to-be-due-to-genetics)

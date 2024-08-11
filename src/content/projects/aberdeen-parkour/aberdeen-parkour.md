@@ -22,7 +22,7 @@ In 2003, I discovered the art of parkour and became the first practitioner in Sc
 
 Originally, Aberdeen Parkour started off as Nokizaru - the moniker we gave our group of friends. Eventually this evolved into Aberdeen Parkour as the community grew and I sought to accelerate local involvement.
 
-Over the years, this community has evolved and adapted to the digital age, migrating from IRC, websites and forums to social media platforms. As the founder and leader, I've been responsible for designing and managing multiple websites, community forums, groups and events. I've also organised thousands of meetups and training sessions, fostering a culture of support, camaraderie, and shared growth.
+Over the years, this community has evolved and adapted to the digital age, migrating from IRC, websites and forums to social media platforms. As the founder and leader, I've been responsible for designing and managing multiple websites, community forums, groups and events. I've also organised thousands of meet-ups and training sessions, fostering a culture of support, camaraderie, and shared growth.
 
 ## Looking Forward
 

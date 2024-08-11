@@ -86,10 +86,10 @@ I made a list of all the available pages by submitting an empty search. A carefu
 
 Here is a list of the discovered pages:
 
-- <http://metapress.htb/events/> - includes some booking/calandar form flow (could be a vulnerable plugin?)
+- <http://metapress.htb/events/> - includes some booking/calendar form flow (could be a vulnerable plugin?)
 - <http://metapress.htb/about-us/> - nothing of note
 - <http://metapress.htb/cancel-payment/> - A page for payment errors, hints at some form of payment system
-- <http://metapress.htb/cancel-appointment/> - page for cancelled appointment mesage
+- <http://metapress.htb/cancel-appointment/> - page for cancelled appointment message
 - <http://metapress.htb/thank-you/> - appointment booking success page. Renders details of appointment (service, date/time, customer name) - maybe we can render something here if we get RCE?
 - <http://metapress.htb/sample-page/> - sample page, contains a link to the wp-admin portal (<http://metapress.htb/wp-login.php?redirect_to=http%3A%2F%2Fmetapress.htb%2Fwp-admin%2F&reauth=1>)
 - <http://metapress.htb/hello-world/> - welcome page - enumerates an `admin` username as the author

@@ -407,22 +407,6 @@ legend.svelte-1v2r7ls.svelte-1v2r7ls {
   all: revert;
 }
 
-:root {
-  --pagefind-ui-scale: 0.8;
-  --pagefind-ui-primary: #393939;
-  --pagefind-ui-text: #393939;
-  --pagefind-ui-background: #fff;
-  --pagefind-ui-border: #eee;
-  --pagefind-ui-tag: #eee;
-  --pagefind-ui-border-width: 2px;
-  --pagefind-ui-border-radius: 8px;
-  --pagefind-ui-image-border-radius: 8px;
-  --pagefind-ui-image-box-ratio: 3 / 2;
-  --pagefind-ui-font: system, -apple-system, "BlinkMacSystemFont",
-    ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue",
-    "Lucida Grande", "Ubuntu", "arial", sans-serif;
-}
-
 .pagefind-ui.svelte-e9gkc3 {
   width: 100%;
   color: var(--pagefind-ui-text);

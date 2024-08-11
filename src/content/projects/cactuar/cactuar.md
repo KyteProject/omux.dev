@@ -32,7 +32,7 @@ The project was originally developed in `Node.js`, and was later rewritten in `G
 
 - Served over 50,000 users in more than 30 community servers.
 - Successfully developed and deployed a chatbot that enhances the quality of artist feedback channels by ensuring reciprocal feedback among users.
-- Gamified the feedback process by implementing an experience/leveling system, encouraging users to actively provide feedback to their peers.
+- Gamified the feedback process by implementing an experience/levelling system, encouraging users to actively provide feedback to their peers.
 - Expanded the project with a microservices architecture using `Go`, with services communicating asynchronously via `pub/sub` and `gRPC`. Each service has its own `Postgresql` or `MongoDB` database and `API` as required.
 
 ## Links

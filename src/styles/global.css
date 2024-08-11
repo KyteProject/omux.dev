@@ -283,3 +283,32 @@ html.scrolled #back-to-top {
 .callout-content > p {
   margin: 0;
 }
+
+#search input {
+  font-weight: normal;
+}
+
+#search p {
+  font-weight: normal;
+}
+
+#search .pagefind-ui__result-title {
+  font-weight: 600;
+}
+
+#search .pagefind-ui__message {
+  padding: 0;
+  padding-bottom: 0.75rem;
+}
+
+.pagefind-ui__result-link {
+  @apply !text-foreground no-underline;
+}
+
+.pagefind-ui__result-excerpt {
+  @apply text-muted-foreground;
+}
+
+.pagefind-ui__result-excerpt mark {
+  @apply bg-primary text-primary-foreground;
+}

@@ -31,7 +31,7 @@ During my time with Ukemi, a company I co-founded with two friends, we've manage
 
 Leveraging our shared passion for parkour and movement culture, we've designed, developed, and deployed a custom website, blog, project, and e-commerce platform, allowing us to reach a global audience.
 
-Static website with ecommerce and multiple data sources.
+Static website with e-commerce and multiple data sources.
 
 **Architecture:** `Web`, `Monolith`, `Serverless`
 
@@ -67,7 +67,7 @@ It is a call to action for the Parkour community worldwide to question the philo
 
 [View Project](/projects/balance-marathon)
 
-### BAME and LGBTQIA+ Community Englagement
+### BAME and LGBTQIA+ Community Engagement
 
 Moreover, we're proud to have played a role in nurturing diversity within the parkour community.
 
@@ -75,9 +75,9 @@ We've supported five members from the BAME and LGBTQIA+ communities in reaching 
 
 ## Background
 
-As founders, we have each been practicing parkour for over 15 years and have witnessed the growth of the Scottish parkour scene firsthand.
+As founders, we have each been practising parkour for over 15 years and have witnessed the growth of the Scottish parkour scene first-hand.
 
-Our experiences encompass everything from traveling and teaching classes to organising national events, creating web resources, and performing.
+Our experiences encompass everything from travelling and teaching classes to organising national events, creating web resources, and performing.
 
 Our shared vision and experiences have brought us together to apply our traceur vision beyond the practice itself and to transform the city into a more active, engaging space.
 
@@ -85,7 +85,7 @@ We are excited about the future of cities, movement, and play, and look forward 
 
 ## Clients & Collaborators
 
-We are proud to have worked with a large number of community leaders and prestigous clients, such as:
+We are proud to have worked with a large number of community leaders and prestigious clients, such as:
 
 AIM Sports Academy, Access Parkour, Art of Retreat, Brewman Parkour, Free Your Instinct, Jaggy, Leap Sports, Lyra Theatre, Parkour Earth, Parkour Generations, Parkour Outreach, Parkour Scotland, Parkour Syllabus, Parkour UK, Parkour Visions, Scottish Canals, Sport Inspired, The Helix (The Kelpies).
 

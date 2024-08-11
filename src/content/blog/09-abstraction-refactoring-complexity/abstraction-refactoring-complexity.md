@@ -1,6 +1,6 @@
 ---
 title: "Abstraction, Refactoring, Complexity, and Tradeoffs - Part 1"
-pubDatetime: 2024-04-26T14:52:43Z
+pubDate: 2024-04-26
 slug: "abstraction-refactoring-complexity"
 featured: true
 draft: false

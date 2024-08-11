@@ -9,7 +9,7 @@ import { getCollection } from "astro:content"
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft && post.data.featured)
-  .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 6)
 ---
 

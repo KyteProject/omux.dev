@@ -1,6 +1,6 @@
 ---
 title: "Assembly Language: The Heart of Reverse Engineering"
-pubDatetime: 2023-09-06T24:19:19Z
+pubDate: 2023-09-06
 slug: "assembly-the-heart-of-reverse-engineering"
 featured: true
 draft: false

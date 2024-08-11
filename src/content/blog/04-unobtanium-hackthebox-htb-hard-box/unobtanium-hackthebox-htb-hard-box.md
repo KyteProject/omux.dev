@@ -1,6 +1,6 @@
 ---
 title: "Unobtainium - HackTheBox (HTB) - Hard Box Writeup"
-pubDatetime: 2022-12-14T12:53:10Z
+pubDate: 2022-12-14
 slug: "unobtanium-hackthebox-htb-hard-box"
 featured: false
 draft: false

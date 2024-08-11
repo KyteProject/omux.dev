@@ -7,12 +7,12 @@ const blog = defineCollection({
       .object({
         title: z.string(),
         description: z.string(),
-        pubDatetime: z.coerce.date(),
-        updateDatetime: z.coerce.date().optional(),
+        pubDate: z.coerce.date(),
+        updateDate: z.coerce.date().optional(),
         draft: z.boolean().optional(),
         featured: z.boolean().optional(),
         categories: z.array(z.string()).default(["misc"]),
-        tags: z.array(z.string()).default(["others"]),
+        tags: z.array(z.string()).default(["other"]),
         ogImage: image().refine(img => img.width >= 720, {
           message: "Cover image must be at least 720 pixels wide!"
         }),
@@ -29,8 +29,8 @@ const projects = defineCollection({
       .object({
         title: z.string(),
         description: z.string(),
-        pubDatetime: z.coerce.date(),
-        updateDatetime: z.coerce.date().optional(),
+        pubDate: z.coerce.date(),
+        updateDate: z.coerce.date().optional(),
         draft: z.boolean().optional(),
         category: z.string().default("software"),
         ogImage: image().refine(img => img.width >= 720, {
@@ -38,7 +38,7 @@ const projects = defineCollection({
         }),
         repoLink: z.string().optional(),
         demoLink: z.string().optional(),
-        toc_enabled: z.boolean().optional()
+        tocEnabled: z.boolean().optional()
       })
       .strict()
 })

@@ -2,7 +2,7 @@
 title: Things I'm Using
 updated: 2024-05-17
 description: A list of the hardware and software I use daily.
-toc_enabled: true
+tocEnabled: true
 layout: ../layouts/PageLayout.astro
 ---
 

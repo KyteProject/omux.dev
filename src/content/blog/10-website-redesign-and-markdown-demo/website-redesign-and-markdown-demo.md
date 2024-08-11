@@ -1,6 +1,6 @@
 ---
 title: "An overview of Site Redesign & Markdown Demo"
-pubDatetime: 2024-06-18T14:52:43Z
+pubDate: 2024-06-18
 slug: "website-redesign-and-markdown-demo"
 featured: false
 draft: true

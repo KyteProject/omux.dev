@@ -1,6 +1,6 @@
 ---
 title: "MetaTwo: A look at hacking WordPress, SQLi, XXE on HackTheBox"
-pubDatetime: 2022-12-16T16:34:45Z
+pubDate: 2022-12-16
 slug: "metatwo-hackthebox-wordpress-sql-injection-xxe"
 featured: false
 draft: false

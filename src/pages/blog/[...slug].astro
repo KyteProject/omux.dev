@@ -7,7 +7,7 @@ import PostsListLayout from "@layouts/PostsListLayout.astro"
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
     .filter(post => !post.data.draft)
-    .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 
   const postMap = posts.map(post => ({
     params: { slug: post.slug },
@@ -26,7 +26,7 @@ const { post } = Astro.props
 
 const posts = (await getCollection("blog"))
   .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 
 const pagination = getPagination({
   posts: posts,

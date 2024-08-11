@@ -4,7 +4,7 @@ updated: 2024-05-17
 name: "Dan"
 location: "Edinburgh"
 image: "https://source.unsplash.com/random/200x200"
-toc_enabled: false
+tocEnabled: false
 layout: ../layouts/AboutLayout.astro
 ---
 

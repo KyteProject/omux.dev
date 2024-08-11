@@ -1,6 +1,6 @@
 ---
 title: "Calculating Phenotypic Age from biomarkers with Python and numpy"
-pubDatetime: 2024-01-24T17:34:12Z
+pubDate: 2024-01-24
 slug: "calculating-phenotypic-age-with-python"
 featured: true
 draft: false

@@ -3,8 +3,8 @@ title: "Cactuar - Feedback Bot"
 category: "software"
 ogImage: "./pexels-kindel-media-8566526.jpg"
 description: "A custom chat-bot for Discord music production communities"
-toc_enabled: true
-pubDatetime: 2018-09-21T05:17:19Z
+tocEnabled: true
+pubDate: 2018-09-21
 ---
 
 ## Overview

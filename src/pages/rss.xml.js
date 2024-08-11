@@ -11,8 +11,7 @@ export async function GET(context) {
 
   const items = [...blog, ...projects].sort(
     (a, b) =>
-      new Date(b.data.pubDatetime).valueOf() -
-      new Date(a.data.pubDatetime).valueOf()
+      new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
   )
 
   return rss({
@@ -22,7 +21,7 @@ export async function GET(context) {
     items: items.map(item => ({
       title: item.data.title,
       description: item.data.description,
-      pubDate: item.data.pubDatetime,
+      pubDate: item.data.pubDate,
       link: `/${item.collection}/${item.slug}/`
     }))
   })

@@ -3,10 +3,10 @@ title: "Ukemi"
 category: "product"
 ogImage: "./images/ukemi-logo.jpg"
 description: "Ukemi is a company that I co-founded with two friends"
-toc_enabled: true
+tocEnabled: true
 repoLink: "https://github.com/ukemi-project/ukemi.ninja-2019"
 demoLink: "https://ukemi.ninja"
-pubDatetime: 2018-09-21T05:17:19Z
+pubDate: 2018-09-21
 ---
 
 ## Overview

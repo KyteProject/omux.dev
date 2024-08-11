@@ -3,7 +3,7 @@ title: "Omux.dev"
 category: "software"
 ogImage: "./coding-1853305_1920.jpg"
 description: "Personal blog and portfolio, built using Astro.js"
-pubDatetime: 2019-09-21T05:17:19Z
+pubDate: 2019-09-21
 ---
 
 ## Overview

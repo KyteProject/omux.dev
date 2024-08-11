@@ -23,7 +23,7 @@ const { Content, headings } = await project.render()
         class="mx-auto w-full flex-1 transform ease-out md:order-last xl:ml-0 xl:mr-0"
       >
         {
-          project.data.toc_enabled && (
+          project.data.tocEnabled && (
             <div class="hidden h-full md:block">
               <TableOfContents {headings} client:only="svelte" />
             </div>

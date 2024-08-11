@@ -1,7 +1,7 @@
 ---
 title: Today I Learned
 updated: 2024-05-24
-toc_enabled: false
+tocEnabled: false
 layout: ../layouts/PageLayout.astro
 ---
 

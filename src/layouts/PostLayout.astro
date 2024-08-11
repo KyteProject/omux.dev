@@ -14,7 +14,7 @@ import { type CollectionEntry, getCollection } from "astro:content"
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
     .filter(post => !post.data.draft)
-    .sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf())
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   return posts.map(post => ({
     params: { slug: post.slug },
     props: post
@@ -91,7 +91,7 @@ const { Content, headings } = await post.render()
             })}
           >
             <div class="font-base text-sm">
-              <FormattedDate date={post.data.pubDatetime} />
+              <FormattedDate date={post.data.pubDate} />
             </div>
             &bull;
             <div class="font-base text-sm">

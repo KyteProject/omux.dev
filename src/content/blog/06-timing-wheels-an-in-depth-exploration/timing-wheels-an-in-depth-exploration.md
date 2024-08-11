@@ -1,6 +1,6 @@
 ---
 title: "Timing Wheels: An In-depth Exploration"
-pubDatetime: 2023-08-11T12:53:10Z
+pubDate: 2023-08-11
 slug: "timing-wheels-an-in-depth-exploration"
 featured: true
 draft: false

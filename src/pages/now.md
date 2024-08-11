@@ -1,7 +1,7 @@
 ---
 title: What I'm doing now
 updated: 2024-05-17
-toc_enabled: false
+tocEnabled: false
 layout: ../layouts/PageLayout.astro
 ---
 

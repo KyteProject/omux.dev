@@ -26,7 +26,7 @@ type Acc = {
 const { currentPage, totalPages, paginatedPosts } = Astro.props
 
 const posts = paginatedPosts?.reduce((acc: Acc, post) => {
-  const year = post.data.pubDatetime.getFullYear().toString()
+  const year = post.data.pubDate.getFullYear().toString()
   if (!acc[year]) {
     acc[year] = []
   }
@@ -75,7 +75,7 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a))
                       </div>
                       <div>
                         <span class="text-sm text-muted-foreground">
-                          {formatDate(post.data.pubDatetime)}
+                          {formatDate(post.data.pubDate)}
                         </span>
                         •
                         {post.data.categories.map((cat, i) => (

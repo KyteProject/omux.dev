@@ -3,7 +3,7 @@ title: "UkemiBot"
 category: "software"
 ogImage: "./pexels-luis-gomes-546819.jpg"
 description: "A discord chatbot using Node.js and the Discord.js library"
-pubDatetime: 2019-11-21T05:17:19Z
+pubDate: 2019-11-21
 ---
 
 ## Overview

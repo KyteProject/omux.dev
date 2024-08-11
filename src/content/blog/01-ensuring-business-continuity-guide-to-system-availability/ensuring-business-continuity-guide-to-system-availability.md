@@ -1,6 +1,6 @@
 ---
 title: "Ensuring Business Continuity: A Guide to System Availability"
-pubDatetime: 2022-07-20T12:12:16Z
+pubDate: 2022-07-20
 slug: "ensuring-business-continuity-guide-to-system-availability"
 featured: false
 draft: false

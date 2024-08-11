@@ -1,6 +1,6 @@
 ---
 title: "Essential Guide to Software Architecture in Web Development"
-pubDatetime: 2022-11-19T34:19:19Z
+pubDate: 2022-11-19
 slug: "essential-guide-software-architecture-web-development"
 featured: true
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu on Windows: Your Step-By-Step Guide to WSL2 Installation"
-pubDatetime: 2022-09-21T05:17:19Z
+pubDate: 2022-09-21
 slug: ubuntu-on-windows-developers-guide-to-wsl2-setup
 featured: false
 draft: false

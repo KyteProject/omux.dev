@@ -4,8 +4,8 @@ category: "community"
 ogImage: "./images/jump.jpg"
 description: "Founder of the Aberdeen Parkour community - est. 2003"
 demoLink: "https://www.facebook.com/groups/AberdeenParkour"
-toc_enabled: true
-pubDatetime: 2003-09-21T05:17:19Z
+tocEnabled: true
+pubDate: 2003-09-21
 ---
 
 ![Daniel Smith jumping in Aberdeen](./images/jump.jpg "Me captured jumping in Aberdeen. Photography by Colin Millum")

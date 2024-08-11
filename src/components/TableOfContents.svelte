@@ -1,8 +1,8 @@
 <script lang="ts">
   import BuyMeACoffee from "@components/ui/BuyMeACoffee.svelte"
-  import type { MarkdownHeading } from 'astro'
-  import { onDestroy, onMount } from 'svelte'
-  import { writable } from 'svelte/store'
+  import type { MarkdownHeading } from "astro"
+  import { onDestroy, onMount } from "svelte"
+  import { writable } from "svelte/store"
 
   export let headings: MarkdownHeading[]
 
@@ -22,13 +22,13 @@
   }
 
   onMount(() => {
-    if (typeof IntersectionObserver === 'undefined') return
+    if (typeof IntersectionObserver === "undefined") return
 
     headingsObserver = new IntersectionObserver(
       headings => {
         headings.forEach(updateIntersecting)
       },
-      { rootMargin: '-64px 0px 0px 0px' }
+      { rootMargin: "-64px 0px 0px 0px" }
     )
 
     articleObserver = new IntersectionObserver(articles => {
@@ -37,10 +37,12 @@
       })
     })
 
-    const headingElements = document.querySelectorAll('main h2, main h3, main h4, main h5, main h6')
+    const headingElements = document.querySelectorAll(
+      "main h2, main h3, main h4, main h5, main h6"
+    )
     headingElements.forEach(element => headingsObserver.observe(element))
 
-    const mainArticle = document.getElementsByTagName('main')[0]
+    const mainArticle = document.getElementsByTagName("main")[0]
     articleObserver.observe(mainArticle)
 
     onDestroy(() => {
@@ -71,9 +73,9 @@
     headings.forEach(heading => {
       const linkElement = document.getElementById(`toc-link-${heading.slug}`)
       if (borderedHeadings.includes(heading.slug)) {
-        linkElement?.classList.add('!border-accent')
+        linkElement?.classList.add("!border-accent")
       } else {
-        linkElement?.classList.remove('!border-accent')
+        linkElement?.classList.remove("!border-accent")
       }
     })
   }
@@ -81,7 +83,7 @@
   const scrollToHeading = (slug: string) => {
     const headingElement = document.getElementById(slug)
     if (headingElement) {
-      headingElement.scrollIntoView({ behavior: 'smooth' })
+      headingElement.scrollIntoView({ behavior: "smooth" })
       headingElement.focus() // Ensure the heading is focused after scrolling for accessibility
     }
   }
@@ -89,7 +91,12 @@
 
 <aside class="sticky top-24">
   {#if Array.isArray(headings)}
-    <nav id="post-toc" aria-label="Table of Contents" dir="ltr" class="max-h-[calc(100vh-12rem)] overflow-y-auto">
+    <nav
+      id="post-toc"
+      aria-label="Table of Contents"
+      dir="ltr"
+      class="max-h-[calc(100vh-12rem)] overflow-y-auto"
+    >
       <ul dir="ltr" id="toc-list-root">
         <span class="text-xl">On This Page:</span>
         {#each headings as { depth, text, slug }}
@@ -106,7 +113,8 @@
               class:pl-16={depth === 5}
               class:pl-20={depth === 6}
               on:click|preventDefault={() => scrollToHeading(slug)}
-              on:keydown|preventDefault={event => event.key === 'Enter' && scrollToHeading(slug)}
+              on:keydown|preventDefault={event =>
+                event.key === "Enter" && scrollToHeading(slug)}
             >
               {text}
             </a>

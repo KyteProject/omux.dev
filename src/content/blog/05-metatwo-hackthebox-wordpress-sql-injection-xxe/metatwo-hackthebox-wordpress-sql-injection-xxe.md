@@ -72,7 +72,7 @@ Our `nmap` scan reveals that there are 3 open ports. The HTTP port (80/tcp), in 
 echo "10.129.228.95 metapress.htb" >> /etc/hosts
 ```
 
-Upon visiting the newly assigned URL, we are able to see the contents served over HTTP. The URL is: http://metapress.htb/.
+Upon visiting the newly assigned URL, we are able to see the contents served over HTTP. The URL is: <http://metapress.htb/>.
 
 ## A Deep Dive into WordPress Exploitation
 
@@ -86,13 +86,13 @@ I made a list of all the available pages by submitting an empty search. A carefu
 
 Here is a list of the discovered pages:
 
-- http://metapress.htb/events/ - includes some booking/calandar form flow (could be a vulnerable plugin?)
-- http://metapress.htb/about-us/ - nothing of note
-- http://metapress.htb/cancel-payment/ - A page for payment errors, hints at some form of payment system
-- http://metapress.htb/cancel-appointment/ - page for cancelled appointment mesage
-- http://metapress.htb/thank-you/ - appointment booking success page. Renders details of appointment (service, date/time, customer name) - maybe we can render something here if we get RCE?
-- http://metapress.htb/sample-page/ - sample page, contains a link to the wp-admin portal (http://metapress.htb/wp-login.php?redirect_to=http%3A%2F%2Fmetapress.htb%2Fwp-admin%2F&reauth=1)
-- http://metapress.htb/hello-world/ - welcome page - enumerates an `admin` username as the author
+- <http://metapress.htb/events/> - includes some booking/calandar form flow (could be a vulnerable plugin?)
+- <http://metapress.htb/about-us/> - nothing of note
+- <http://metapress.htb/cancel-payment/> - A page for payment errors, hints at some form of payment system
+- <http://metapress.htb/cancel-appointment/> - page for cancelled appointment mesage
+- <http://metapress.htb/thank-you/> - appointment booking success page. Renders details of appointment (service, date/time, customer name) - maybe we can render something here if we get RCE?
+- <http://metapress.htb/sample-page/> - sample page, contains a link to the wp-admin portal (<http://metapress.htb/wp-login.php?redirect_to=http%3A%2F%2Fmetapress.htb%2Fwp-admin%2F&reauth=1>)
+- <http://metapress.htb/hello-world/> - welcome page - enumerates an `admin` username as the author
 
 A look into the source code and searching for `generator` revealed that the site was built on `WordPress version 5.6.2`, utilising the `bookingpress v1.0.10 plugin` and `twentytwwentyone v1.1 theme`. With these details, we were able to investigate known vulnerabilities:
 

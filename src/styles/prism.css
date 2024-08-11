@@ -30,6 +30,7 @@ code[data-line-numbers] {
 code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
+
   @apply inline-block w-4 text-right text-gray-500;
 }
 
@@ -64,13 +65,16 @@ pre [data-line] {
 }
 
 [data-highlighted-line] {
-  background: rgba(200, 200, 255, 0.1);
+  background: rgb(200 200 255 / 10%);
+
   @apply border-l-blue-400;
 }
 
 [data-highlighted-chars] {
   @apply rounded bg-background px-1 py-0.5;
-  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+
+  box-shadow: 0 0 0 4px rgb(82 82 91 / 50%);
+
   span {
     @apply !text-foreground;
   }
@@ -96,13 +100,16 @@ figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
 .katex-display {
   overflow: auto hidden;
 }
+
 .katex-display > .katex {
   white-space: normal;
 }
+
 /* Add space between broken lines: */
 .katex-display > .base {
   margin: 0.25em 0;
 }
+
 /* Compensate by reducing space around display math */
 .katex-display {
   margin: 0.5em 0;

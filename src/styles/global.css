@@ -1,74 +1,55 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import url("tailwindcss/base");
+@import url("tailwindcss/components");
+@import url("tailwindcss/utilities");
 
 /* @import "./reset.css"; */
-@import "./prism.css";
-@import "@microflash/remark-callout-directives/theme/github";
-
+@import url("./prism.css");
+@import url("@microflash/remark-callout-directives/theme/github");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
-@import "./components.css";
+@import url("./components.css");
 
 /* colour vars */
 @layer base {
   :root {
     --background: 38 24% 91%;
     --foreground: 229 84% 5%;
-
     --card: 0 0% 100%;
     --card-foreground: 229 84% 5%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 229 84% 5%;
-
     --primary: 22 86% 65%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 169 25% 44%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 169 25% 44%;
     --accent-foreground: 22 86% 65%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 0 0% 80%;
     --input: 0 0% 80%;
     --ring: 75 12% 7%;
-
     --radius: 0.5rem;
   }
 
   .dark {
     --background: 229 84% 5%;
     --foreground: 210 40% 99%;
-
     --card: 221 60% 5%;
     --card-foreground: 210 40% 98%;
-
     --popover: 221 60% 20%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 22 86% 65%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 169 25% 44%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 169 25% 44%;
     --accent-foreground: 22 86% 65%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 0 0% 15%;
     --input: 0 0% 15%;
     --ring: 212.7 26.8% 83.9%;
@@ -83,10 +64,9 @@
   html {
     scroll-padding-top: 100px;
     color-scheme: light;
-
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden scroll;
     scrollbar-gutter: stable;
+
     /* scrollbar-color: hsl(var(--secondary) / 50%) hsl(var(--background)); */
     scrollbar-width: thin;
     scroll-behavior: smooth;
@@ -136,7 +116,7 @@
   }
 
   article {
-    @apply prose prose-neutral max-w-full dark:prose-invert lg:prose-xl prose-img:mx-auto prose-img:my-auto;
+    @apply prose prose-neutral max-w-full lg:prose-xl dark:prose-invert prose-img:mx-auto prose-img:my-auto;
     @apply prose-headings:font-semibold;
   }
 
@@ -203,6 +183,7 @@
   [aria-current="page"] {
     pointer-events: none;
     cursor: default;
+
     @apply text-muted-foreground;
   }
 }

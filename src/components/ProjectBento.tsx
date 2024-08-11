@@ -30,7 +30,12 @@ export const ProjectBento = ({
           key={i}
           title={item.data.title}
           description={<span className="text-sm">{item.data.description}</span>}
-          header={<BentoGridItemImage image={item.data.ogImage} alt={item.data.title} />}
+          header={
+            <BentoGridItemImage
+              image={item.data.ogImage}
+              alt={item.data.title}
+            />
+          }
           className={cn(
             "[&>p:text-lg] cursor-pointer",
             i === 4 || i === 8 ? "md:col-span-2" : "",

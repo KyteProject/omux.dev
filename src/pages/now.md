@@ -7,7 +7,7 @@ layout: ../layouts/PageLayout.astro
 
 After what felt like a particularly uneventful year, these first few months of 2024 have been a breath of fresh air. Here's a quick summary of what's happening in my life recently.
 
-## Things I'm Proud Of:
+## Things I'm Proud Of
 
 #### 1. **Relationship Milestones**
 
@@ -21,7 +21,7 @@ Moving to a new city has injected a sense of adventure and excitement that has b
 
 I'm starting a new job as a Tech Lead at [Push](https://pushentertainment.com/). It's rare in tech to actually enjoy the interview process, but I can honestly say that I did.
 
-## Things I'm Working On:
+## Things I'm Working On
 
 #### 1. **Music Production**
 

@@ -14,6 +14,10 @@
 
 <div class="flex justify-center">
   <a href="https://www.buymeacoffee.com/omux" target="_blank" class="mt-5">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" class="w-32" />
+    <img
+      src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+      alt="Buy Me A Coffee"
+      class="w-32"
+    />
   </a>
 </div>

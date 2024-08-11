@@ -2,14 +2,13 @@
   "recommendations": [
     "astro-build.astro-vscode",
     "bradlc.vscode-tailwindcss",
-    "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "unifiedjs.vscode-mdx",
     "yoavbls.pretty-ts-errors",
     "nick-rudenko.back-n-forth",
     "xyc.vscode-mdx-preview",
     "ryu1kn.partial-diff",
-    "csstools.postcss",
+    "csstools.postcss"
   ],
   "unwantedRecommendations": []
 }

@@ -12,15 +12,14 @@ export default {
   plugins: [
     "prettier-plugin-astro",
     "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss",
-    "prettier-plugin-toml",
+    "prettier-plugin-tailwindcss"
   ],
   overrides: [
     {
       files: ["*.astro"],
       options: {
-        parser: "astro",
-      },
-    },
-  ],
-};
+        parser: "astro"
+      }
+    }
+  ]
+}

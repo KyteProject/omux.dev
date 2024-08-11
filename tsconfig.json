@@ -16,5 +16,19 @@
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.astro", "tailwind.config.ts"],
-  "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    ".vscode",
+    "dist",
+    ".astro",
+    ".cache",
+    ".netlify",
+    ".vercel",
+    ".husky",
+    "**/*.json",
+    "**/*.yaml",
+    "**/*.yml",
+    "**/*.mjs"
+  ]
 }

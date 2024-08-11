@@ -40,7 +40,12 @@ const getTransitionNameFromId = setTransitionSlug({ slug: post.slug })
         {post.data.title}
       </Link>
     </h2>
-    <p class="!mt-0 mb-4 text-muted-foreground">
+    <p
+      class="!mt-0 mb-4 text-muted-foreground"
+      transition:name={getTransitionNameFromId({
+        id: TransitionIds.post_card.meta
+      })}
+    >
       {post.data.description}
     </p>
     <Button variant="invert" className="mt-2 max-w-56">

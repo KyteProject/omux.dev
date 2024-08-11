@@ -1,8 +1,7 @@
-TODO
+## TODO
 
-- bento on index?
 - tags filter/cloud
-- blog sharing
+
 - populate TIL page
 - tags filter from blog page
 - Contact/Collaborate CTA on projects
@@ -14,13 +13,14 @@ TODO
 
 - music page
 - 404 page
-- tags page?
 - rework About page
   - books?
   - clients list?
 
-DONE
+## DONE
 
+- remake blog images for consistent style
+- blog sharing
 - JSON rss feed
 - dev tooling
 - about page

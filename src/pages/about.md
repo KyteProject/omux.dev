@@ -8,7 +8,7 @@ tocEnabled: false
 layout: ../layouts/AboutLayout.astro
 ---
 
-Welcome, I'm Daniel Smith <small><em>(He/Him)</em></small>.
+Welcome, I'm Dan <small><em>(He/Him)</em></small>.
 
 ### TLDR
 
@@ -23,11 +23,13 @@ Welcome, I'm Daniel Smith <small><em>(He/Him)</em></small>.
 
 ### Introduction
 
-Introductions are hard. We are each astonishingly complex, with a unique perspective formed from our experiences and internal dialogues. We are also full of fluctuating whims, contradictions, and desires. As a result, my intention for this page is not to replicate my resume, but to introduce myself as a human — hopeful, persevering, and flawed.
+Introductions are hard. We are each astonishingly complex, with a unique perspective formed from our experiences and internal dialogues. As a result, my intention for this page is not to replicate my resume, but to introduce myself as a human — hopeful, resilient, and flawed.
 
 The stories we tell ourselves hold a lot of power; they construct our identity, shape our ethics, and plot our destiny. Thus, my preference for personal labels leans towards broader nouns that elucidate a combination of what I am, and what I aspire to be.
 
 With that in mind, some labels I currently adopt are: Problem Solver; Learner; Creator; Producer; Leader; Mover; and Entrepreneur. More specifically: Software Engineer, Musician, and [Traceur](https://parkour.com/redefining-the-word-traceur-by-adam-dunlap/).
+
+![DJ'ing while a Resident DJ @ Chaplins](../assets/images/fg.png)
 
 ### Origin Story
 
@@ -45,11 +47,25 @@ In 2003, my friend shared a [video](https://www.youtube.com/watch?v=OaVzjGOqQQY)
 
 The discovery of [parkour](https://en.wikipedia.org/wiki/Parkour) ([L'Art du Déplacement](https://www.parkourways.com/history)) was another pivotal moment in my life. I was obsessed. For the next fifteen years, whenever I wasn't scouring the internet, I was practising parkour. We would train every day after school, and up to twelve hours at the weekend!
 
-It's an unforgettable experience to be involved in the inception of a new discipline. There were no experts to consult, no community to learn from, and no rules. On the outside, parkour appeared to be just urban gymnastics, but to those inside the community, it was intrinsically linked to an almost spiritual philosophy of “movement.” In this regard, it was far closer to Eastern martial arts than any other sport. We weren't just reclaiming public spaces; we were dismantling social constructs and shaping a collective morality — all stemming from the mantra: “Être fort pour être utile” (“Being strong to be useful”).
+![Daniel Smith, Aberdeen (2008) - Captured by Colin Millum](../assets/images/Colin_Millum_Photography_Parkour_16.jpg)
+
+It's an unforgettable experience to be involved in the inception of a new discipline. There were no experts to consult, no community to learn from, and no rules.
+
+On the outside, parkour appeared to be just urban gymnastics, but to those inside the community, it was intrinsically linked to an almost spiritual philosophy of “movement.” In this regard, it was far closer to Eastern martial arts than any other sport.
+
+We weren't just reclaiming public spaces; we were dismantling social constructs and shaping a collective morality — all stemming from the mantra: “Être fort pour être utile” (“Being strong to be useful”).
+
+![Daniel Smith, Aberdeen (2020)](../assets/images/11822999_10155905198780344_2347654258119841783_o.jpg)
 
 As a result of my combined interests and serendipitous placement at the birth of parkour, I quickly began building websites and forums, doing everything I could to foster the community in Scotland. Establishing a new culture, discovering new movements, and living through its transition into a global phenomenon — I can only describe it as electrifying.
 
-Throughout the years, I've met, trained with, and brought hundreds of new people into the sport. It's something I am deeply proud of, as parkour transforms lives in ways no other sport can. My closest friends today were strangers I met via the internet 20 years ago. I can honestly say that parkour and the people I've met along the way have had a profoundly positive impact on my life.
+![Rooftops of Edinburgh (2013)](../assets/images/1004462_10153027187215344_924303699_n.jpg)
+
+Throughout the years, I've met, trained with, and brought hundreds of new people into the sport. It's something I am deeply proud of, as parkour transforms lives in ways no other sport can.
+
+My closest friends today were strangers I met via the internet 20 years ago. I can honestly say that parkour and the people I've met along the way have had a profoundly positive impact on my life.
+
+![For The Love of Movement (2015) - Den Haag, NL](../assets/images/884573_785655354911183_4494020323688496710_o.jpg)
 
 ### Now
 

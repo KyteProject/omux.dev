@@ -77,7 +77,15 @@
     "Ukemi",
     "omux",
     "Omux",
-    "tada"
+    "tada",
+    "Homelab",
+    "homelab",
+    "homelabs",
+    "Homelabs",
+    "Kubernetes",
+    "kubernetes",
+    "k8s",
+    "k3s"
   ],
   "flagWords": ["shit", "fuck", "cunt", "fucking"],
   "ignorePaths": [

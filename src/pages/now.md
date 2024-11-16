@@ -5,35 +5,31 @@ tocEnabled: false
 layout: ../layouts/PageLayout.astro
 ---
 
-After what felt like a particularly uneventful year, these first few months of 2024 have been a breath of fresh air. Here's a quick summary of what's happening in my life recently.
+Now that I'm settled into Edinburgh and my new job, I've been reflecting on the past year and thinking about what direction I want to take. Here's a quick update:
 
 ## Things I'm Proud Of
 
-#### 1. **Relationship Milestones**
+#### 1. **Music Production**
 
-Passing the one-year mark and moving in together has probably been the biggest improvement in my life.
+Recently one of my tracks was released by a label as part of a remix VA. It was a huge milestone for me, and I'm grateful for the opportunity.
 
-#### 2. **Moving to Edinburgh**
+#### 2. **Career Success**
 
-Moving to a new city has injected a sense of adventure and excitement that has been missing for a while.
-
-#### 3. **Career Progression**
-
-I'm starting a new job as a Tech Lead at [Push](https://pushentertainment.com/). It's rare in tech to actually enjoy the interview process, but I can honestly say that I did.
+Within the first 4 months in my new role, I've already made a significant impact. I've been able to help the team with a number of technical challenges, and I've helped deliver a large project to one of our biggest clients!
 
 ## Things I'm Working On
 
 #### 1. **Music Production**
 
-In typical ADHDer fashion, I have an abundance of projects that are a few steps from the finish line. I'm aiming to complete and release at least four songs this year.
+In typical ADHDer fashion, I have an abundance of projects that are a few steps from the finish line.
 
-#### 2. **AWS Solutions Architect Certification**
+#### 2. **Homelab**
 
-This is something I've been wanting to do for a while, and I'm finally in a position where I can dedicate the time to it.
+I've started building out my homelab beyond just the Proxmox server I had running before. I'm currently working on setting up a Kubernetes cluster and I'm aiming to write some more blog posts about my journey.
 
 #### 3. **Driver's Licence**
 
-I've probably had about 25 hours of lessons over the years, but I've never been able to commit to it. I'm determined to get it done this year.
+I've made great progress on this goal, and I'm expecting to pass my test in January!
 
 ---
 

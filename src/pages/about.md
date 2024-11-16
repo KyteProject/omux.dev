@@ -1,6 +1,6 @@
 ---
 title: "About"
-updated: 2024-05-17
+updated: 2024-11-16
 name: "Dan"
 location: "Edinburgh"
 image: "https://source.unsplash.com/random/200x200"

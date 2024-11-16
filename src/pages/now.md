@@ -1,6 +1,6 @@
 ---
 title: What I'm doing now
-updated: 2024-05-17
+updated: 2024-11-16
 tocEnabled: false
 layout: ../layouts/PageLayout.astro
 ---
